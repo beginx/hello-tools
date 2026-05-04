@@ -1,26 +1,369 @@
 @import "tailwindcss";
 
+/* Mac OS 9 Inspired Color Palette */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --os9-bg: #d4d4d4;
+  --os9-surface: #c0c0c0;
+  --os9-highlight: #808080;
+  --os9-border: #666666;
+  --os9-text: #000000;
+  --os9-titlebar: #4a4a7a;
+  --os9-titlebar-text: #ffffff;
+  --os9-btn-start: #cfcfcf;
+  --os9-btn-end: #a0a0a0;
+  --os9-btn-hover: #dcdcdc;
+  --os9-btn-active: #999999;
+  --os9-accent: #3333cc;
+  --os9-green: #228b22;
+  --os9-red: #cc3333;
+  --os9-orange: #cc6600;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Mac OS 9 Platinum Theme - Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --os9-bg: #1a1a1a;
+    --os9-surface: #2a2a2a;
+    --os9-highlight: #555555;
+    --os9-border: #888888;
+    --os9-text: #e0e0e0;
+    --os9-titlebar: #2a2a5a;
+    --os9-titlebar-text: #cccccc;
+    --os9-btn-start: #3a3a3a;
+    --os9-btn-end: #2a2a2a;
+    --os9-btn-hover: #4a4a4a;
+    --os9-btn-active: #1a1a1a;
+    --os9-accent: #6666dd;
+    --os9-green: #44bb44;
+    --os9-red: #dd4444;
+    --os9-orange: #dd8800;
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: 'Chicago', 'ChicagoFLF', 'Charcoal', 'Lucida Grande', 'Trebuchet MS', sans-serif;
+  background: var(--os9-bg);
+  color: var(--os9-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Mac OS 9 Title Bar */
+.os9-titlebar {
+  background: linear-gradient(180deg, #5a5a9a, var(--os9-titlebar));
+  color: var(--os9-titlebar-text);
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+  border-radius: 8px 8px 0 0;
+  border: 2px solid var(--os9-border);
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  user-select: none;
+}
+
+/* Mac OS 9 Window */
+.os9-window {
+  background: var(--os9-surface);
+  border: 2px solid var(--os9-border);
+  border-radius: 10px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.os9-window-body {
+  padding: 16px;
+  border: 2px solid var(--os9-border);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Mac OS 9 Close/Drag buttons */
+.os9-window-controls {
+  display: flex;
+  gap: 6px;
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
+
+.os9-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.os9-dot-close { background: radial-gradient(circle at 35% 35%, #ff7777, #cc0000); }
+.os9-dot-minimize { background: radial-gradient(circle at 35% 35%, #ffaa44, #cc7700); }
+.os9-dot-zoom { background: radial-gradient(circle at 35% 35%, #66cc66, #228822); }
+
+/* Mac OS 9 Button */
+.os9-btn {
+  background: linear-gradient(180deg, var(--os9-btn-start) 0%, var(--os9-btn-end) 100%);
+  border: 2px solid var(--os9-border);
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-family: 'Chicago', 'Charcoal', 'Lucida Grande', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--os9-text);
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.05s;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.os9-btn:hover {
+  background: linear-gradient(180deg, var(--os9-btn-hover) 0%, var(--os9-btn-end) 100%);
+}
+
+.os9-btn:active {
+  background: linear-gradient(180deg, var(--os9-btn-end) 0%, var(--os9-btn-start) 100%);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}
+
+.os9-btn-primary {
+  background: linear-gradient(180deg, #5555bb 0%, #333399 100%);
+  border-color: #222277;
+  color: white;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.os9-btn-primary:hover {
+  background: linear-gradient(180deg, #6666cc 0%, #4444aa 100%);
+}
+
+.os9-btn-primary:active {
+  background: linear-gradient(180deg, #333399 0%, #222277 100%);
+}
+
+/* Mac OS 9 Input */
+.os9-input {
+  background: #f5f5f5;
+  border: 2px solid #888888;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  color: #000;
+  width: 100%;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.2s;
+}
+
+.os9-input:focus {
+  outline: none;
+  border-color: var(--os9-accent);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(51, 51, 204, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .os9-input {
+    background: #3a3a3a;
+    border-color: #666666;
+    color: #e0e0e0;
+  }
+}
+
+/* Mac OS 9 Select */
+.os9-select {
+  background: #f5f5f5;
+  border: 2px solid #888888;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-family: 'Chicago', 'Charcoal', 'Lucida Grande', sans-serif;
+  color: #000;
+  width: 100%;
+  cursor: pointer;
+  appearance: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .os9-select {
+    background: #3a3a3a;
+    color: #e0e0e0;
+    border-color: #666;
+  }
+}
+
+/* Mac OS 9 Label */
+.os9-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #555555;
+  margin-bottom: 4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .os9-label {
+    color: #aaaaaa;
+  }
+}
+
+/* Mac OS 9 Divider */
+.os9-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--os9-highlight), transparent);
+  margin: 16px 0;
+}
+
+/* Mac OS 9 Result Box */
+.os9-result {
+  background: #f0f0f0;
+  border: 2px solid #999999;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .os9-result {
+    background: #2e2e2e;
+    border-color: #555555;
+  }
+}
+
+/* Mac OS 9 Tab Style */
+.os9-tab-group {
+  display: flex;
+  gap: 0;
+  margin-bottom: 0;
+}
+
+.os9-tab {
+  background: var(--os9-surface);
+  border: 2px solid var(--os9-border);
+  border-bottom: none;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--os9-text);
+  margin-right: -2px;
+  position: relative;
+  z-index: 0;
+}
+
+.os9-tab:first-child {
+  border-radius: 6px 0 0 0;
+}
+
+.os9-tab:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+.os9-tab-active {
+  background: linear-gradient(180deg, #f0f0f0, #e0e0e0);
+  z-index: 1;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .os9-tab-active {
+    background: linear-gradient(180deg, #3a3a3a, #333333);
+    border-bottom-color: #333333;
+  }
+}
+
+/* Unit toggle pill */
+.os9-unit-toggle {
+  display: inline-flex;
+  border: 2px solid var(--os9-border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.os9-unit-option {
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  background: var(--os9-surface);
+  color: var(--os9-text);
+  transition: none;
+}
+
+.os9-unit-option-active {
+  background: var(--os9-accent);
+  color: white;
+}
+
+/* Result number big */
+.os9-big-number {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+}
+
+/* Footer stripe */
+.os9-footer {
+  font-size: 10px;
+  text-align: center;
+  color: #777;
+  padding: 12px;
+  border-top: 2px solid var(--os9-highlight);
+  margin-top: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .os9-footer {
+    color: #888;
+  }
+}
+
+/* Ad container */
+.os9-ad {
+  background: #e0e0e0;
+  border: 2px solid var(--os9-border);
+  border-radius: 6px;
+  padding: 8px;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 11px;
+  color: #888;
+  min-height: 60px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .os9-ad {
+    background: #252525;
+    color: #777;
+  }
+}
+
+/* Scrollbar Mac OS 9 style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--os9-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--os9-highlight);
+  border-radius: 5px;
 }
