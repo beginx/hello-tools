@@ -1,31 +1,25 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 const AM = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, extra: 1.9 };
-const AL = {
-  sedentary: '\uac70\uc758 \uc5c6\uc74c (\uc0ac\ubb34\uc9c1, \uc6b4\ub3d9 X)',
-  light: '\uac00\ubc0c\uc5c4 (\uc8fc 1-3\uc77c \uc6b4\ub3d9)',
-  moderate: '\ubcf4\ud1b5 (\uc8fc 3-5\uc77c \uc6b4\ub3d9)',
-  active: '\ud65c\ubc1c\ud568 (\uc8fc 6-7\uc77c \uc6b4\ub3d9)',
-  extra: '\ub9e4\uc6b0 \ud65c\ubc1c\ud568 (\uaca9\ub82c\ud55c \uc6b4\ub3d9/\uc721\uccb4\ub178\ub3d9)',
-};
-const GL = { lose: '\uccb4\uc911 \uac10\ub7c9', maintain: '\uccb4\uc911 \uc720\uc9c0', gain: '\uccb4\uc911 \uc99d\ub7c9' };
-const AS = { sedentary: '\uc88c\uc2dd', light: '\uac00\ubc0c\uc74c', moderate: '\ubcf4\ud1b5', active: '\ud65c\ubc1c', extra: '\uaca9\ub82c' };
+const AS = { sedentary: 0, light: 1, moderate: 2, active: 3, extra: 4 };
+const LK = ['sedentary', 'light', 'moderate', 'active', 'extra'];
+const GK = ['lose', 'maintain', 'gain'];
 
-function bmiCat(b) {
-  if (b < 18.5) return '\uc800\uccb4\uc911';
-  if (b < 23) return '\uc815\uc0c1';
-  if (b < 25) return '\uacfc\uccb4\uc911';
-  if (b < 30) return '\ube44\ub9cc 1\ub2e8\uacc4';
-  return '\ube44\ub9cc 2\ub2e8\uacc4 \uc774\uc0c1';
+function bmiCat(b, t) {
+  if (b < 18.5) return t('underweight');
+  if (b < 23) return t('normal');
+  if (b < 25) return t('overweight');
+  if (b < 30) return t('obese1');
+  return t('obese2');
 }
-
 function calcBMR(g, w, h, a) {
   if (g === 'male') return 88.362 + 13.397 * w + 4.799 * h - 5.677 * a;
   return 447.593 + 9.247 * w + 3.098 * h - 4.33 * a;
 }
-
 function calcMacros(cal, goal) {
   let pr, fr;
   if (goal === 'lose') { pr = 0.35; fr = 0.25; }
@@ -34,7 +28,6 @@ function calcMacros(cal, goal) {
   const cr = 1 - pr - fr;
   return { protein: Math.round(cal * pr / 4), carbs: Math.round(cal * cr / 4), fat: Math.round(cal * fr / 9) };
 }
-
 function goalAdj(goal, tdee) {
   if (goal === 'lose') return tdee - 500;
   if (goal === 'gain') return tdee + 300;
@@ -42,6 +35,12 @@ function goalAdj(goal, tdee) {
 }
 
 export default function CalorieCalculatorPage() {
+  const t = useTranslations('app');
+  const params = useParams();
+  const locale = params?.locale || 'en';
+
+  const changeLang = (l) => { window.location.href = '/' + l; };
+
   const [gender, setGender] = useState('male');
   const [unit, setUnit] = useState('metric');
   const [mWeight, setMWeight] = useState('72');
@@ -67,27 +66,17 @@ export default function CalorieCalculatorPage() {
     const tc = Math.round(goalAdj(goal, tdee));
     const m = calcMacros(tc, goal);
     const bmi = Math.round((w / ((h / 100) ** 2)) * 10) / 10;
-    setResults({ bmr, tdee, targetCalories: tc, ...m, bmi, bmiCategory: bmiCat(bmi) });
+    setResults({ bmr, tdee, targetCalories: tc, ...m, bmi, bmiCategory: bmiCat(bmi, t) });
     setTimeout(() => { if (ref.current) ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
-  }, [gender, wKg, hCm, age, activity, goal]);
+  }, [gender, wKg, hCm, age, activity, goal, t]);
 
   const keyDown = (e) => { if (e.key === 'Enter') calc(); };
 
   const copyRes = () => {
     if (!results) return;
     const r = results;
-    const txt = [
-      'Calorie Calculator Results',
-      'BMI: ' + r.bmi + ' (' + r.bmiCategory + ')',
-      'BMR: ' + r.bmr.toLocaleString() + ' kcal',
-      'TDEE: ' + r.tdee.toLocaleString() + ' kcal',
-      'Target: ' + r.targetCalories.toLocaleString() + ' kcal/day',
-      'Protein: ' + r.protein + 'g | Carbs: ' + r.carbs + 'g | Fat: ' + r.fat + 'g'
-    ].join('\n');
-    navigator.clipboard.writeText(txt).then(function() {
-      setCopied(true);
-      setTimeout(function() { setCopied(false); }, 2500);
-    });
+    const txt = [t('title'), 'BMI: ' + r.bmi + ' (' + r.bmiCategory + ')', 'BMR: ' + r.bmr.toLocaleString() + ' kcal', 'TDEE: ' + r.tdee.toLocaleString() + ' kcal', t('target') + ': ' + r.targetCalories.toLocaleString() + ' kcal', t('protein') + ': ' + r.protein + 'g | ' + t('carbs') + ': ' + r.carbs + 'g | ' + t('fat') + ': ' + r.fat + 'g'].join('\n');
+    navigator.clipboard.writeText(txt).then(function() { setCopied(true); setTimeout(function() { setCopied(false); }, 2500); });
   };
 
   return (
@@ -99,27 +88,36 @@ export default function CalorieCalculatorPage() {
             <div className="os9-dot os9-dot-minimize" />
             <div className="os9-dot os9-dot-zoom" />
           </div>
-          <span className="tracking-[0.5px] text-sm">Calorie Calculator</span>
+          <span className="tracking-[0.5px] text-sm">{t('title')}</span>
         </div>
         <div className="os9-window-body">
+          <div className="flex justify-between items-center mb-3">
+            <select className="os9-select !w-auto" value={locale} onChange={function(e) { changeLang(e.target.value); }}>
+              <option value="en">English</option>
+              <option value="es">Espa\u00f1ol</option>
+              <option value="zh">\u4e2d\u6587</option>
+              <option value="ko">\ud55c\uad6d\uc5b4</option>
+              <option value="pt">Portugu\u00eas</option>
+            </select>
+          </div>
           <div className="flex justify-between items-center mb-5">
-            <span className="os9-label" style={{ marginBottom: 0 }}>Unit</span>
+            <span className="os9-label" style={{ marginBottom: 0 }}>{t('unit')}</span>
             <div className="os9-unit-toggle">
-              <div className={'os9-unit-option' + (unit === 'metric' ? ' os9-unit-option-active' : '')} onClick={function() { setUnit('metric'); }}>Metric</div>
-              <div className={'os9-unit-option' + (unit === 'imperial' ? ' os9-unit-option-active' : '')} onClick={function() { setUnit('imperial'); }}>Imperial</div>
+              <div className={'os9-unit-option' + (unit === 'metric' ? ' os9-unit-option-active' : '')} onClick={function() { setUnit('metric'); }}>{t('metric')}</div>
+              <div className={'os9-unit-option' + (unit === 'imperial' ? ' os9-unit-option-active' : '')} onClick={function() { setUnit('imperial'); }}>{t('imperial')}</div>
             </div>
           </div>
           <div className="flex gap-2 mb-4">
-            <button className={'os9-btn flex-1' + (gender === 'male' ? ' os9-btn-primary' : '')} onClick={function() { setGender('male'); }}>Male</button>
-            <button className={'os9-btn flex-1' + (gender === 'female' ? ' os9-btn-primary' : '')} onClick={function() { setGender('female'); }}>Female</button>
+            <button className={'os9-btn flex-1' + (gender === 'male' ? ' os9-btn-primary' : '')} onClick={function() { setGender('male'); }}>{t('male')}</button>
+            <button className={'os9-btn flex-1' + (gender === 'female' ? ' os9-btn-primary' : '')} onClick={function() { setGender('female'); }}>{t('female')}</button>
           </div>
           <div className="mb-3">
-            <label className="os9-label">Age</label>
+            <label className="os9-label">{t('age')}</label>
             <input className="os9-input" type="number" min={10} max={120} value={age} onChange={function(e) { setAge(e.target.value); }} onKeyDown={keyDown} placeholder="30" />
           </div>
           <div className="grid grid-cols-2 gap-3 mb-3">
             <div>
-              <label className="os9-label">{unit === 'metric' ? 'Weight (kg)' : 'Weight (lbs)'}</label>
+              <label className="os9-label">{unit === 'metric' ? t('weightMetric') : t('weightImperial')}</label>
               <input className="os9-input" type="number" step="0.1" min={20} max={400}
                 value={unit === 'metric' ? mWeight : iWeight}
                 onChange={function(e) { if (unit === 'metric') setMWeight(e.target.value); else setIWeight(e.target.value); }}
@@ -128,19 +126,19 @@ export default function CalorieCalculatorPage() {
             </div>
             {unit === 'metric' ? (
               <div>
-                <label className="os9-label">Height (cm)</label>
+                <label className="os9-label">{t('heightMetric')}</label>
                 <input className="os9-input" type="number" step="0.1" min={100} max={250} value={mHeight}
                   onChange={function(e) { setMHeight(e.target.value); }} onKeyDown={keyDown} placeholder="175" />
               </div>
             ) : (
               <div className="flex gap-1">
                 <div style={{ flex: 1 }}>
-                  <label className="os9-label">ft</label>
+                  <label className="os9-label">{t('heightFt')}</label>
                   <input className="os9-input" type="number" min={3} max={8} value={iFt}
                     onChange={function(e) { setIFt(e.target.value); }} onKeyDown={keyDown} placeholder="5" />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <label className="os9-label">in</label>
+                  <label className="os9-label">{t('heightIn')}</label>
                   <input className="os9-input" type="number" min={0} max={11} value={iIn}
                     onChange={function(e) { setIIn(e.target.value); }} onKeyDown={keyDown} placeholder="9" />
                 </div>
@@ -148,21 +146,21 @@ export default function CalorieCalculatorPage() {
             )}
           </div>
           <div className="mb-3">
-            <label className="os9-label">Activity</label>
+            <label className="os9-label">{t('activity')}</label>
             <select className="os9-select" value={activity} onChange={function(e) { setActivity(e.target.value); }}>
-              {Object.keys(AL).map(function(k) { return <option key={k} value={k}>{AL[k]}</option>; })}
+              {LK.map(function(k) { return <option key={k} value={k}>{t(k)}</option>; })}
             </select>
           </div>
           <div className="mb-5">
-            <label className="os9-label">Goal</label>
+            <label className="os9-label">{t('goal')}</label>
             <div className="flex gap-2">
-              {Object.keys(GL).map(function(k) {
+              {GK.map(function(k) {
                 return <button key={k} className={'os9-btn flex-1 text-xs px-1' + (goal === k ? ' os9-btn-primary' : '')}
-                  onClick={function() { setGoal(k); }}>{GL[k]}</button>;
+                  onClick={function() { setGoal(k); }}>{t(k)}</button>;
               })}
             </div>
           </div>
-          <button className="os9-btn os9-btn-primary w-full text-base py-3" onClick={calc}>Calculate</button>
+          <button className="os9-btn os9-btn-primary w-full text-base py-3" onClick={calc}>{t('calculate')}</button>
 
           {results && (
             <div ref={ref} className="mt-5">
@@ -176,48 +174,46 @@ export default function CalorieCalculatorPage() {
               </div>
               <div className="grid grid-cols-3 gap-2 mb-3">
                 <div className="os9-result text-center">
-                  <div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>BMR</div>
+                  <div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>{t('bmr')}</div>
                   <div className="os9-big-number" style={{ fontSize: '1.25rem' }}>{results.bmr.toLocaleString()}</div>
                   <div className="text-[10px]" style={{ opacity: 0.6 }}>kcal</div>
                 </div>
                 <div className="os9-result text-center" style={{ borderColor: 'var(--os9-accent)' }}>
-                  <div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>TDEE</div>
+                  <div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>{t('tdee')}</div>
                   <div className="os9-big-number" style={{ fontSize: '1.25rem' }}>{results.tdee.toLocaleString()}</div>
                   <div className="text-[10px]" style={{ opacity: 0.6 }}>kcal</div>
                 </div>
                 <div className="os9-result text-center">
-                  <div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>Target</div>
+                  <div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>{t('target')}</div>
                   <div className="os9-big-number" style={{ fontSize: '1.25rem' }}>{results.targetCalories.toLocaleString()}</div>
                   <div className="text-[10px]" style={{ opacity: 0.6 }}>kcal</div>
                 </div>
               </div>
               <div className="os9-result mb-3">
-                <div className="text-xs uppercase tracking-wider mb-2" style={{ opacity: 0.6 }}>Macros</div>
+                <div className="text-xs uppercase tracking-wider mb-2" style={{ opacity: 0.6 }}>{t('macros')}</div>
                 <div className="flex gap-2 text-center">
                   <div className="flex-1 p-2 rounded-lg" style={{ backgroundColor: 'rgba(255,165,0,0.15)' }}>
                     <div className="text-lg font-bold">{results.carbs}g</div>
-                    <div className="text-[10px]" style={{ opacity: 0.6 }}>Carbs</div>
+                    <div className="text-[10px]" style={{ opacity: 0.6 }}>{t('carbs')}</div>
                   </div>
                   <div className="flex-1 p-2 rounded-lg" style={{ backgroundColor: 'rgba(255,0,0,0.15)' }}>
                     <div className="text-lg font-bold">{results.protein}g</div>
-                    <div className="text-[10px]" style={{ opacity: 0.6 }}>Protein</div>
+                    <div className="text-[10px]" style={{ opacity: 0.6 }}>{t('protein')}</div>
                   </div>
                   <div className="flex-1 p-2 rounded-lg" style={{ backgroundColor: 'rgba(255,200,0,0.15)' }}>
                     <div className="text-lg font-bold">{results.fat}g</div>
-                    <div className="text-[10px]" style={{ opacity: 0.6 }}>Fat</div>
+                    <div className="text-[10px]" style={{ opacity: 0.6 }}>{t('fat')}</div>
                   </div>
                 </div>
               </div>
-              <button className="os9-btn w-full text-xs py-2" onClick={copyRes}>{copied ? 'Copied!' : 'Copy Results'}</button>
-              <p className="text-[10px] text-center mt-3" style={{ opacity: 0.5 }}>
-                * Estimated using Mifflin-St Jeor equation.<br />Individual results may vary.
-              </p>
+              <button className="os9-btn w-full text-xs py-2" onClick={copyRes}>{copied ? t('copied') : t('copy')}</button>
+              <p className="text-[10px] text-center mt-3 whitespace-pre-line" style={{ opacity: 0.5 }}>{t('note')}</p>
             </div>
           )}
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 520, width: '100%' }}>
-        hello-tools 2026
+        {t('footer')}
       </div>
     </div>
   );
