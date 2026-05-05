@@ -19,15 +19,20 @@ import esPhoto from '../messages/es/photo.json';
 import zhPhoto from '../messages/zh/photo.json';
 import koPhoto from '../messages/ko/photo.json';
 import ptPhoto from '../messages/pt/photo.json';
+import enDate from '../messages/en/date.json';
+import esDate from '../messages/es/date.json';
+import zhDate from '../messages/zh/date.json';
+import koDate from '../messages/ko/date.json';
+import ptDate from '../messages/pt/date.json';
 
 const locales = ['en', 'es', 'zh', 'ko', 'pt'];
 
 const allMessages = {
-  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto },
-  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto },
-  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto },
-  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto },
-  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto },
+  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto, date: enDate },
+  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto, date: esDate },
+  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto, date: zhDate },
+  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto, date: koDate },
+  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto, date: ptDate },
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {

@@ -124,6 +124,10 @@ export default function QRPage() {
       <div className="os9-footer" style={{ maxWidth: 520, width: '100%' }}>
         <a href={'/' + locale} className="underline" style={{ opacity: 0.7 }}>Calorie Calculator</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/bmi'} className="underline" style={{ opacity: 0.7 }}>BMI Calculator</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/date'} className="underline" style={{ opacity: 0.7 }}>Date Calculator</a>
+        <span className="mx-2">|</span>
         <a href={'/' + locale + '/convert'} className="underline" style={{ opacity: 0.7 }}>Unit Converter</a>
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/photo'} className="underline" style={{ opacity: 0.7 }}>Photo Editor</a>
