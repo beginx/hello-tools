@@ -14,15 +14,20 @@ import esQr from '../messages/es/qr.json';
 import zhQr from '../messages/zh/qr.json';
 import koQr from '../messages/ko/qr.json';
 import ptQr from '../messages/pt/qr.json';
+import enPhoto from '../messages/en/photo.json';
+import esPhoto from '../messages/es/photo.json';
+import zhPhoto from '../messages/zh/photo.json';
+import koPhoto from '../messages/ko/photo.json';
+import ptPhoto from '../messages/pt/photo.json';
 
 const locales = ['en', 'es', 'zh', 'ko', 'pt'];
 
 const allMessages = {
-  en: { app: en, convert: enConvert, qr: enQr },
-  es: { app: es, convert: esConvert, qr: esQr },
-  zh: { app: zh, convert: zhConvert, qr: zhQr },
-  ko: { app: ko, convert: koConvert, qr: koQr },
-  pt: { app: pt, convert: ptConvert, qr: ptQr },
+  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto },
+  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto },
+  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto },
+  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto },
+  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto },
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {

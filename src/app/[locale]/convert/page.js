@@ -163,6 +163,8 @@ export default function ConvertPage() {
       <div className="os9-footer" style={{ maxWidth: 520, width: '100%' }}>
         <a href={'/' + locale} className="underline" style={{ opacity: 0.7 }}>Calorie Calculator</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/photo'} className="underline" style={{ opacity: 0.7 }}>Photo Editor</a>
+        <span className="mx-2">|</span>
         <a href={'/' + locale + '/qr'} className="underline" style={{ opacity: 0.7 }}>QR Code</a>
         <span className="mx-2">|</span>
         {t('footer')}

@@ -126,6 +126,8 @@ export default function QRPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/convert'} className="underline" style={{ opacity: 0.7 }}>Unit Converter</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/photo'} className="underline" style={{ opacity: 0.7 }}>Photo Editor</a>
+        <span className="mx-2">|</span>
         {t('footer')}
       </div>
     </div>
