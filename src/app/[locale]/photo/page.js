@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 
 const MAX_SIZE = 10 * 1024 * 1024; // 10MB
 const TABS = ['resize', 'crop', 'compress', 'convert'];
+const TAB_ICONS = ['\uD83D\uDCCD', '\u2702\uFE0F', '\uD83D\uDCE6', '\uD83D\uDD04']; // 📍, ✂️, 📦, 🔄
 
 export default function PhotoPage() {
   const t = useTranslations('photo');
@@ -240,10 +241,13 @@ export default function PhotoPage() {
             <>
               {/* Tab bar */}
               <div className="flex gap-1 mb-3 mt-2">
-                {TABS.map(function(k) {
+                {TABS.map(function(k, i) {
                   return <button key={k}
                     className={'os9-btn text-xs flex-1 px-1' + (tab === k ? ' os9-btn-primary' : '')}
-                    onClick={function() { setTab(k); setResultUrl(null); }}>{t(k)}</button>;
+                    onClick={function() { setTab(k); setResultUrl(null); }}
+                    style={{ whiteSpace: 'normal', wordBreak: 'keep-all', lineHeight: 1.2, paddingTop: 6, paddingBottom: 6 }}>
+                    <span style={{ display: 'block', fontSize: '1.1rem', marginBottom: 2 }}>{TAB_ICONS[i]}</span>
+                    {t(k)}</button>;
                 })}
               </div>
 

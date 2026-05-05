@@ -6,6 +6,7 @@ import { useParams } from 'next/navigation';
 
 const TABS = ['tabDaysBetween', 'tabDday', 'tabAddSubtract', 'tabAge', 'tabAnniversary'];
 const TAB_KEYS = ['daysBetween', 'dday', 'addSubtract', 'age', 'anniversary'];
+const TAB_ICONS = ['\uD83D\uDCC5', '\u23F3', '\u2795', '\uD83C\uDFB1', '\uD83C\uDF89']; // 📅, ⏳, ➕, 🎱, 🎉
 
 function daysBetween(a, b) {
   const ms = Math.abs(a.getTime() - b.getTime());
@@ -128,8 +129,12 @@ export default function DatePage() {
           {/* Tab bar */}
           <div className="flex gap-1 mb-3 flex-wrap">
             {TABS.map((k, i) => (
-              <button key={k} className={'os9-btn text-xs flex-1 px-1 min-w-[80px]' + (tab === TAB_KEYS[i] ? ' os9-btn-primary' : '')}
-                onClick={() => setTab(TAB_KEYS[i])}>{t(k)}</button>
+              <button key={k} className={'os9-btn text-xs flex-1 px-1' + (tab === TAB_KEYS[i] ? ' os9-btn-primary' : '')}
+                onClick={() => setTab(TAB_KEYS[i])}
+                style={{ whiteSpace: 'normal', wordBreak: 'keep-all', lineHeight: 1.2, paddingTop: 6, paddingBottom: 6 }}>
+                <span style={{ display: 'block', fontSize: '1.1rem', marginBottom: 2 }}>{TAB_ICONS[i]}</span>
+                {t(k)}
+              </button>
             ))}
           </div>
 
