@@ -7,7 +7,7 @@ import pt from '../messages/pt/app.json';
 
 const locales = ['en', 'es', 'zh', 'ko', 'pt'];
 
-const allMessages = { en, es, zh, ko, pt };
+const allMessages = { en: { app: en }, es: { app: es }, zh: { app: zh }, ko: { app: ko }, pt: { app: pt } };
 
 export default getRequestConfig(async ({ requestLocale }) => {
   let locale = await requestLocale;

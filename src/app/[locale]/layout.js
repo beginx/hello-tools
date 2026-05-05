@@ -66,6 +66,7 @@ export default async function LocaleLayout({ children, params }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: schemaJson }}
+          suppressHydrationWarning
         />
       </head>
       <body className="min-h-full flex flex-col" style={{ background: 'var(--os9-bg)' }}>

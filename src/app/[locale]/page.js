@@ -94,10 +94,10 @@ export default function CalorieCalculatorPage() {
           <div className="flex justify-between items-center mb-3">
             <select className="os9-select !w-auto" value={locale} onChange={function(e) { changeLang(e.target.value); }}>
               <option value="en">English</option>
-              <option value="es">Espa\u00f1ol</option>
-              <option value="zh">\u4e2d\u6587</option>
-              <option value="ko">\ud55c\uad6d\uc5b4</option>
-              <option value="pt">Portugu\u00eas</option>
+              <option value="es">Español</option>
+              <option value="zh">中文</option>
+              <option value="ko">한국어</option>
+              <option value="pt">Português</option>
             </select>
           </div>
           <div className="flex justify-between items-center mb-5">
