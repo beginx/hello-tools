@@ -9,15 +9,20 @@ import esConvert from '../messages/es/convert.json';
 import zhConvert from '../messages/zh/convert.json';
 import koConvert from '../messages/ko/convert.json';
 import ptConvert from '../messages/pt/convert.json';
+import enQr from '../messages/en/qr.json';
+import esQr from '../messages/es/qr.json';
+import zhQr from '../messages/zh/qr.json';
+import koQr from '../messages/ko/qr.json';
+import ptQr from '../messages/pt/qr.json';
 
 const locales = ['en', 'es', 'zh', 'ko', 'pt'];
 
 const allMessages = {
-  en: { app: en, convert: enConvert },
-  es: { app: es, convert: esConvert },
-  zh: { app: zh, convert: zhConvert },
-  ko: { app: ko, convert: koConvert },
-  pt: { app: pt, convert: ptConvert },
+  en: { app: en, convert: enConvert, qr: enQr },
+  es: { app: es, convert: esConvert, qr: esQr },
+  zh: { app: zh, convert: zhConvert, qr: zhQr },
+  ko: { app: ko, convert: koConvert, qr: koQr },
+  pt: { app: pt, convert: ptConvert, qr: ptQr },
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {
