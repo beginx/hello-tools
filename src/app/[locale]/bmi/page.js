@@ -152,6 +152,10 @@ export default function BMIPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/qr'} className="underline" style={{ opacity: 0.7 }}>QR Code</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/password'} className="underline" style={{ opacity: 0.7 }}>Password</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/lotto'} className="underline" style={{ opacity: 0.7 }}>Lotto</a>
+        <span className="mx-2">|</span>
         hello-tools 2026
       </div>
     </div>

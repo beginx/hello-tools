@@ -24,15 +24,25 @@ import esDate from '../messages/es/date.json';
 import zhDate from '../messages/zh/date.json';
 import koDate from '../messages/ko/date.json';
 import ptDate from '../messages/pt/date.json';
+import enPassword from '../messages/en/password.json';
+import esPassword from '../messages/es/password.json';
+import zhPassword from '../messages/zh/password.json';
+import koPassword from '../messages/ko/password.json';
+import ptPassword from '../messages/pt/password.json';
+import enLotto from '../messages/en/lotto.json';
+import esLotto from '../messages/es/lotto.json';
+import zhLotto from '../messages/zh/lotto.json';
+import koLotto from '../messages/ko/lotto.json';
+import ptLotto from '../messages/pt/lotto.json';
 
 const locales = ['en', 'es', 'zh', 'ko', 'pt'];
 
 const allMessages = {
-  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto, date: enDate },
-  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto, date: esDate },
-  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto, date: zhDate },
-  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto, date: koDate },
-  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto, date: ptDate },
+  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto, date: enDate, password: enPassword, lotto: enLotto },
+  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto, date: esDate, password: esPassword, lotto: esLotto },
+  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto, date: zhDate, password: zhPassword, lotto: zhLotto },
+  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto, date: koDate, password: koPassword, lotto: koLotto },
+  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto, date: ptDate, password: ptPassword, lotto: ptLotto },
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {

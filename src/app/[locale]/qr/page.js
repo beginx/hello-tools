@@ -132,6 +132,10 @@ export default function QRPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/photo'} className="underline" style={{ opacity: 0.7 }}>Photo Editor</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/password'} className="underline" style={{ opacity: 0.7 }}>Password</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/lotto'} className="underline" style={{ opacity: 0.7 }}>Lotto</a>
+        <span className="mx-2">|</span>
         {t('footer')}
       </div>
     </div>
