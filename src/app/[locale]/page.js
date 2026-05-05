@@ -213,6 +213,8 @@ export default function CalorieCalculatorPage() {
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 520, width: '100%' }}>
+        <a href={'/' + locale + '/convert'} className="underline" style={{ opacity: 0.7 }}>Unit Converter</a>
+        <span className="mx-2">|</span>
         {t('footer')}
       </div>
     </div>
