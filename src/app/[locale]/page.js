@@ -233,6 +233,8 @@ export default function CalorieCalculatorPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/currency'} className="underline" style={{ opacity: 0.7 }}>Currency</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/random'} className="underline" style={{ opacity: 0.7 }}>Random</a>
+        <span className="mx-2">|</span>
         {t('footer')}
       </div>
     </div>

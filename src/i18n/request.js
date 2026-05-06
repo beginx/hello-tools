@@ -54,15 +54,20 @@ import esPrivacy from '../messages/es/privacy.json';
 import zhPrivacy from '../messages/zh/privacy.json';
 import koPrivacy from '../messages/ko/privacy.json';
 import ptPrivacy from '../messages/pt/privacy.json';
+import enRandom from '../messages/en/random.json';
+import esRandom from '../messages/es/random.json';
+import zhRandom from '../messages/zh/random.json';
+import koRandom from '../messages/ko/random.json';
+import ptRandom from '../messages/pt/random.json';
 
 const locales = ['en', 'es', 'zh', 'ko', 'pt'];
 
 const allMessages = {
-  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto, date: enDate, password: enPassword, lotto: enLotto, pdf: enPdf, percent: enPercent, currency: enCurrency, privacy: enPrivacy },
-  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto, date: esDate, password: esPassword, lotto: esLotto, pdf: esPdf, percent: esPercent, currency: esCurrency, privacy: esPrivacy },
-  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto, date: zhDate, password: zhPassword, lotto: zhLotto, pdf: zhPdf, percent: zhPercent, currency: zhCurrency, privacy: zhPrivacy },
-  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto, date: koDate, password: koPassword, lotto: koLotto, pdf: koPdf, percent: koPercent, currency: koCurrency, privacy: koPrivacy },
-  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto, date: ptDate, password: ptPassword, lotto: ptLotto, pdf: ptPdf, percent: ptPercent, currency: ptCurrency, privacy: ptPrivacy },
+  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto, date: enDate, password: enPassword, lotto: enLotto, pdf: enPdf, percent: enPercent, currency: enCurrency, privacy: enPrivacy, random: enRandom },
+  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto, date: esDate, password: esPassword, lotto: esLotto, pdf: esPdf, percent: esPercent, currency: esCurrency, privacy: esPrivacy, random: esRandom },
+  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto, date: zhDate, password: zhPassword, lotto: zhLotto, pdf: zhPdf, percent: zhPercent, currency: zhCurrency, privacy: zhPrivacy, random: zhRandom },
+  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto, date: koDate, password: koPassword, lotto: koLotto, pdf: koPdf, percent: koPercent, currency: koCurrency, privacy: koPrivacy, random: koRandom },
+  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto, date: ptDate, password: ptPassword, lotto: ptLotto, pdf: ptPdf, percent: ptPercent, currency: ptCurrency, privacy: ptPrivacy, random: ptRandom },
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {

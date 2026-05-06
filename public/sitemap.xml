@@ -216,4 +216,10 @@
   <url><loc>https://oxoxox1.com/zh/privacy</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://oxoxox1.com/ko/privacy</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://oxoxox1.com/pt/privacy</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <!-- Random Number Generator -->
+  <url><loc>https://oxoxox1.com/en/random</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://oxoxox1.com/es/random</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/zh/random</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/ko/random</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/pt/random</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

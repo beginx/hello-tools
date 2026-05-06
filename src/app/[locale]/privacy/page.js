@@ -95,6 +95,8 @@ export default function PrivacyPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/privacy'} className="underline" style={{ opacity: 0.7 }}>{t('title')}</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/random'} className="underline" style={{ opacity: 0.7 }}>Random</a>
+        <span className="mx-2">|</span>
         hello-tools 2026
       </div>
     </div>
