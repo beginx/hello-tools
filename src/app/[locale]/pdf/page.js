@@ -306,8 +306,8 @@ export default function PdfPage() {
             </select>
           </div>
 
-          {/* Tabs */}
-          <div className="os9-tab-group flex-wrap">
+          {/* Tabs - align with os9-result border via negative margin */}
+          <div className="os9-tab-group flex-wrap" style={{ margin: '0 -2px' }}>
             {TABS.map(t => (
               <button key={t.key}
                 className={'os9-tab text-[10px] ' + (tab === t.key ? 'os9-tab-active' : '')}
@@ -317,7 +317,7 @@ export default function PdfPage() {
             ))}
           </div>
 
-          <div className="os9-result rounded-t-none" style={{ borderTop: 'none', borderRadius: '0 0 8px 8px' }}>
+          <div className="os9-result" style={{ borderTop: 'none', borderRadius: '0 0 8px 8px' }}>
             {/* Description */}
             <p className="text-xs mb-3" style={{ opacity: 0.7 }}>{t(tab + 'Desc')}</p>
 
