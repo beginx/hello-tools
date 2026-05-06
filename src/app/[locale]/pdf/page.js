@@ -307,7 +307,7 @@ export default function PdfPage() {
           </div>
 
           {/* Tabs - align with os9-result border via negative margin */}
-          <div className="os9-tab-group flex-wrap" style={{ margin: '0 -2px' }}>
+          <div className="os9-tab-group w-full" style={{ margin: '0 -2px' }}>
             {TABS.map(t => (
               <button key={t.key}
                 className={'os9-tab text-[10px] ' + (tab === t.key ? 'os9-tab-active' : '')}
