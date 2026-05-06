@@ -203,6 +203,8 @@ export default function LottoPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/lotto'} className="underline" style={{ opacity: 0.7 }}>Lotto</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/pdf'} className="underline" style={{ opacity: 0.7 }}>PDF</a>
+        <span className="mx-2">|</span>
         hello-tools 2026
       </div>
     </div>
