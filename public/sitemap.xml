@@ -222,4 +222,10 @@
   <url><loc>https://oxoxox1.com/zh/random</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/ko/random</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/pt/random</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Text Tools -->
+  <url><loc>https://oxoxox1.com/en/text</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://oxoxox1.com/es/text</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/zh/text</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/ko/text</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/pt/text</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

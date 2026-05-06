@@ -166,6 +166,8 @@ export default function CurrencyPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/random'} className="underline" style={{ opacity: 0.7 }}>Random</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/text'} className="underline" style={{ opacity: 0.7 }}>Text</a>
+        <span className="mx-2">|</span>
         <a href={'/' + locale + '/photo'} className="underline" style={{ opacity: 0.7 }}>Photo</a>
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/password'} className="underline" style={{ opacity: 0.7 }}>Password</a>

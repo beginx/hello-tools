@@ -160,6 +160,8 @@ export default function BMIPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/random'} className="underline" style={{ opacity: 0.7 }}>Random</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/text'} className="underline" style={{ opacity: 0.7 }}>Text</a>
+        <span className="mx-2">|</span>
         hello-tools 2026
       </div>
     </div>
