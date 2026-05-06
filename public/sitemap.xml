@@ -210,4 +210,10 @@
   <url><loc>https://oxoxox1.com/zh/currency</loc><lastmod>2026-05-06</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/ko/currency</loc><lastmod>2026-05-06</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/pt/currency</loc><lastmod>2026-05-06</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <!-- Privacy Policy -->
+  <url><loc>https://oxoxox1.com/en/privacy</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://oxoxox1.com/es/privacy</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://oxoxox1.com/zh/privacy</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://oxoxox1.com/ko/privacy</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://oxoxox1.com/pt/privacy</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

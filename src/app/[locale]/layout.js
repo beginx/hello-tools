@@ -107,11 +107,6 @@ export default async function LocaleLayout({ children, params }) {
     <html lang={locale} className="h-full antialiased">
       <head>
         <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8178172082493004`}
-          crossOrigin="anonymous"
-        />
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: schemaJson }}
           suppressHydrationWarning
@@ -122,9 +117,6 @@ export default async function LocaleLayout({ children, params }) {
           {children}
         </NextIntlClientProvider>
         <Analytics />
-        <script dangerouslySetInnerHTML={{
-          __html: `(adsbygoogle = window.adsbygoogle || []).push({});`
-        }} />
       </body>
     </html>
   );
