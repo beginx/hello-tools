@@ -6,7 +6,7 @@ const msgs = {
   pt: { title: 'Calculadora de Calorias | BMR, TDEE e Macros - Ferramenta Gratuita', desc: 'Calcule suas necessidades cal\u00f3ricas di\u00e1rias: BMR, TDEE, IMC e macronutrientes.' },
 };
 
-export async function generateMetadata({ params }) {
+export default async function generateMetadata({ params }) {
   const { locale } = await params;
   const m = msgs[locale] || msgs.en;
   return {

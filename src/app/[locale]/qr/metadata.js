@@ -6,8 +6,8 @@ const metaByLocale = {
   pt: { title: 'Gerador de C\u00f3digo QR — Criador Gratuito Online', desc: 'Gere c\u00f3digos QR gratuitamente. Insira URL ou texto, personalize tamanho e corre\u00e7\u00e3o de erros.' },
 };
 
-export default function generateMetadata({ params }) {
-  const locale = params.locale || 'en';
+export default async function generateMetadata({ params }) {
+  const { locale } = await params;
   const m = metaByLocale[locale] || metaByLocale.en;
   return {
     title: m.title,

@@ -6,8 +6,8 @@ const metaByLocale = {
   pt: { title: 'Gerador de Números da Loteria — Powerball, Mega Millions — Ferramenta Gratuita', desc: 'Gere números de loteria aleatórios para Powerball, Mega Millions, EuroMillions e UK Lotto. Gerador criptograficamente seguro.' },
 };
 
-export default function generateMetadata({ params }) {
-  const locale = params.locale || 'en';
+export default async function generateMetadata({ params }) {
+  const { locale } = await params;
   const m = metaByLocale[locale] || metaByLocale.en;
   return {
     title: m.title,

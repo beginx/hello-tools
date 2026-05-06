@@ -6,8 +6,8 @@ const metaByLocale = {
   pt: { title: 'Conversor de Unidades | Comprimento, Peso, Temperatura — Ferramenta Gratuita', desc: 'Conversor de unidades gratuito: comprimento, peso, temperatura, volume, \u00e1rea, velocidade, press\u00e3o.' },
 };
 
-export default function generateMetadata({ params }) {
-  const locale = params.locale || 'en';
+export default async function generateMetadata({ params }) {
+  const { locale } = await params;
   const m = metaByLocale[locale] || metaByLocale.en;
   return {
     title: m.title,

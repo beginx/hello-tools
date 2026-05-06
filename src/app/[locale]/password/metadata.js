@@ -6,8 +6,8 @@ const metaByLocale = {
   pt: { title: 'Gerador de Senhas — Senha Forte Aleatória — Ferramenta Gratuita', desc: 'Gere senhas seguras e aleatórias instantaneamente no seu navegador. Comprimento personalizável, maiúsculas, minúsculas, números e símbolos.' },
 };
 
-export default function generateMetadata({ params }) {
-  const locale = params.locale || 'en';
+export default async function generateMetadata({ params }) {
+  const { locale } = await params;
   const m = metaByLocale[locale] || metaByLocale.en;
   return {
     title: m.title,
