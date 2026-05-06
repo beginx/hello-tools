@@ -413,6 +413,10 @@ export default function PdfPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/pdf'} className="underline" style={{ opacity: 0.7 }}>PDF</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/percent'} className="underline" style={{ opacity: 0.7 }}>Percent</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/currency'} className="underline" style={{ opacity: 0.7 }}>Currency</a>
+        <span className="mx-2">|</span>
         hello-tools 2026
       </div>
     </div>

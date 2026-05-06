@@ -39,15 +39,25 @@ import esPdf from '../messages/es/pdf.json';
 import zhPdf from '../messages/zh/pdf.json';
 import koPdf from '../messages/ko/pdf.json';
 import ptPdf from '../messages/pt/pdf.json';
+import enPercent from '../messages/en/percent.json';
+import esPercent from '../messages/es/percent.json';
+import zhPercent from '../messages/zh/percent.json';
+import koPercent from '../messages/ko/percent.json';
+import ptPercent from '../messages/pt/percent.json';
+import enCurrency from '../messages/en/currency.json';
+import esCurrency from '../messages/es/currency.json';
+import zhCurrency from '../messages/zh/currency.json';
+import koCurrency from '../messages/ko/currency.json';
+import ptCurrency from '../messages/pt/currency.json';
 
 const locales = ['en', 'es', 'zh', 'ko', 'pt'];
 
 const allMessages = {
-  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto, date: enDate, password: enPassword, lotto: enLotto, pdf: enPdf },
-  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto, date: esDate, password: esPassword, lotto: esLotto, pdf: esPdf },
-  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto, date: zhDate, password: zhPassword, lotto: zhLotto, pdf: zhPdf },
-  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto, date: koDate, password: koPassword, lotto: koLotto, pdf: koPdf },
-  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto, date: ptDate, password: ptPassword, lotto: ptLotto, pdf: ptPdf },
+  en: { app: en, convert: enConvert, qr: enQr, photo: enPhoto, date: enDate, password: enPassword, lotto: enLotto, pdf: enPdf, percent: enPercent, currency: enCurrency },
+  es: { app: es, convert: esConvert, qr: esQr, photo: esPhoto, date: esDate, password: esPassword, lotto: esLotto, pdf: esPdf, percent: esPercent, currency: esCurrency },
+  zh: { app: zh, convert: zhConvert, qr: zhQr, photo: zhPhoto, date: zhDate, password: zhPassword, lotto: zhLotto, pdf: zhPdf, percent: zhPercent, currency: zhCurrency },
+  ko: { app: ko, convert: koConvert, qr: koQr, photo: koPhoto, date: koDate, password: koPassword, lotto: koLotto, pdf: koPdf, percent: koPercent, currency: koCurrency },
+  pt: { app: pt, convert: ptConvert, qr: ptQr, photo: ptPhoto, date: ptDate, password: ptPassword, lotto: ptLotto, pdf: ptPdf, percent: ptPercent, currency: ptCurrency },
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {

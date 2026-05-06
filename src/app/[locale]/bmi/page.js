@@ -106,13 +106,11 @@ export default function BMIPage() {
           {result && (
             <div className="mt-5">
               <hr className="os9-divider" />
-              {/* BMI Gauge */}
               <div className="os9-result mb-3">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-xs uppercase tracking-wider" style={{ opacity: 0.6 }}>BMI</span>
                   <span className="text-2xl font-bold">{result.bmi}</span>
                 </div>
-                {/* Color bar */}
                 <div className="w-full h-3 rounded-full overflow-hidden flex" style={{ background: '#ddd' }}>
                   <div style={{ flex: '18.5', background: '#3399ff', height: '100%' }} title="Underweight" />
                   <div style={{ flex: '4.5', background: '#22aa22', height: '100%' }} title="Normal" />
@@ -120,7 +118,6 @@ export default function BMIPage() {
                   <div style={{ flex: '5', background: '#cc6600', height: '100%' }} title="Obese 1" />
                   <div style={{ flex: '70', background: '#cc3333', height: '100%' }} title="Obese 2+" />
                 </div>
-                {/* Indicator arrow */}
                 <div className="relative h-4 mt-1">
                   <div className="absolute text-lg font-bold" style={{ left: barWidth + '%', transform: 'translateX(-50%)', color: result.category.color }}>▼</div>
                 </div>
@@ -129,7 +126,6 @@ export default function BMIPage() {
                 </div>
                 <p className="text-center font-bold mt-2" style={{ color: result.category.color, fontSize: '1.1rem' }}>{result.category.label}</p>
               </div>
-              {/* Healthy weight range */}
               <div className="os9-result text-center">
                 <p className="text-xs uppercase tracking-wider mb-1" style={{ opacity: 0.6 }}>{t('normalWeightRange') || 'Healthy BMI Range'}</p>
                 <p className="text-sm font-bold">18.5 – 23</p>
@@ -157,6 +153,10 @@ export default function BMIPage() {
         <a href={'/' + locale + '/lotto'} className="underline" style={{ opacity: 0.7 }}>Lotto</a>
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/pdf'} className="underline" style={{ opacity: 0.7 }}>PDF</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/percent'} className="underline" style={{ opacity: 0.7 }}>Percent</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/currency'} className="underline" style={{ opacity: 0.7 }}>Currency</a>
         <span className="mx-2">|</span>
         hello-tools 2026
       </div>
