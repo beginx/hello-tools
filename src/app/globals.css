@@ -262,7 +262,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.3px;
   color: var(--os9-text);
-  margin-right: -2px;
   position: relative;
   z-index: 0;
   flex: 1;
@@ -272,10 +271,12 @@ body {
 
 .os9-tab:first-child {
   border-radius: 6px 0 0 0;
+  margin-left: -2px;
 }
 
 .os9-tab:last-child {
   border-radius: 0 6px 0 0;
+  margin-right: -2px;
 }
 
 .os9-tab-active {
