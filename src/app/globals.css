@@ -142,6 +142,7 @@ body {
   background: linear-gradient(180deg, #5555bb 0%, #333399 100%);
   border-color: #222277;
   color: white;
+  border-radius: 20px;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
