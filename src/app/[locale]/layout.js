@@ -17,6 +17,7 @@ const tools = {
     random: { name: "Random Number Generator - Free Online Tool", desc: "Generate cryptographically secure random numbers within any range. Choose count, unique mode, and sorting.", cat: "UtilitiesApplication" },
     text: { name: "Text Tools - Word Counter, Case Converter, Base64", desc: "Free online text tools: count characters and words, convert text case, encode/decode Base64.", cat: "UtilitiesApplication" },
     timer: { name: "Stopwatch & Timer - Free Online Stopwatch and Countdown Timer", desc: "Free online stopwatch and countdown timer. Measure elapsed time with lap recording, or set a countdown timer. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
+    discount: { name: "Discount Calculator - Free Online Percent Off Calculator", desc: "Free online discount calculator: calculate final price after percentage discount, savings amount, and percent off. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -32,6 +33,7 @@ const tools = {
     random: { name: "Generador de N\u00fameros Aleatorios - Gratis", desc: "Generador de n\u00fameros aleatorios criptogr\u00e1ficamente seguros.", cat: "UtilitiesApplication" },
     text: { name: "Herramientas de Texto - Contador, Convertir, Base64", desc: "Herramientas de texto gratuitas: contar caracteres, convertir may\u00fasculas/min\u00fasculas, Base64.", cat: "UtilitiesApplication" },
     timer: { name: "Cron\u00f3metro y Temporizador - Cron\u00f3metro Online Gratuito", desc: "Cron\u00f3metro online gratuito y temporizador de cuenta atr\u00e1s con registro de vueltas.", cat: "UtilitiesApplication" },
+    discount: { name: "Calculadora de Descuento - Calculadora de Porcentaje de Descuento Gratuita", desc: "Calculadora de descuento gratuita: calcule el precio final despu\u00e9s del descuento y la cantidad ahorrada. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -47,6 +49,7 @@ const tools = {
     random: { name: "\u968f\u673a\u6570\u751f\u6210\u5668 - \u514d\u8d39\u5728\u7ebf", desc: "\u5728\u4efb\u610f\u8303\u56f4\u5185\u751f\u6210\u5bc6\u7801\u5b66\u5b89\u5168\u7684\u968f\u673a\u6570\u3002", cat: "UtilitiesApplication" },
     text: { name: "\u6587\u672c\u5de5\u5177 - \u5b57\u7b26\u8ba1\u6570\u3001\u5927\u5c0f\u5199\u8f6c\u6362\u3001Base64", desc: "\u514d\u8d39\u6587\u672c\u5de5\u5177\uff1a\u7edf\u8ba1\u5b57\u7b26\u548c\u5355\u8bcd\u3001\u8f6c\u6362\u5927\u5c0f\u5199\u3001Base64\u7f16\u7801/\u89e3\u7801\u3002", cat: "UtilitiesApplication" },
     timer: { name: "\u79d2\u8868\u548c\u8ba1\u65f6\u5668 - \u514d\u8d39\u5728\u7ebf\u79d2\u8868\u548c\u5012\u8ba1\u65f6", desc: "\u514d\u8d39\u5728\u7ebf\u79d2\u8868\u548c\u5012\u8ba1\u65f6\u5668\u3002\u8bb0\u5f55\u7ecf\u8fc7\u65f6\u95f4\u548c\u8ba1\u6b21\uff0c\u6216\u8bbe\u7f6e\u5012\u8ba1\u65f6\u3002", cat: "UtilitiesApplication" },
+    discount: { name: "\u6298\u6263\u8ba1\u7b97\u5668 - \u514d\u8d39\u5728\u7ebf\u6298\u6263\u8ba1\u7b97\u5668", desc: "\u514d\u8d39\u5728\u7ebf\u6298\u6263\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97\u6298\u6263\u540e\u7684\u6700\u7ec8\u4ef7\u683c\u548c\u60a8\u8282\u7701\u7684\u91d1\u989d\u3002Mac OS 9\u590d\u53e4\u98ce\u683c\u3002", cat: "UtilitiesApplication" },
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -62,6 +65,7 @@ const tools = {
     random: { name: "\ub79c\ub364 \uc22b\uc790 \uc0dd\uc131\uae30 - \ubb34\ub8cc", desc: "\uc784\uc758 \ubc94\uc704\uc5d0\uc11c \uc548\uc804\ud55c \ub79c\ub364 \uc22b\uc790\ub97c \uc0dd\uc131\ud569\ub2c8\ub2e4.", cat: "UtilitiesApplication" },
     text: { name: "\ud14d\uc2a4\ud2b8 \ub3c4\uad6c - \uae00\uc790\uc218, \ub300\uc18c\ubb38\uc790, Base64", desc: "\ubb34\ub8cc \ud14d\uc2a4\ud2b8 \ub3c4\uad6c: \uae00\uc790\uc218 \uacc4\uc0b0, \ub300\uc18c\ubb38\uc790 \ubcc0\ud658, Base64 \uc778\ucf54\ub529/\ub514\ucf54\ub529.", cat: "UtilitiesApplication" },
     timer: { name: "\uc2a4\ud1b1\uc6cc\uce58 & \ud0c0\uc774\uba38 - \ubb34\ub8cc \uc628\ub77c\uc778 \uc2a4\ud1b1\uc6cc\uce58", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uc2a4\ud1b1\uc6cc\uce58 \ubc0f \uce74\uc6b4\ud2b8\ub2e4\uc6b4 \ud0c0\uc774\uba38. \ub7a9 \uae30\ub85d\uacfc \ud568\uaed8 \uacbd\uacfc \uc2dc\uac04 \uce21\uc815.", cat: "UtilitiesApplication" },
+    discount: { name: "\ud560\uc778 \uacc4\uc0b0\uae30 - \ubb34\ub8cc \uc628\ub77c\uc778 \ud560\uc778\uc728 \uacc4\uc0b0\uae30", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \ud560\uc778 \uacc4\uc0b0\uae30: \ud560\uc778 \ud6c4 \ucd5c\uc885 \uac00\uaca9\uacfc \uc808\uc57d \uae08\uc561\uc744 \uacc4\uc0b0\ud569\ub2c8\ub2e4. Mac OS 9 \ubcf5\uace0 \uc2a4\ud0c0\uc77c.", cat: "UtilitiesApplication" },
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -77,13 +81,14 @@ const tools = {
     random: { name: "Gerador de N\u00fameros Aleat\u00f3rios - Gr\u00e1tis", desc: "Gere n\u00fameros aleat\u00f3rios criptograficamente seguros.", cat: "UtilitiesApplication" },
     text: { name: "Ferramentas de Texto - Contador, Converter, Base64", desc: "Ferramentas de texto gratuitas: contar caracteres, converter mai\u00fasculas/min\u00fasculas, Base64.", cat: "UtilitiesApplication" },
     timer: { name: "Cron\u00f4metro e Temporizador - Cron\u00f4metro Online Gr\u00e1tis", desc: "Cron\u00f4metro online gratuito e temporizador de contagem regressiva com registro de voltas.", cat: "UtilitiesApplication" },
-  },
+    discount: { name: "Calculadora de Desconto - Calculadora de Desconto Percentual Gr\u00e1tis", desc: "Calculadora de desconto gratuita: calcule o pre\u00e7o final ap\u00f3s o desconto e o valor economizado. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
+  }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount' };
   return toolMap[p] || 'calorie';
 }
 
