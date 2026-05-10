@@ -1,12 +1,17 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/privacy.json';
+import esMsgs from '../../../messages/es/privacy.json';
+import zhMsgs from '../../../messages/zh/privacy.json';
+import koMsgs from '../../../messages/ko/privacy.json';
+import ptMsgs from '../../../messages/pt/privacy.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 export default function PrivacyPage() {
-  const t = useTranslations('privacy');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/privacy'; };
 
   return (

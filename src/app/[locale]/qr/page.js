@@ -1,13 +1,18 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/qr.json';
+import esMsgs from '../../../messages/es/qr.json';
+import zhMsgs from '../../../messages/zh/qr.json';
+import koMsgs from '../../../messages/ko/qr.json';
+import ptMsgs from '../../../messages/pt/qr.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 export default function QRPage() {
-  const t = useTranslations('qr');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
 
   const changeLang = (l) => { window.location.href = '/' + l + '/qr'; };
 

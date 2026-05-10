@@ -1,9 +1,14 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
 import { PDFDocument } from 'pdf-lib';
+import enMsgs from '../../../messages/en/pdf.json';
+import esMsgs from '../../../messages/es/pdf.json';
+import zhMsgs from '../../../messages/zh/pdf.json';
+import koMsgs from '../../../messages/ko/pdf.json';
+import ptMsgs from '../../../messages/pt/pdf.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const MAX_SIZE = 20 * 1024 * 1024; // 20MB
 
@@ -14,9 +19,9 @@ function formatSize(bytes) {
 }
 
 export default function PdfPage() {
-  const t = useTranslations('pdf');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/pdf'; };
 
   const [tab, setTab] = useState('compress');

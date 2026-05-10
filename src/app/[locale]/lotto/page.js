@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/lotto.json';
+import esMsgs from '../../../messages/es/lotto.json';
+import zhMsgs from '../../../messages/zh/lotto.json';
+import koMsgs from '../../../messages/ko/lotto.json';
+import ptMsgs from '../../../messages/pt/lotto.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const PRESETS = {
   powerball:  { mainCount: 5, mainMax: 69, bonusCount: 1, bonusMax: 26, key: 'powerball' },
@@ -32,9 +37,9 @@ function generateDraws(mainCount, mainMax, bonusCount, bonusMax, draws) {
 }
 
 export default function LottoPage() {
-  const t = useTranslations('lotto');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/lotto'; };
 
   const [preset, setPreset] = useState('powerball');

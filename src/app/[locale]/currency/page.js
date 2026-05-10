@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/currency.json';
+import esMsgs from '../../../messages/es/currency.json';
+import zhMsgs from '../../../messages/zh/currency.json';
+import koMsgs from '../../../messages/ko/currency.json';
+import ptMsgs from '../../../messages/pt/currency.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const CURRENCIES = [
   'USD','EUR','GBP','JPY','KRW','CNY','CAD','AUD','CHF',
@@ -10,9 +15,9 @@ const CURRENCIES = [
 ];
 
 export default function CurrencyPage() {
-  const t = useTranslations('currency');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/currency'; };
 
   const [amount, setAmount] = useState('100');

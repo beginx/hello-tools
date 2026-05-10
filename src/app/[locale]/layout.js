@@ -1,6 +1,4 @@
 import "../../app/globals.css";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
 import { headers } from 'next/headers';
 import { Analytics } from "@vercel/analytics/react";
 
@@ -91,7 +89,6 @@ function getToolKey(pathname) {
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
-  const messages = await getMessages();
   const headersList = await headers();
   const pathname = headersList.get('x-pathname') || headersList.get('x-url') || '';
   const toolKey = getToolKey(pathname);
@@ -128,9 +125,7 @@ export default async function LocaleLayout({ children, params }) {
         />
       </head>
       <body className="min-h-full flex flex-col" style={{ background: 'var(--os9-bg)' }}>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        {children}
         <Analytics />
       </body>
     </html>

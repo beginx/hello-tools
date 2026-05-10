@@ -1,8 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/app.json';
+import esMsgs from '../../../messages/es/app.json';
+import zhMsgs from '../../../messages/zh/app.json';
+import koMsgs from '../../../messages/ko/app.json';
+import ptMsgs from '../../../messages/pt/app.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 function bmiCategory(b, t) {
   if (b < 18.5) return { label: t('underweight'), color: '#3399ff' };
@@ -13,9 +18,9 @@ function bmiCategory(b, t) {
 }
 
 export default function BMIPage() {
-  const t = useTranslations('app');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/bmi'; };
 
   const [unit, setUnit] = useState('metric');

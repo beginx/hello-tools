@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/random.json';
+import esMsgs from '../../../messages/es/random.json';
+import zhMsgs from '../../../messages/zh/random.json';
+import koMsgs from '../../../messages/ko/random.json';
+import ptMsgs from '../../../messages/pt/random.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 function secureRandom(min, max) {
   const range = max - min + 1;
@@ -17,9 +22,9 @@ function secureRandom(min, max) {
 }
 
 export default function RandomPage() {
-  const t = useTranslations('random');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/random'; };
 
   const [minVal, setMinVal] = useState('1');

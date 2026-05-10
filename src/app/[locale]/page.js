@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useCallback, useRef } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../messages/en/app.json';
+import esMsgs from '../../messages/es/app.json';
+import zhMsgs from '../../messages/zh/app.json';
+import koMsgs from '../../messages/ko/app.json';
+import ptMsgs from '../../messages/pt/app.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const AM = { sedentary: 1.2, light: 1.375, moderate: 1.55, active: 1.725, extra: 1.9 };
 const AS = { sedentary: 0, light: 1, moderate: 2, active: 3, extra: 4 };
@@ -35,9 +40,9 @@ function goalAdj(goal, tdee) {
 }
 
 export default function CalorieCalculatorPage() {
-  const t = useTranslations('app');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
 
   const changeLang = (l) => { window.location.href = '/' + l; };
 

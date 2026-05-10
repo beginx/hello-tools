@@ -1,8 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/date.json';
+import esMsgs from '../../../messages/es/date.json';
+import zhMsgs from '../../../messages/zh/date.json';
+import koMsgs from '../../../messages/ko/date.json';
+import ptMsgs from '../../../messages/pt/date.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const TABS = ['tabDaysBetween', 'tabDday', 'tabAddSubtract', 'tabAge', 'tabAnniversary'];
 const TAB_KEYS = ['daysBetween', 'dday', 'addSubtract', 'age', 'anniversary'];
@@ -31,9 +36,9 @@ function ageFrom(birth) {
 }
 
 export default function DatePage() {
-  const t = useTranslations('date');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/date'; };
 
   const [tab, setTab] = useState('daysBetween');

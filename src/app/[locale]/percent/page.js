@@ -1,15 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/percent.json';
+import esMsgs from '../../../messages/es/percent.json';
+import zhMsgs from '../../../messages/zh/percent.json';
+import koMsgs from '../../../messages/ko/percent.json';
+import ptMsgs from '../../../messages/pt/percent.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const TABS = ['whatIs', 'percentOf', 'change'];
 
 export default function PercentPage() {
-  const t = useTranslations('percent');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/percent'; };
 
   const [tab, setTab] = useState('whatIs');

@@ -1,17 +1,22 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/photo.json';
+import esMsgs from '../../../messages/es/photo.json';
+import zhMsgs from '../../../messages/zh/photo.json';
+import koMsgs from '../../../messages/ko/photo.json';
+import ptMsgs from '../../../messages/pt/photo.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const MAX_SIZE = 10 * 1024 * 1024; // 10MB
 const TABS = ['resize', 'crop', 'compress', 'convert'];
 const TAB_ICONS = ['\uD83D\uDCCD', '\u2702\uFE0F', '\uD83D\uDCE6', '\uD83D\uDD04']; // 📍, ✂️, 📦, 🔄
 
 export default function PhotoPage() {
-  const t = useTranslations('photo');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
 
   const changeLang = (l) => { window.location.href = '/' + l + '/photo'; };
 

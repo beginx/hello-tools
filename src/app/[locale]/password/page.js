@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/password.json';
+import esMsgs from '../../../messages/es/password.json';
+import zhMsgs from '../../../messages/zh/password.json';
+import koMsgs from '../../../messages/ko/password.json';
+import ptMsgs from '../../../messages/pt/password.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWER = 'abcdefghijklmnopqrstuvwxyz';
@@ -68,9 +73,9 @@ function calcStrength(pwd, len) {
 }
 
 export default function PasswordPage() {
-  const t = useTranslations('password');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/password'; };
 
   const [length, setLength] = useState(16);

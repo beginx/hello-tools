@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/convert.json';
+import esMsgs from '../../../messages/es/convert.json';
+import zhMsgs from '../../../messages/zh/convert.json';
+import koMsgs from '../../../messages/ko/convert.json';
+import ptMsgs from '../../../messages/pt/convert.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const CATEGORIES = ['length', 'weight', 'temperature', 'volume', 'area', 'speed', 'pressure'];
 
@@ -39,9 +44,9 @@ const INVERSE = {
 const CONV_LIST = Object.keys(CONVERSIONS);
 
 export default function ConvertPage() {
-  const t = useTranslations('convert');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
 
   const changeLang = (l) => { window.location.href = '/' + l + '/convert'; };
 

@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsg from '../../../messages/en/timer.json';
+import esMsg from '../../../messages/es/timer.json';
+import zhMsg from '../../../messages/zh/timer.json';
+import koMsg from '../../../messages/ko/timer.json';
+import ptMsg from '../../../messages/pt/timer.json';
+const pageMsgs = { en: enMsg, es: esMsg, zh: zhMsg, ko: koMsg, pt: ptMsg };
 
 function formatMs(ms) {
   const totalSec = Math.floor(ms / 1000);
@@ -16,9 +21,9 @@ function formatMs(ms) {
 }
 
 export default function TimerPage() {
-  const t = useTranslations('timer');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/timer'; };
 
   const [mode, setMode] = useState('stopwatch'); // stopwatch | timer
