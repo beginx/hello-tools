@@ -27,6 +27,7 @@ const tools = {
     average: { name: "Average Calculator - Mean, Median, Mode Calculator - Free Online", desc: "Free online average calculator: calculate the mean, median, and mode of a set of numbers. Add multiple numbers and instantly see the average, sum, count, median, range, and mode. Perfect for students, teachers, and data analysis. Mac OS 9 retro style.", cat: "MathApplication" },
     age: { name: "Age Calculator - Exact Age in Years, Months, Days - Free Online Birthday Calculator", desc: "Free online age calculator: calculate your exact age in years, months, and days. Enter your date of birth to find out exactly how old you are, total days lived, day of the week you were born, and days until your next birthday. Accurate and easy to use.", cat: "UtilitiesApplication" },
     grade: { name: "Grade Calculator - GPA Calculator - Free Online Letter Grade Calculator", desc: "Free online grade calculator and GPA calculator: add subjects, scores, and weights to calculate your average score, GPA on a 4.0 scale, and letter grade (A/B/C/D/F). Perfect for students tracking academic performance. Mac OS 9 retro style.", cat: "EducationApplication" },
+    duration: { name: "Time Duration Calculator - Calculate Time Between Dates - Free Online", desc: "Free online time duration calculator: calculate the exact time difference between two dates and times. See duration in years, months, weeks, days, hours, minutes, and seconds. Quick presets for today, last 7 days, last 30 days, last year. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -52,6 +53,7 @@ const tools = {
     average: { name: "Calculadora de Promedio - Calcular Media, Mediana, Moda - Gratis", desc: "Calculadora de promedio gratuita: calcule la media, mediana y moda de un conjunto de números. Agregue múltiples números y vea el promedio, suma, mediana, rango y moda al instante. Estilo retro Mac OS 9.", cat: "MathApplication" },
     age: { name: "Calculadora de Edad - Edad Exacta en Años, Meses, Días - Calculadora de Cumpleaños", desc: "Calculadora de edad gratuita: calcule su edad exacta en años, meses y días. Ingrese su fecha de nacimiento para saber su edad, días vividos, día de la semana que nació y días hasta su próximo cumpleaños.", cat: "UtilitiesApplication" },
     grade: { name: "Calculadora de Calificaciones - Calculadora GPA - Calculadora de Notas", desc: "Calculadora de calificaciones gratuita: agregue materias, puntajes y pesos para calcular su puntaje promedio, GPA en escala 4.0 y calificación por letras. Estilo retro Mac OS 9.", cat: "EducationApplication" },
+    duration: { name: "Calculadora de Duración de Tiempo - Calcular Tiempo Entre Fechas", desc: "Calculadora de duración de tiempo gratuita: calcule la diferencia exacta entre dos fechas y horas. Vea la duración en años, meses, semanas, días, horas, minutos y segundos. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -77,6 +79,7 @@ const tools = {
     average: { name: "平均值计算器 - 计算平均值、中位数、众数 - 免费在线", desc: "免费在线平均值计算器：计算一组数字的平均值、中位数和众数。添加多个数字，立即查看平均值、总和、个数、中位数、范围和众数。Mac OS 9 复古风格。", cat: "MathApplication" },
     age: { name: "年龄计算器 - 精确年龄(年/月/日) - 免费在线生日计算器", desc: "免费在线年龄计算器：计算您的精确年龄(年/月/日)。输入出生日期，查看您的年龄、已生存总天数、出生星期和距离下次生日的倒计时。", cat: "UtilitiesApplication" },
     grade: { name: "成绩计算器 - GPA计算器 - 免费在线成绩等级计算器", desc: "免费成绩计算器：添加科目、成绩和权重，计算您的平均成绩、GPA(4.0标准)和等级(A/B/C/D/F)。Mac OS 9 复古风格。", cat: "EducationApplication" },
+    duration: { name: "时间时长计算器 - 计算两个日期之间的时间差", desc: "免费在线时间时长计算器：计算两个日期和时间之间的精确差异。以年、月、周、天、小时、分钟、秒显示时长。支持快速预设：今天、最近7天、最近30天、最近1年。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -102,6 +105,7 @@ const tools = {
     average: { name: "평균 계산기 - 평균, 중앙값, 최빈값 계산기 - 무료 온라인", desc: "무료 온라인 평균 계산기: 여러 숫자의 평균, 중앙값, 최빈값을 계산합니다. 숫자를 추가하면 평균, 합계, 개수, 중앙값, 범위, 최빈값을 바로 확인할 수 있습니다. Mac OS 9 레트로 스타일.", cat: "MathApplication" },
     age: { name: "나이 계산기 - 만 나이(년/월/일) - 무료 온라인 생일 계산기", desc: "무료 온라인 나이 계산기: 생년월일을 입력하면 만 나이를 년/월/일로 정확하게 계산합니다. 총 일수, 태어난 요일, 다음 생일까지 남은 날짜도 함께 확인하세요. 윤년 자동 처리.", cat: "UtilitiesApplication" },
     grade: { name: "성적 계산기 - GPA 계산기 - 무료 온라인 등급 계산기", desc: "무료 성적 계산기: 과목별 점수와 가중치를 입력하여 평균 점수, GPA(4.0 기준), 등급(A/B/C/D/F)을 계산합니다. 학생들의 학업 성적 추적에 완벽한 도구입니다. Mac OS 9 레트로 스타일.", cat: "EducationApplication" },
+    duration: { name: "시간 계산기 - 두 날짜/시간 사이의 시간 차이 계산", desc: "무료 온라인 시간 계산기: 두 날짜와 시간 사이의 정확한 차이를 계산합니다. 년, 일, 시간, 분, 초 단위로 표시. 총 시간, 총 분, 총 초도 함께 확인. 퀵 프리셋: 오늘, 최근 7일, 최근 30일, 최근 1년. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -127,13 +131,14 @@ const tools = {
     average: { name: "Calculadora de M\u00e9dia - Calcular M\u00e9dia, Mediana, Moda - Gr\u00e1tis", desc: "Calculadora de m\u00e9dia gratuita: calcule a m\u00e9dia, mediana e moda de um conjunto de n\u00fameros. Adicione v\u00e1rios n\u00fameros e veja a m\u00e9dia, soma, mediana, amplitude e moda instantaneamente. Estilo retro Mac OS 9.", cat: "MathApplication" },
     age: { name: "Calculadora de Idade - Idade Exata em Anos, Meses, Dias - Calculadora de Anivers\u00e1rio", desc: "Calculadora de idade gratuita: calcule sua idade exata em anos, meses e dias. Informe sua data de nascimento para saber sua idade, dias vividos, dia da semana em que nasceu e dias at\u00e9 seu pr\u00f3ximo anivers\u00e1rio.", cat: "UtilitiesApplication" },
     grade: { name: "Calculadora de Notas - Calculadora GPA - Calculadora de Conceitos", desc: "Calculadora de notas gratuita: adicione disciplinas, notas e pesos para calcular sua nota m\u00e9dia, GPA em escala 4.0 e conceito (A/B/C/D/F). Estilo retro Mac OS 9.", cat: "EducationApplication" },
+    duration: { name: "Calculadora de Dura\u00e7\u00e3o de Tempo - Calcular Diferen\u00e7a Entre Datas", desc: "Calculadora de dura\u00e7\u00e3o de tempo gratuita: calcule a diferen\u00e7a exata entre duas datas e horas. Veja a dura\u00e7\u00e3o em anos, dias, horas, minutos e segundos. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
   }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration' };
   return toolMap[p] || 'calorie';
 }
 
