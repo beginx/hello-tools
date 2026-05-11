@@ -11,7 +11,7 @@ const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const DAYS = { en: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], es: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'], zh: ['周日','周一','周二','周三','周四','周五','周六'], ko: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'], pt: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'] };
 
-function fmt(d) { return d.toISOString().split('T')[0]; }
+const MONTHS = { en: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], es: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'], zh: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'], ko: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'], pt: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'] };
 
 function calcAge(birth) {
   const now = new Date();
@@ -21,7 +21,6 @@ function calcAge(birth) {
   if (d < 0) { m--; d += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
   if (m < 0) { y--; m += 12; }
   const totalDays = Math.round((now.getTime() - birth.getTime()) / 86400000);
-  // Next birthday
   const nextBday = new Date(now.getFullYear(), birth.getMonth(), birth.getDate());
   if (nextBday < now) nextBday.setFullYear(nextBday.getFullYear() + 1);
   const daysToBday = Math.round((nextBday.getTime() - now.getTime()) / 86400000);
@@ -34,15 +33,24 @@ export default function AgePage() {
   const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/age'; };
 
-  const [birth, setBirth] = useState('');
+  const [year, setYear] = useState('');
+  const [month, setMonth] = useState('');
+  const [day, setDay] = useState('');
   const [result, setResult] = useState(null);
   const dayNames = DAYS[locale] || DAYS.en;
+  const monthNames = MONTHS[locale] || MONTHS.en;
 
   const calc = () => {
-    if (!birth) { setResult(null); return; }
-    const d = new Date(birth);
-    if (isNaN(d.getTime()) || d >= new Date()) { setResult(null); return; }
-    setResult(calcAge(d));
+    const y = parseInt(year);
+    const m = parseInt(month);
+    const d2 = parseInt(day);
+    if (!y || !m || !d2 || y < 1900 || y > new Date().getFullYear() || m < 1 || m > 12 || d2 < 1 || d2 > 31) {
+      setResult(null);
+      return;
+    }
+    const birth = new Date(y, m - 1, d2);
+    if (isNaN(birth.getTime()) || birth >= new Date()) { setResult(null); return; }
+    setResult(calcAge(birth));
   };
 
   return (
@@ -68,12 +76,32 @@ export default function AgePage() {
             </select>
           </div>
 
-          {/* Date of Birth */}
+          {/* Date of Birth — year / month / day */}
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">{t('dob')}</label>
-            <input className="os9-input w-full" type="date"
-              value={birth} onChange={(e) => setBirth(e.target.value)}
-              style={{ fontSize: 16, padding: '10px 8px' }} />
+            <div className="flex gap-2 items-end">
+              <div className="flex-1">
+                <input className="os9-input w-full text-center" type="number" min="1900" max="2100"
+                  value={year} onChange={(e) => { const v = e.target.value; if (v.length <= 4) setYear(v); }}
+                  placeholder={locale === 'ko' ? '년(YYYY)' : locale === 'zh' ? '年(YYYY)' : locale === 'es' ? 'Año(YYYY)' : locale === 'pt' ? 'Ano(YYYY)' : 'Year(YYYY)'}
+                  style={{ fontSize: 16, padding: '10px 4px' }} />
+              </div>
+              <div className="flex-none" style={{ width: 80 }}>
+                <select className="os9-select w-full text-center" value={month} onChange={(e) => setMonth(e.target.value)}
+                  style={{ fontSize: 14, padding: '10px 4px' }}>
+                  <option value="">{locale === 'ko' ? '월' : locale === 'zh' ? '月' : 'Month'}</option>
+                  {monthNames.map((n, i) => (
+                    <option key={i} value={i + 1}>{n}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="flex-none" style={{ width: 70 }}>
+                <input className="os9-input w-full text-center" type="number" min="1" max="31"
+                  value={day} onChange={(e) => { const v = e.target.value; if (v.length <= 2) setDay(v); }}
+                  placeholder={locale === 'ko' ? '일' : locale === 'zh' ? '日' : 'Day'}
+                  style={{ fontSize: 16, padding: '10px 4px' }} />
+              </div>
+            </div>
           </div>
 
           {/* Calculate */}
@@ -111,14 +139,14 @@ export default function AgePage() {
               </div>
             </div>
           )}
-          {!result && birth && (
+          {!result && year && month && day && (
             <p className="text-xs text-center" style={{ opacity: 0.6 }}>{t('error')}</p>
           )}
 
           {/* Clear */}
           <div className="text-center mt-3">
             <button className="text-xs underline" style={{ opacity: 0.5, padding: '6px 12px' }}
-              onClick={() => { setBirth(''); setResult(null); }}>{t('clear')}</button>
+              onClick={() => { setYear(''); setMonth(''); setDay(''); setResult(null); }}>{t('clear')}</button>
           </div>
         </div>
       </div>
