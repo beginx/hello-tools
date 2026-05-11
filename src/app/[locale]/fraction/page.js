@@ -131,19 +131,19 @@ export default function FractionPage() {
           {/* Fraction 1 */}
           <div className="mb-3">
             <label className="os9-label block text-xs mb-1">1{t('result')}</label>
-            <div className="flex items-center gap-2">
+            <div className="flex gap-2">
               {useMixed && (
-                <input className="os9-input !w-16 text-center" type="number"
+                <input className="os9-input text-center" type="number"
                   value={w1} onChange={(e) => setW1(e.target.value)} placeholder={t('whole1')}
-                  style={{ fontSize: 14, padding: '8px 4px' }} />
+                  style={{ flex: 1, minWidth: 40, fontSize: 15, padding: '10px 4px' }} />
               )}
-              <input className="os9-input !w-20 text-center" type="number"
+              <input className="os9-input text-center" type="number"
                 value={n1} onChange={(e) => setN1(e.target.value)} placeholder={t('placeholderNum')}
-                style={{ fontSize: 16, padding: '10px 4px' }} />
-              <span className="text-sm" style={{ opacity: 0.6 }}>/</span>
-              <input className="os9-input !w-20 text-center" type="number"
+                style={{ flex: 3, fontSize: 16, padding: '10px 4px' }} />
+              <span className="text-sm flex items-center justify-center" style={{ opacity: 0.6, minWidth: 20 }}>/</span>
+              <input className="os9-input text-center" type="number"
                 value={d1} onChange={(e) => setD1(e.target.value)} placeholder={t('placeholderDen')}
-                style={{ fontSize: 16, padding: '10px 4px' }} />
+                style={{ flex: 3, fontSize: 16, padding: '10px 4px' }} />
             </div>
           </div>
 
@@ -164,19 +164,19 @@ export default function FractionPage() {
           {/* Fraction 2 */}
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">2{t('result')}</label>
-            <div className="flex items-center gap-2">
+            <div className="flex gap-2">
               {useMixed && (
-                <input className="os9-input !w-16 text-center" type="number"
+                <input className="os9-input text-center" type="number"
                   value={w2} onChange={(e) => setW2(e.target.value)} placeholder={t('whole2')}
-                  style={{ fontSize: 14, padding: '8px 4px' }} />
+                  style={{ flex: 1, minWidth: 40, fontSize: 15, padding: '10px 4px' }} />
               )}
-              <input className="os9-input !w-20 text-center" type="number"
+              <input className="os9-input text-center" type="number"
                 value={n2} onChange={(e) => setN2(e.target.value)} placeholder={t('placeholderNum')}
-                style={{ fontSize: 16, padding: '10px 4px' }} />
-              <span className="text-sm" style={{ opacity: 0.6 }}>/</span>
-              <input className="os9-input !w-20 text-center" type="number"
+                style={{ flex: 3, fontSize: 16, padding: '10px 4px' }} />
+              <span className="text-sm flex items-center justify-center" style={{ opacity: 0.6, minWidth: 20 }}>/</span>
+              <input className="os9-input text-center" type="number"
                 value={d2} onChange={(e) => setD2(e.target.value)} placeholder={t('placeholderDen')}
-                style={{ fontSize: 16, padding: '10px 4px' }} />
+                style={{ flex: 3, fontSize: 16, padding: '10px 4px' }} />
             </div>
           </div>
 
