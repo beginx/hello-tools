@@ -33,6 +33,11 @@ const tools = {
     idealweight: { name: "Ideal Weight Calculator - Healthy Body Weight Calculator - Devine Hamwi Formula", desc: "Free online ideal weight calculator: calculate your ideal body weight using Devine, Hamwi, Robinson, and Miller formulas. See healthy BMI weight range for your height. Metric and imperial units supported. Mac OS 9 retro style.", cat: "HealthApplication" },
     fuelcost: { name: "Fuel Cost Calculator - Trip Fuel Cost Estimator - Gas Calculator", desc: "Free online fuel cost calculator: estimate total fuel cost for any trip. Enter distance, fuel economy (L/100km or MPG), and fuel price. See total cost, fuel needed, cost per km/mile. Perfect for road trips. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
     salary: { name: "Salary Calculator - Annual to Hourly Converter - Paycheck Calculator", desc: "Free online salary calculator: convert annual salary to hourly, daily, weekly, biweekly, and monthly pay. Enter hours and days per week. Perfect for job offer comparison and budgeting. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    overtime: { name: "Overtime Calculator - Overtime Pay Calculator - Time and a Half Calculator", desc: "Free online overtime calculator: calculate overtime pay with time-and-a-half (1.5x) and double-time (2x) rates. Enter hourly rate, regular hours, and overtime hours to see total pay including overtime. Perfect for hourly workers and payroll. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    retirement: { name: "Retirement Calculator - Retirement Savings Calculator - 401k IRA Planner", desc: "Free online retirement calculator: estimate your retirement savings with compound interest projections. Enter current age, retirement age, current savings, monthly contributions, and expected annual return. Shows 4% safe withdrawal rule and year-by-year growth table. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    duedate: { name: "Due Date Calculator - Pregnancy Due Date Calculator - Conception Date Estimator", desc: "Free online due date calculator: calculate your estimated due date, conception date, fertile window, and current pregnancy week using Naegele's rule. Enter first day of last menstrual period. Shows trimester schedule. Mac OS 9 retro style.", cat: "HealthApplication" },
+    pace: { name: "Pace Calculator - Running Pace Calculator - Speed Distance Time Calculator", desc: "Free online pace calculator for runners: calculate running pace (min/km), speed (km/h), time, or distance. Enter any two values to find the third. Perfect for marathon training, 5K, 10K, and half marathon planning. Mac OS 9 retro style.", cat: "HealthApplication" },
+    sip: { name: "SIP Calculator - Systematic Investment Plan Calculator - Mutual Fund Returns", desc: "Free online SIP calculator: estimate the maturity amount of your systematic investment plan. Enter monthly investment, time period, and expected return rate. Shows total invested vs estimated returns with year-by-year growth table. Mac OS 9 retro style.", cat: "FinanceApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -64,6 +69,11 @@ const tools = {
     idealweight: { name: "Calculadora de Peso Ideal - Peso Saludable - Fórmulas Devine Hamwi", desc: "Calculadora de peso ideal gratuita: calcule su peso ideal usando las fórmulas Devine, Hamwi, Robinson y Miller. Vea el rango de peso saludable del IMC. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     fuelcost: { name: "Calculadora de Costo de Combustible - Estimador de Gastos de Gasolina", desc: "Calculadora de costo de combustible gratuita: estime el costo total de combustible para cualquier viaje. Ingrese distancia, consumo y precio. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
     salary: { name: "Calculadora de Salario - Convertir Anual a Por Hora", desc: "Calculadora de salario gratuita: convierta salario anual en pago por hora, día, semana, quincena y mes. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    overtime: { name: "Calculadora de Horas Extras - Pago de Horas Extra", desc: "Calculadora de horas extras gratuita: calcule el pago de horas extras con tarifa 1.5x y 2x. Ingrese tarifa por hora, horas regulares y horas extras. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    retirement: { name: "Calculadora de Jubilación - Planificador de Retiro", desc: "Calculadora de jubilación gratuita: estime sus ahorros para el retiro con proyecciones de interés compuesto. Muestra la regla de retiro seguro del 4%. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    duedate: { name: "Calculadora de Fecha de Parto - Embarazo", desc: "Calculadora de fecha de parto gratuita: calcule su fecha probable de parto, fecha de concepción y semana actual de embarazo usando la regla de Naegele. Estilo retro Mac OS 9.", cat: "HealthApplication" },
+    pace: { name: "Calculadora de Ritmo - Ritmo de Carrera", desc: "Calculadora de ritmo gratuita para corredores: calcule ritmo (min/km), velocidad (km/h), tiempo o distancia. Perfecta para entrenamiento de maratón. Estilo retro Mac OS 9.", cat: "HealthApplication" },
+    sip: { name: "Calculadora SIP - Plan de Inversión Sistemática", desc: "Calculadora SIP gratuita: estime el monto de vencimiento de su plan de inversión sistemática. Ingrese inversión mensual, plazo y rendimiento esperado. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -95,6 +105,11 @@ const tools = {
     idealweight: { name: "理想体重计算器 - 健康体重计算 - Devine Hamwi 公式", desc: "免费在线理想体重计算器：使用 Devine、Hamwi、Robinson 和 Miller 公式计算您的理想体重。查看健康 BMI 体重范围。Mac OS 9 复古风格。", cat: "HealthApplication" },
     fuelcost: { name: "燃油费用计算器 - 行程油费估算", desc: "免费在线燃油费用计算器：估算任何行程的燃油总费用。输入距离、油耗和油价。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
     salary: { name: "薪资计算器 - 年薪转时薪 - 工资计算器", desc: "免费在线薪资计算器：将年薪转换为时薪、日薪、周薪、双周薪和月薪。Mac OS 9 复古风格。", cat: "FinanceApplication" },
+    overtime: { name: "加班费计算器 - 加班工资计算", desc: "免费在线加班费计算器：计算加班工资。输入时薪、正常工时和加班工时。支持1.5倍和2倍加班费率。Mac OS 9 复古风格。", cat: "FinanceApplication" },
+    retirement: { name: "退休金计算器 - 退休储蓄规划", desc: "免费在线退休金计算器：通过复利预估退休储蓄。输入当前年龄、退休年龄、现有储蓄和月供款。显示4%安全提款规则。Mac OS 9 复古风格。", cat: "FinanceApplication" },
+    duedate: { name: "预产期计算器 - 怀孕预产期估算", desc: "免费在线预产期计算器：使用Naegele规则计算预产期、受孕日期和当前孕周。显示孕期阶段。Mac OS 9 复古风格。", cat: "HealthApplication" },
+    pace: { name: "配速计算器 - 跑步配速计算", desc: "免费在线跑步配速计算器：计算配速、速度、时间或距离。输入任意两个值推算出第三个。适合马拉松训练。Mac OS 9 复古风格。", cat: "HealthApplication" },
+    sip: { name: "SIP计算器 - 系统投资计划", desc: "免费在线SIP计算器：估算系统投资计划的到期金额。输入每月投资、期限和预期回报率。Mac OS 9 复古风格。", cat: "FinanceApplication" },
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -126,6 +141,11 @@ const tools = {
     idealweight: { name: "표준 체중 계산기 - 이상적인 체중 계산 - Devine Hamwi 공식", desc: "무료 온라인 표준 체중 계산기: Devine, Hamwi, Robinson, Miller 공식으로 표준 체중을 계산합니다. 건강한 BMI 체중 범위도 확인. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
     fuelcost: { name: "기름값 계산기 - 주유비 계산 - 연료비 계산기", desc: "무료 온라인 기름값 계산기: 거리, 연비, 기름값을 입력하여 총 주유비와 L/100km를 계산합니다. 여행 경비 계획에 완벽한 도구. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
     salary: { name: "연봉 계산기 - 연봉 시급 변환 - 월급 계산기", desc: "무료 온라인 연봉 계산기: 연봉을 시급, 일급, 주급, 격주, 월급으로 변환합니다. 근무 시간과 근무 일수를 설정. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
+    overtime: { name: "야근 수당 계산기 - 초과 근무 수당 계산", desc: "무료 온라인 야근 수당 계산기: 시급, 정규 시간, 초과 시간을 입력하여 총 임금을 계산합니다. 1.5배, 2배 야근 수당 지원. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
+    retirement: { name: "은퇴 자금 계산기 - 노후 준비 계산", desc: "무료 온라인 은퇴 자금 계산기: 복리로 은퇴 자금을 예측합니다. 현재 나이, 은퇴 나이, 현재 저축액, 월 납입액 입력. 4% 법칙 표시. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
+    duedate: { name: "출산 예정일 계산기 - 임신 주수 계산", desc: "무료 온라인 출산 예정일 계산기: Naegele 법칙으로 예정일, 수정일, 현재 주수를 계산합니다. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
+    pace: { name: "페이스 계산기 - 러닝 페이스 계산", desc: "무료 온라인 러닝 페이스 계산기: 페이스, 속도, 시간, 거리 중 두 값을 입력하면 나머지를 계산합니다. 마라톤 트레이닝에 완벽. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
+    sip: { name: "SIP 계산기 - 적립식 투자 계산", desc: "무료 온라인 SIP 계산기: 적립식 투자의 만기 금액을 추정합니다. 월 투자액, 기간, 예상 수익률 입력. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -157,13 +177,18 @@ const tools = {
     idealweight: { name: "Calculadora de Peso Ideal - Peso Saud\u00e1vel - F\u00f3rmulas Devine Hamwi", desc: "Calculadora de peso ideal gratuita: calcule seu peso ideal usando as f\u00f3rmulas Devine, Hamwi, Robinson e Miller. Veja a faixa de peso saud\u00e1vel do IMC. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     fuelcost: { name: "Calculadora de Custo de Combust\u00edvel - Estimador de Gastos com Gasolina", desc: "Calculadora de custo de combust\u00edvel gratuita: estime o custo total de combust\u00edvel para qualquer viagem. Insira dist\u00e2ncia, consumo e pre\u00e7o. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
     salary: { name: "Calculadora de Sal\u00e1rio - Converter Anual para Por Hora", desc: "Calculadora de sal\u00e1rio gratuita: converta sal\u00e1rio anual em pagamento por hora, dia, semana, quinzena e m\u00eas. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    overtime: { name: "Calculadora de Horas Extras - Pagamento de Horas Extras", desc: "Calculadora de horas extras gratuita: calcule o pagamento de horas extras com tarifa 1.5x e 2x. Insira tarifa por hora, horas regulares e horas extras. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    retirement: { name: "Calculadora de Aposentadoria - Planejador de Aposentadoria", desc: "Calculadora de aposentadoria gratuita: estime sua poupan\u00e7a para a aposentadoria com proje\u00e7\u00f5es de juros compostos. Mostra a regra de retirada segura de 4%. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    duedate: { name: "Calculadora de Data Prevista - Gravidez", desc: "Calculadora de data prevista gratuita: calcule sua data prov\u00e1vel do parto, data da concep\u00e7\u00e3o e semana atual de gravidez usando a regra de Naegele. Estilo retro Mac OS 9.", cat: "HealthApplication" },
+    pace: { name: "Calculadora de Ritmo - Ritmo de Corrida", desc: "Calculadora de ritmo gratuita para corredores: calcule ritmo (min/km), velocidade (km/h), tempo ou dist\u00e2ncia. Perfeita para treinamento de maratona. Estilo retro Mac OS 9.", cat: "HealthApplication" },
+    sip: { name: "Calculadora SIP - Plano de Investimento Sistem\u00e1tico", desc: "Calculadora SIP gratuita: estime o valor de vencimento do seu plano de investimento sistem\u00e1tico. Insira investimento mensal, prazo e retorno esperado. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary', '/overtime': 'overtime', '/retirement': 'retirement', '/duedate': 'duedate', '/pace': 'pace', '/sip': 'sip' };
   return toolMap[p] || 'calorie';
 }
 
