@@ -28,6 +28,11 @@ const tools = {
     age: { name: "Age Calculator - Exact Age in Years, Months, Days - Free Online Birthday Calculator", desc: "Free online age calculator: calculate your exact age in years, months, and days. Enter your date of birth to find out exactly how old you are, total days lived, day of the week you were born, and days until your next birthday. Accurate and easy to use.", cat: "UtilitiesApplication" },
     grade: { name: "Grade Calculator - GPA Calculator - Free Online Letter Grade Calculator", desc: "Free online grade calculator and GPA calculator: add subjects, scores, and weights to calculate your average score, GPA on a 4.0 scale, and letter grade (A/B/C/D/F). Perfect for students tracking academic performance. Mac OS 9 retro style.", cat: "EducationApplication" },
     duration: { name: "Time Duration Calculator - Calculate Time Between Dates - Free Online", desc: "Free online time duration calculator: calculate the exact time difference between two dates and times. See duration in years, months, weeks, days, hours, minutes, and seconds. Quick presets for today, last 7 days, last 30 days, last year. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
+    daysuntil: { name: "Days Until Calculator - Countdown Days Until Date - How Many Days Left", desc: "Free online days until calculator: find out how many days, weeks, months, and years until any target date. Countdown to Christmas, New Year, birthday, or any special event. Shows day of the week. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
+    wordcounter: { name: "Word Counter - Free Online Word Count, Character Count, Sentence Counter", desc: "Free online word counter tool: count words, characters (with and without spaces), sentences, paragraphs, lines, reading time, and speaking time. Paste any text for instant stats. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
+    idealweight: { name: "Ideal Weight Calculator - Healthy Body Weight Calculator - Devine Hamwi Formula", desc: "Free online ideal weight calculator: calculate your ideal body weight using Devine, Hamwi, Robinson, and Miller formulas. See healthy BMI weight range for your height. Metric and imperial units supported. Mac OS 9 retro style.", cat: "HealthApplication" },
+    fuelcost: { name: "Fuel Cost Calculator - Trip Fuel Cost Estimator - Gas Calculator", desc: "Free online fuel cost calculator: estimate total fuel cost for any trip. Enter distance, fuel economy (L/100km or MPG), and fuel price. See total cost, fuel needed, cost per km/mile. Perfect for road trips. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
+    salary: { name: "Salary Calculator - Annual to Hourly Converter - Paycheck Calculator", desc: "Free online salary calculator: convert annual salary to hourly, daily, weekly, biweekly, and monthly pay. Enter hours and days per week. Perfect for job offer comparison and budgeting. Mac OS 9 retro style.", cat: "FinanceApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -54,6 +59,11 @@ const tools = {
     age: { name: "Calculadora de Edad - Edad Exacta en Años, Meses, Días - Calculadora de Cumpleaños", desc: "Calculadora de edad gratuita: calcule su edad exacta en años, meses y días. Ingrese su fecha de nacimiento para saber su edad, días vividos, día de la semana que nació y días hasta su próximo cumpleaños.", cat: "UtilitiesApplication" },
     grade: { name: "Calculadora de Calificaciones - Calculadora GPA - Calculadora de Notas", desc: "Calculadora de calificaciones gratuita: agregue materias, puntajes y pesos para calcular su puntaje promedio, GPA en escala 4.0 y calificación por letras. Estilo retro Mac OS 9.", cat: "EducationApplication" },
     duration: { name: "Calculadora de Duración de Tiempo - Calcular Tiempo Entre Fechas", desc: "Calculadora de duración de tiempo gratuita: calcule la diferencia exacta entre dos fechas y horas. Vea la duración en años, meses, semanas, días, horas, minutos y segundos. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    daysuntil: { name: "Calculadora de Días Hasta - Cuenta Regresiva de Días", desc: "Calculadora de días hasta gratuita: descubra cuántos días, semanas, meses y años faltan para cualquier fecha objetivo. Cuenta regresiva para Navidad, Año Nuevo. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    wordcounter: { name: "Contador de Palabras - Contador de Palabras y Caracteres Gratis", desc: "Contador de palabras gratuito: cuente palabras, caracteres (con y sin espacios), oraciones, párrafos, líneas, tiempo de lectura y habla. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    idealweight: { name: "Calculadora de Peso Ideal - Peso Saludable - Fórmulas Devine Hamwi", desc: "Calculadora de peso ideal gratuita: calcule su peso ideal usando las fórmulas Devine, Hamwi, Robinson y Miller. Vea el rango de peso saludable del IMC. Estilo retro Mac OS 9.", cat: "HealthApplication" },
+    fuelcost: { name: "Calculadora de Costo de Combustible - Estimador de Gastos de Gasolina", desc: "Calculadora de costo de combustible gratuita: estime el costo total de combustible para cualquier viaje. Ingrese distancia, consumo y precio. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    salary: { name: "Calculadora de Salario - Convertir Anual a Por Hora", desc: "Calculadora de salario gratuita: convierta salario anual en pago por hora, día, semana, quincena y mes. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -80,6 +90,11 @@ const tools = {
     age: { name: "年龄计算器 - 精确年龄(年/月/日) - 免费在线生日计算器", desc: "免费在线年龄计算器：计算您的精确年龄(年/月/日)。输入出生日期，查看您的年龄、已生存总天数、出生星期和距离下次生日的倒计时。", cat: "UtilitiesApplication" },
     grade: { name: "成绩计算器 - GPA计算器 - 免费在线成绩等级计算器", desc: "免费成绩计算器：添加科目、成绩和权重，计算您的平均成绩、GPA(4.0标准)和等级(A/B/C/D/F)。Mac OS 9 复古风格。", cat: "EducationApplication" },
     duration: { name: "时间时长计算器 - 计算两个日期之间的时间差", desc: "免费在线时间时长计算器：计算两个日期和时间之间的精确差异。以年、月、周、天、小时、分钟、秒显示时长。支持快速预设：今天、最近7天、最近30天、最近1年。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
+    daysuntil: { name: "距离日期计算器 - 距离目标日期还有多少天", desc: "免费在线距离日期计算器：计算距离圣诞节、新年、生日或任何目标日期还有多少天、周、月和年。显示星期。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
+    wordcounter: { name: "字数统计工具 - 在线字数、字符、句子计数器", desc: "免费在线字数统计工具：统计字数、字符数（含/不含空格）、句子数、段落数、行数、阅读时间和说话时间。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
+    idealweight: { name: "理想体重计算器 - 健康体重计算 - Devine Hamwi 公式", desc: "免费在线理想体重计算器：使用 Devine、Hamwi、Robinson 和 Miller 公式计算您的理想体重。查看健康 BMI 体重范围。Mac OS 9 复古风格。", cat: "HealthApplication" },
+    fuelcost: { name: "燃油费用计算器 - 行程油费估算", desc: "免费在线燃油费用计算器：估算任何行程的燃油总费用。输入距离、油耗和油价。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
+    salary: { name: "薪资计算器 - 年薪转时薪 - 工资计算器", desc: "免费在线薪资计算器：将年薪转换为时薪、日薪、周薪、双周薪和月薪。Mac OS 9 复古风格。", cat: "FinanceApplication" },
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -106,6 +121,11 @@ const tools = {
     age: { name: "나이 계산기 - 만 나이(년/월/일) - 무료 온라인 생일 계산기", desc: "무료 온라인 나이 계산기: 생년월일을 입력하면 만 나이를 년/월/일로 정확하게 계산합니다. 총 일수, 태어난 요일, 다음 생일까지 남은 날짜도 함께 확인하세요. 윤년 자동 처리.", cat: "UtilitiesApplication" },
     grade: { name: "성적 계산기 - GPA 계산기 - 무료 온라인 등급 계산기", desc: "무료 성적 계산기: 과목별 점수와 가중치를 입력하여 평균 점수, GPA(4.0 기준), 등급(A/B/C/D/F)을 계산합니다. 학생들의 학업 성적 추적에 완벽한 도구입니다. Mac OS 9 레트로 스타일.", cat: "EducationApplication" },
     duration: { name: "시간 계산기 - 두 날짜/시간 사이의 시간 차이 계산", desc: "무료 온라인 시간 계산기: 두 날짜와 시간 사이의 정확한 차이를 계산합니다. 년, 일, 시간, 분, 초 단위로 표시. 총 시간, 총 분, 총 초도 함께 확인. 퀵 프리셋: 오늘, 최근 7일, 최근 30일, 최근 1년. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
+    daysuntil: { name: "D-Day 계산기 - 목표 날짜까지 남은 일수", desc: "무료 온라인 D-Day 계산기: 크리스마스, 새해, 생일 등 특정 날짜까지 남은 일, 주, 월, 년을 계산합니다. 요일도 함께 표시. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
+    wordcounter: { name: "글자 수 세기 - 단어 수, 글자 수, 문장 수 세는 프로그램", desc: "무료 온라인 글자 수 세기 도구: 단어 수, 글자 수(공백 포함/제외), 문장 수, 문단 수, 줄 수, 읽기 시간, 말하기 시간을 한 번에 확인. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
+    idealweight: { name: "표준 체중 계산기 - 이상적인 체중 계산 - Devine Hamwi 공식", desc: "무료 온라인 표준 체중 계산기: Devine, Hamwi, Robinson, Miller 공식으로 표준 체중을 계산합니다. 건강한 BMI 체중 범위도 확인. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
+    fuelcost: { name: "기름값 계산기 - 주유비 계산 - 연료비 계산기", desc: "무료 온라인 기름값 계산기: 거리, 연비, 기름값을 입력하여 총 주유비와 L/100km를 계산합니다. 여행 경비 계획에 완벽한 도구. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
+    salary: { name: "연봉 계산기 - 연봉 시급 변환 - 월급 계산기", desc: "무료 온라인 연봉 계산기: 연봉을 시급, 일급, 주급, 격주, 월급으로 변환합니다. 근무 시간과 근무 일수를 설정. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -132,13 +152,18 @@ const tools = {
     age: { name: "Calculadora de Idade - Idade Exata em Anos, Meses, Dias - Calculadora de Anivers\u00e1rio", desc: "Calculadora de idade gratuita: calcule sua idade exata em anos, meses e dias. Informe sua data de nascimento para saber sua idade, dias vividos, dia da semana em que nasceu e dias at\u00e9 seu pr\u00f3ximo anivers\u00e1rio.", cat: "UtilitiesApplication" },
     grade: { name: "Calculadora de Notas - Calculadora GPA - Calculadora de Conceitos", desc: "Calculadora de notas gratuita: adicione disciplinas, notas e pesos para calcular sua nota m\u00e9dia, GPA em escala 4.0 e conceito (A/B/C/D/F). Estilo retro Mac OS 9.", cat: "EducationApplication" },
     duration: { name: "Calculadora de Dura\u00e7\u00e3o de Tempo - Calcular Diferen\u00e7a Entre Datas", desc: "Calculadora de dura\u00e7\u00e3o de tempo gratuita: calcule a diferen\u00e7a exata entre duas datas e horas. Veja a dura\u00e7\u00e3o em anos, dias, horas, minutos e segundos. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    daysuntil: { name: "Calculadora de Dias At\u00e9 - Contagem Regressiva At\u00e9 a Data", desc: "Calculadora de dias at\u00e9 gratuita: descubra quantos dias, semanas, meses e anos faltam para qualquer data alvo. Contagem regressiva para Natal, Ano Novo, anivers\u00e1rio. Mostra o dia da semana. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    wordcounter: { name: "Contador de Palavras - Contagem de Palavras e Caracteres Gratuito", desc: "Contador de palavras gratuito: conte palavras, caracteres (com e sem espa\u00e7os), frases, par\u00e1grafos, linhas, tempo de leitura e fala. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    idealweight: { name: "Calculadora de Peso Ideal - Peso Saud\u00e1vel - F\u00f3rmulas Devine Hamwi", desc: "Calculadora de peso ideal gratuita: calcule seu peso ideal usando as f\u00f3rmulas Devine, Hamwi, Robinson e Miller. Veja a faixa de peso saud\u00e1vel do IMC. Estilo retro Mac OS 9.", cat: "HealthApplication" },
+    fuelcost: { name: "Calculadora de Custo de Combust\u00edvel - Estimador de Gastos com Gasolina", desc: "Calculadora de custo de combust\u00edvel gratuita: estime o custo total de combust\u00edvel para qualquer viagem. Insira dist\u00e2ncia, consumo e pre\u00e7o. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    salary: { name: "Calculadora de Sal\u00e1rio - Converter Anual para Por Hora", desc: "Calculadora de sal\u00e1rio gratuita: converta sal\u00e1rio anual em pagamento por hora, dia, semana, quinzena e m\u00eas. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary' };
   return toolMap[p] || 'calorie';
 }
 
