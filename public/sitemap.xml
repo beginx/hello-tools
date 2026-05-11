@@ -276,4 +276,10 @@
   <url><loc>https://oxoxox1.com/zh/tip</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/ko/tip</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/pt/tip</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Average Calculator -->
+  <url><loc>https://oxoxox1.com/en/average</loc><lastmod>2026-05-11</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://oxoxox1.com/es/average</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/zh/average</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/ko/average</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/pt/average</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
