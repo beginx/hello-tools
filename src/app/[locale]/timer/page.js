@@ -60,8 +60,10 @@ export default function TimerPage() {
     const total = (h * 3600 + m * 60 + s) * 1000;
     if (total <= 0) return;
     setCountdownDone(false);
-    startRef.current = Date.now();
-    const endTime = Date.now() + total;
+    // If resuming from pause, use remaining time from elapsed
+    const remainingMs = elapsed > 0 ? total - elapsed : total;
+    if (remainingMs <= 0) return;
+    const endTime = Date.now() + remainingMs;
     intervalRef.current = setInterval(() => {
       const remaining = endTime - Date.now();
       if (remaining <= 0) {
@@ -74,7 +76,7 @@ export default function TimerPage() {
       }
     }, 50);
     setRunning(true);
-  }, [countdownH, countdownM, countdownS, stopTimer]);
+  }, [countdownH, countdownM, countdownS, elapsed, stopTimer]);
 
   const handleStart = useCallback(() => {
     if (mode === 'stopwatch') startStopwatch();
@@ -113,7 +115,7 @@ export default function TimerPage() {
 
   // Determine display mode for countdown: show full time if not started, or remaining
   // When countdownDone and not running, show alarm state
-  const showCountdownInput = mode === 'timer' && !running && !countdownDone;
+  const showCountdownInput = mode === 'timer' && !running && !countdownDone && elapsed === 0;
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start py-6 px-2" style={{ background: 'var(--os9-bg)' }}>
