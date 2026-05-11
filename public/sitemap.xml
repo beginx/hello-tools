@@ -252,4 +252,10 @@
   <url><loc>https://oxoxox1.com/zh/compound</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/ko/compound</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/pt/compound</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Mortgage Calculator -->
+  <url><loc>https://oxoxox1.com/en/mortgage</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://oxoxox1.com/es/mortgage</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/zh/mortgage</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/ko/mortgage</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/pt/mortgage</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

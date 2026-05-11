@@ -20,6 +20,7 @@ const tools = {
     discount: { name: "Discount Calculator - Free Online Percent Off Calculator", desc: "Free online discount calculator: calculate final price after percentage discount, savings amount, and percent off. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
     loan: { name: "Loan Calculator - Free Online Loan Payment Calculator", desc: "Free online loan calculator: calculate monthly payments, total interest, and amortization for any loan. Easy to use Mac OS 9 retro style interface.", cat: "FinanceApplication" },
     compound: { name: "Compound Interest Calculator - Free Online Investment Calculator", desc: "Free online compound interest calculator: see how your investments grow over time with monthly contributions. Year-by-year breakdown, Mac OS 9 retro style.", cat: "FinanceApplication" },
+    mortgage: { name: "Mortgage Calculator - Free Home Loan Payment Calculator", desc: "Free online mortgage calculator: estimate monthly payments including principal, interest, taxes and insurance. Amortization schedule, Mac OS 9 retro style.", cat: "FinanceApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -38,6 +39,7 @@ const tools = {
     discount: { name: "Calculadora de Descuento - Calculadora de Porcentaje de Descuento Gratuita", desc: "Calculadora de descuento gratuita: calcule el precio final despu\u00e9s del descuento y la cantidad ahorrada. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
     loan: { name: "Calculadora de Pr\u00e9stamos - Calculadora de Pago de Pr\u00e9stamo Gratuita", desc: "Calculadora de pr\u00e9stamos gratuita: calcule pagos mensuales, inter\u00e9s total y amortizaci\u00f3n para cualquier pr\u00e9stamo. Interfaz retro Mac OS 9.", cat: "FinanceApplication" },
     compound: { name: "Calculadora de Inter\u00e9s Compuesto - Calculadora de Inversi\u00f3n Gratuita", desc: "Calculadora de inter\u00e9s compuesto gratuita: vea c\u00f3mo crecen sus inversiones con aportes mensuales. Desglose anual, estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    mortgage: { name: "Calculadora de Hipoteca - Calculadora de Pago de Vivienda Gratuita", desc: "Calculadora de hipoteca gratuita: calcule pagos mensuales incluyendo capital, inter\u00e9s, impuestos y seguro. Tabla de amortizaci\u00f3n, estilo retro Mac OS 9.", cat: "FinanceApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -56,6 +58,7 @@ const tools = {
     discount: { name: "\u6298\u6263\u8ba1\u7b97\u5668 - \u514d\u8d39\u5728\u7ebf\u6298\u6263\u8ba1\u7b97\u5668", desc: "\u514d\u8d39\u5728\u7ebf\u6298\u6263\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97\u6298\u6263\u540e\u7684\u6700\u7ec8\u4ef7\u683c\u548c\u60a8\u8282\u7701\u7684\u91d1\u989d\u3002Mac OS 9\u590d\u53e4\u98ce\u683c\u3002", cat: "UtilitiesApplication" },
     loan: { name: "\u8d37\u6b3e\u8ba1\u7b97\u5668 - \u514d\u8d39\u5728\u7ebf\u8d37\u6b3e\u8ba1\u7b97\u5668", desc: "\u514d\u8d39\u5728\u7ebf\u8d37\u6b3e\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97\u6bcf\u6708\u8fd8\u6b3e\u3001\u603b\u5229\u606f\u548c\u5206\u671f\u4ed8\u6b3e\u8868\u3002Mac OS 9\u590d\u53e4\u98ce\u683c\u3002", cat: "FinanceApplication" },
     compound: { name: "\u590d\u5229\u8ba1\u7b97\u5668 - \u514d\u8d39\u5728\u7ebf\u6295\u8d44\u8ba1\u7b97\u5668", desc: "\u514d\u8d39\u590d\u5229\u8ba1\u7b97\u5668\uff1a\u67e5\u770b\u60a8\u7684\u6295\u8d44\u968f\u7740\u6708\u5b58\u800c\u589e\u957f\u7684\u60c5\u51b5\u3002\u5e74\u5ea6\u8be6\u7ec6\u62c6\u89e3\uff0cMac OS 9\u590d\u53e4\u98ce\u683c\u3002", cat: "FinanceApplication" },
+    mortgage: { name: "\u623f\u8d37\u8ba1\u7b97\u5668 - \u514d\u8d39\u5728\u7ebf\u623f\u5c4b\u8d37\u6b3e\u8ba1\u7b97\u5668", desc: "\u514d\u8d39\u623f\u8d37\u8ba1\u7b97\u5668\uff1a\u4f30\u7b97\u6bcf\u6708\u8fd8\u6b3e\u5305\u62ec\u672c\u91d1\u3001\u5229\u606f\u3001\u7a0e\u8d39\u548c\u4fdd\u9669\u3002\u5206\u671f\u4ed8\u6b3e\u8868\uff0cMac OS 9\u590d\u53e4\u98ce\u683c\u3002", cat: "FinanceApplication" },
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -74,6 +77,7 @@ const tools = {
     discount: { name: "\ud560\uc778 \uacc4\uc0b0\uae30 - \ubb34\ub8cc \uc628\ub77c\uc778 \ud560\uc778\uc728 \uacc4\uc0b0\uae30", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \ud560\uc778 \uacc4\uc0b0\uae30: \ud560\uc778 \ud6c4 \ucd5c\uc885 \uac00\uaca9\uacfc \uc808\uc57d \uae08\uc561\uc744 \uacc4\uc0b0\ud569\ub2c8\ub2e4. Mac OS 9 \ubcf5\uace0 \uc2a4\ud0c0\uc77c.", cat: "UtilitiesApplication" },
     loan: { name: "\ub300\ucd9c \uacc4\uc0b0\uae30 - \ubb34\ub8cc \uc628\ub77c\uc778 \ub300\ucd9c \uacc4\uc0b0\uae30", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \ub300\ucd9c \uacc4\uc0b0\uae30: \uc6d4 \uc0c1\ud658\uc561, \ucd1d \uc774\uc790\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4. Mac OS 9 \ubcf5\uace0 \uc2a4\ud0c0\uc77c.", cat: "FinanceApplication" },
     compound: { name: "\ubcf5\ub9ac \uacc4\uc0b0\uae30 - \ubb34\ub8cc \uc628\ub77c\uc778 \ud22c\uc790 \uacc4\uc0b0\uae30", desc: "\ubb34\ub8cc \ubcf5\ub9ac \uacc4\uc0b0\uae30: \uc6d4 \uc801\uae08\uc73c\ub85c \ubaa9\ub3c8\uc774 \uc5bc\ub9c8\ub098 \ubd88\ub9ac\ub294\uc9c0 \ud655\uc778\ud558\uc138\uc694. \ub144\ub3c4\ubcc4 \uc0c1\uc138 \ub0b4\uc5ed. Mac OS 9 \ubcf5\uace0 \uc2a4\ud0c0\uc77c.", cat: "FinanceApplication" },
+    mortgage: { name: "\uc8fc\ud0dd\ub2f4\ubcf4 \ub300\ucd9c \uacc4\uc0b0\uae30 - \ubb34\ub8cc \uc628\ub77c\uc778 \uc8fc\ud0dd\ub2f4\ubcf4 \uacc4\uc0b0\uae30", desc: "\ubb34\ub8cc \uc8fc\ud0dd\ub2f4\ubcf4 \ub300\ucd9c \uacc4\uc0b0\uae30: \uc6d4 \uc0c1\ud658\uc561, \uc774\uc790, \uc7ac\uc0b0\uc138, \ubcf4\ud5d8\ub8cc\ub97c \ud3ec\ud568\ud55c \uacc4\uc0b0. \uc0c1\ud658 \uc77c\uc815\ud45c, Mac OS 9 \ubcf5\uace0 \uc2a4\ud0c0\uc77c.", cat: "FinanceApplication" },
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -92,13 +96,14 @@ const tools = {
     discount: { name: "Calculadora de Desconto - Calculadora de Desconto Percentual Gr\u00e1tis", desc: "Calculadora de desconto gratuita: calcule o pre\u00e7o final ap\u00f3s o desconto e o valor economizado. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
     loan: { name: "Calculadora de Empr\u00e9stimo - Calculadora de Pagamento de Empr\u00e9stimo Gratuita", desc: "Calculadora de empr\u00e9stimo gratuita: calcule pagamentos mensais, juros totais e amortiza\u00e7\u00e3o para qualquer empr\u00e9stimo. Interface retro Mac OS 9.", cat: "FinanceApplication" },
     compound: { name: "Calculadora de Juros Compostos - Calculadora de Investimento Gratuita", desc: "Calculadora de juros compostos gratuita: veja como seus investimentos crescem com contribui\u00e7\u00f5es mensais. Detalhamento anual, estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    mortgage: { name: "Calculadora de Hipoteca - Calculadora de Pagamento de Im\u00f3vel Gratuita", desc: "Calculadora de hipoteca gratuita: calcule pagamentos mensais incluindo principal, juros, impostos e seguro. Tabela de amortiza\u00e7\u00e3o, estilo retro Mac OS 9.", cat: "FinanceApplication" },
   }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage' };
   return toolMap[p] || 'calorie';
 }
 
