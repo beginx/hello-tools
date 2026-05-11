@@ -148,6 +148,15 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <html lang={locale} className="h-full antialiased">
       <head>
+        <title>{tool.name}</title>
+        <meta name="description" content={tool.desc} />
+        <meta property="og:title" content={tool.name} />
+        <meta property="og:description" content={tool.desc} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://oxoxox1.com/${locale}${pathname.replace(/^\/[a-z]{2}/, '')}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={tool.name} />
+        <meta name="twitter:description" content={tool.desc} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: schemaJson }}
@@ -156,6 +165,27 @@ export default async function LocaleLayout({ children, params }) {
       </head>
       <body className="min-h-full flex flex-col" style={{ background: 'var(--os9-bg)' }}>
         {children}
+
+        {/* SEO Content Section — visible text for Google AdSense crawling */}
+        <div className="mt-6 px-2" style={{ maxWidth: 520, width: '100%', margin: '0 auto' }}>
+          <article className="text-xs leading-relaxed" style={{ opacity: 0.75, lineHeight: 1.7 }}>
+            <h2 className="text-sm font-bold mb-2">{tool.name}</h2>
+            <p className="mb-3">{tool.desc}</p>
+            <p className="mb-2">
+              {locale === 'ko' ? `무료 온라인 ${toolKey === 'calorie' ? '도구 모음' : '도구'}입니다. ` :
+               locale === 'zh' ? `免费在线${toolKey === 'calorie' ? '工具集' : '工具'}。` :
+               locale === 'es' ? `Herramienta en línea gratuita. ` :
+               locale === 'pt' ? `Ferramenta online gratuita. ` :
+               `Free online tool. `}
+              {locale === 'ko' ? 'hello-tools는 누구나 쉽게 사용할 수 있는 무료 웹 도구를 제공합니다. 계산기, 변환기, 생성기 등 다양한 도구를 Mac OS 9 레트로 스타일로 만나보세요.' :
+               locale === 'zh' ? 'hello-tools 提供免费在线工具，包括计算器、转换器、生成器等。所有工具均采用 Mac OS 9 复古风格设计。' :
+               locale === 'es' ? 'hello-tools ofrece herramientas web gratuitas y fáciles de usar. Calculadoras, convertidores, generadores y más, con estilo retro Mac OS 9.' :
+               locale === 'pt' ? 'hello-tools oferece ferramentas web gratuitas e fáceis de usar. Calculadoras, conversores, geradores e mais, com estilo retro Mac OS 9.' :
+               `hello-tools offers free, easy-to-use web tools. Calculators, converters, generators, and more — all in Mac OS 9 retro style. No signup required, no data stored.`}
+            </p>
+          </article>
+        </div>
+
         <Analytics />
       </body>
     </html>
