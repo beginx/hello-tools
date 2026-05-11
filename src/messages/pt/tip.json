@@ -1,0 +1,22 @@
+{
+  "title": "Calculadora de Gorjeta - Calculadora de Gorjeta Online Grátis",
+  "bill": "Valor da Conta",
+  "tipPercent": "Porcentagem da Gorjeta",
+  "tip": "Gorjeta (%)",
+  "split": "Dividir",
+  "people": "pessoas",
+  "calculate": "Calcular",
+  "clear": "Limpar",
+  "tipAmount": "Valor da Gorjeta",
+  "totalBill": "Conta Total",
+  "perPerson": "Por Pessoa",
+  "error": "Por favor, insira um valor válido",
+  "placeholderBill": "ex. 75.50",
+  "placeholderTip": "ex. 15",
+  "placeholderSplit": "ex. 2",
+  "seoH1": "Calculadora de Gorjeta Online Grátis",
+  "seoDesc": "Use nossa calculadora de gorjeta online grátis para descobrir rapidamente quanto deixar de gorjeta. Calcule facilmente a porcentagem da gorjeta, o valor da gratificação e divida a conta do jantar por pessoa.",
+  "seoHowTo": "Como Calcular a Gorjeta",
+  "seoHowToDesc": "Para calcular a gorjeta, multiplique o valor da sua conta pela porcentagem da gorjeta. Por exemplo, uma gorjeta de 15 por cento em uma conta de $100 é $15. Os valores comuns de gorjeta em restaurantes são 15 por cento, 18 por cento ou 20 por cento, dependendo do serviço.",
+  "seoSplitDesc": "Nossa calculadora de dividir a conta facilita a divisão do custo total entre o seu grupo. Basta inserir o número de pessoas para ver o valor exato da gorjeta e a conta total por pessoa."
+}

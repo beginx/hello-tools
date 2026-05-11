@@ -23,6 +23,7 @@ const tools = {
     mortgage: { name: "Mortgage Calculator - Free Home Loan Payment Calculator - Mortgage Estimator", desc: "Free online mortgage calculator: estimate your monthly mortgage payment including principal, interest, property taxes, and home insurance. Full 30-year amortization schedule. Calculate how much house you can afford. Mac OS 9 retro style.", cat: "FinanceApplication" },
     bodyfat: { name: "Body Fat Calculator - Body Fat Percentage Calculator - US Navy Method", desc: "Free online body fat calculator: estimate your body fat percentage using the U.S. Navy circumference method. Input height, neck, waist (and hip for women). Color-coded category chart shows essential fat, athlete, fitness, acceptable, and obese ranges.", cat: "HealthApplication" },
     fraction: { name: "Fraction Calculator - Add, Subtract, Multiply, Divide Fractions - Free Online", desc: "Free online fraction calculator: add fractions, subtract fractions, multiply fractions, and divide fractions. Simplifies results to lowest terms. Converts between improper fractions and mixed numbers. Shows decimal equivalent. Perfect for math homework help.", cat: "MathApplication" },
+    tip: { name: "Tip Calculator - Free Online Gratuity Calculator - Bill Split Calculator", desc: "Free online tip calculator and gratuity calculator: calculate tip amount, total bill including tip, and per person cost when splitting the bill. Choose 10%, 15%, 18%, or 20% tip or enter a custom percentage. Perfect for restaurant dinner bills, parties, and group dining.", cat: "FinanceApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -44,6 +45,7 @@ const tools = {
     mortgage: { name: "Calculadora de Hipoteca - Calculadora de Pago de Vivienda Gratuita", desc: "Calculadora de hipoteca gratuita: calcule pagos mensuales incluyendo capital, inter\u00e9s, impuestos y seguro. Tabla de amortizaci\u00f3n, estilo retro Mac OS 9.", cat: "FinanceApplication" },
     bodyfat: { name: "Calculadora de Grasa Corporal - Calculadora de Porcentaje de Grasa", desc: "Calculadora de grasa corporal gratuita: estime su porcentaje de grasa corporal usando el m\u00e9todo de la Armada de EE.UU. Gr\u00e1fico de categor\u00edas, estilo retro Mac OS 9.", cat: "HealthApplication" },
   fraction: { name: "Calculadora de Fracciones - Sumar, Restar, Multiplicar, Dividir Fracciones - Simplificar Fracciones", desc: "Calculadora de fracciones gratuita: sumar fracciones, restar fracciones, multiplicar fracciones y dividir fracciones. Simplifica resultados a la fracción irreducible. Convierte entre fracciones impropias y números mixtos. Muestra el equivalente decimal. Ideal para tareas de matemáticas.", cat: "MathApplication" },
+    tip: { name: "Calculadora de Propinas - Calculadora de Gratificación Gratuita - Dividir Cuenta", desc: "Calculadora de propinas gratuita: calcule el monto de la propina, el total de la cuenta y el costo por persona. Elija 10%, 15%, 18% o 20% de propina o ingrese un porcentaje personalizado.", cat: "FinanceApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -65,6 +67,7 @@ const tools = {
     mortgage: { name: "\u623f\u8d37\u8ba1\u7b97\u5668 - \u514d\u8d39\u5728\u7ebf\u623f\u5c4b\u8d37\u6b3e\u8ba1\u7b97\u5668", desc: "\u514d\u8d39\u623f\u8d37\u8ba1\u7b97\u5668\uff1a\u4f30\u7b97\u6bcf\u6708\u8fd8\u6b3e\u5305\u62ec\u672c\u91d1\u3001\u5229\u606f\u3001\u7a0e\u8d39\u548c\u4fdd\u9669\u3002\u5206\u671f\u4ed8\u6b3e\u8868\uff0cMac OS 9\u590d\u53e4\u98ce\u683c\u3002", cat: "FinanceApplication" },
     bodyfat: { name: "\u4f53\u8102\u7387\u8ba1\u7b97\u5668 - \u4f53\u8102\u767e\u5206\u6bd4\u8ba1\u7b97\u5668", desc: "\u514d\u8d39\u4f53\u8102\u7387\u8ba1\u7b97\u5668\uff1a\u4f7f\u7528\u7f8e\u56fd\u6d77\u519b\u65b9\u6cd5\u4f30\u7b97\u60a8\u7684\u4f53\u8102\u7387\u3002\u989c\u8272\u7f16\u7801\u56fe\u8868\uff0cMac OS 9\u590d\u53e4\u98ce\u683c\u3002", cat: "HealthApplication" },
   fraction: { name: "分数计算器 - 分数加减乘除 - 在线分数化简器 - 带分数计算器", desc: "免费在线分数计算器：分数加法、分数减法、分数乘法、分数除法。自动将结果化简为最简分数。支持假分数和带分数互转。显示小数等效值。适合数学作业辅助。", cat: "MathApplication" },
+    tip: { name: "小费计算器 - 免费在线小费计算器 - 账单分摊", desc: "免费在线小费计算器：输入账单金额和小费比例，计算小费金额、总账单和每人分摊费用。支持10%、15%、18%、20%预设比例或自定义。", cat: "FinanceApplication" },
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -86,6 +89,7 @@ const tools = {
     mortgage: { name: "\uc8fc\ud0dd\ub2f4\ubcf4 \ub300\ucd9c \uacc4\uc0b0\uae30 - \ubb34\ub8cc \uc628\ub77c\uc778 \uc8fc\ud0dd\ub2f4\ubcf4 \uacc4\uc0b0\uae30", desc: "\ubb34\ub8cc \uc8fc\ud0dd\ub2f4\ubcf4 \ub300\ucd9c \uacc4\uc0b0\uae30: \uc6d4 \uc0c1\ud658\uc561, \uc774\uc790, \uc7ac\uc0b0\uc138, \ubcf4\ud5d8\ub8cc\ub97c \ud3ec\ud568\ud55c \uacc4\uc0b0. \uc0c1\ud658 \uc77c\uc815\ud45c, Mac OS 9 \ubcf5\uace0 \uc2a4\ud0c0\uc77c.", cat: "FinanceApplication" },
     bodyfat: { name: "\uccb4\uc9c0\ubc29\uc728 \uacc4\uc0b0\uae30 - \uccb4\uc9c0\ubc29 \ubc31\ubd84\uc728 \uacc4\uc0b0\uae30", desc: "\ubb34\ub8cc \uccb4\uc9c0\ubc29\uc728 \uacc4\uc0b0\uae30: \ubbf8\uad6d \ud574\uad70 US Navy \ubc29\uc2dd\uc73c\ub85c \uccb4\uc9c0\ubc29\uc728\uc744 \ucd94\uc815\ud569\ub2c8\ub2e4. \uac83\ub0b4 \uc2e4\ud328 \uc0c9\uc0c1 \uce74\ud14c\uace0\ub9ac\ud45c, Mac OS 9 \ubcf5\uace0 \uc2a4\ud0c0\uc77c.", cat: "HealthApplication" },
   fraction: { name: "분수 계산기 - 분수 덧셈, 뺄셈, 곱셈, 나눗셈 - 분수 약분 계산기", desc: "무료 온라인 분수 계산기: 분수 더하기, 분수 빼기, 분수 곱하기, 분수 나누기. 결과를 자동으로 기약분수로 약분합니다. 가분수와 대분수 변환을 지원합니다. 소수 형태도 함께 표시합니다. 수학 숙제에 완벽한 도구입니다.", cat: "MathApplication" },
+    tip: { name: "팁 계산기 - 무료 온라인 팁 계산기 - 더치페이 계산기", desc: "무료 온라인 팁 계산기: 팁 금액, 총 계산서, 인당 부담 금액을 계산합니다. 10%, 15%, 18%, 20% 프리셋 또는 직접 입력. 식당 계산서, 더치페이에 완벽한 도구입니다.", cat: "FinanceApplication" },
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -107,13 +111,14 @@ const tools = {
     mortgage: { name: "Calculadora de Hipoteca - Calculadora de Pagamento de Im\u00f3vel Gratuita", desc: "Calculadora de hipoteca gratuita: calcule pagamentos mensais incluindo principal, juros, impostos e seguro. Tabela de amortiza\u00e7\u00e3o, estilo retro Mac OS 9.", cat: "FinanceApplication" },
     bodyfat: { name: "Calculadora de Gordura Corporal - Calculadora de Percentual de Gordura", desc: "Calculadora de gordura corporal gratuita: estime seu percentual de gordura usando o m\u00e9todo da Marinha dos EUA. Gr\u00e1fico de categorias, estilo retro Mac OS 9.", cat: "HealthApplication" },
     fraction: { name: "Calculadora de Fra\u00e7\u00f5es - Somar, Subtrair, Multiplicar, Dividir Fra\u00e7\u00f5es - Simplificar Fra\u00e7\u00f5es", desc: "Calculadora de fra\u00e7\u00f5es gratuita: somar fra\u00e7\u00f5es, subtrair fra\u00e7\u00f5es, multiplicar fra\u00e7\u00f5es e dividir fra\u00e7\u00f5es. Simplifica resultados para a fra\u00e7\u00e3o irredut\u00edvel. Converte entre fra\u00e7\u00f5es impr\u00f3prias e n\u00fameros mistos. Mostra o equivalente decimal. Ideal para li\u00e7\u00f5es de matem\u00e1tica.", cat: "MathApplication" },
+    tip: { name: "Calculadora de Gorjeta - Calculadora de Gratifica\u00e7\u00e3o Gratuita", desc: "Calculadora de gorjeta gratuita: calcule o valor da gorjeta, total da conta e valor por pessoa ao dividir a conta. Escolha 10%, 15%, 18% ou 20% de gorjeta ou insira um percentual personalizado.", cat: "FinanceApplication" },
   }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip' };
   return toolMap[p] || 'calorie';
 }
 

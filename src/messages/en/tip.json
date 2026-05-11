@@ -1,0 +1,22 @@
+{
+  "title": "Tip Calculator - Free Online Gratuity Calculator",
+  "bill": "Bill Amount",
+  "tipPercent": "Tip Percentage",
+  "tip": "Tip (%)",
+  "split": "Split",
+  "people": "people",
+  "calculate": "Calculate",
+  "clear": "Clear",
+  "tipAmount": "Tip Amount",
+  "totalBill": "Total Bill",
+  "perPerson": "Per Person",
+  "error": "Please enter a valid amount",
+  "placeholderBill": "e.g. 75.50",
+  "placeholderTip": "e.g. 15",
+  "placeholderSplit": "e.g. 2",
+  "seoH1": "Free Online Tip Calculator",
+  "seoDesc": "Use our free online tip calculator to quickly figure out how much to tip. Easily calculate tip percentage, gratuity amount, and split the dinner bill per person.",
+  "seoHowTo": "How to Calculate Tip",
+  "seoHowToDesc": "To calculate tip, multiply your bill amount by the tip percentage. For example, a 15 percent tip on a $100 bill is $15. Common restaurant tip amounts are 15 percent tip, 18 percent tip, or 20 percent tip depending on the service.",
+  "seoSplitDesc": "Our split bill calculator makes it easy to divide the total cost among your group. Just enter the number of people to see the exact tip amount and total bill per person."
+}

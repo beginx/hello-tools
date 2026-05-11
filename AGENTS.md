@@ -123,3 +123,39 @@ const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
 - 빌드: `npx next build` (Turbopack), `Compiled successfully`
 - 배포: GitHub push → Vercel 자동 배포
 <!-- END:sisyphus-postmortem -->
+
+<!-- BEGIN:sisyphus-adsense -->
+# AdSense 운영 규칙 (2026-05-11)
+
+## Google AdSense 상태
+- **사이트**: `oxoxox1.com`
+- **상태**: "주의 필요" — "게시자 콘텐츠가 없는 화면에 Google 게재 광고"
+- **해결 조치**: layout.js에 동적 `<title>` + `<meta name="description">` + `<og:title/description>` + `<twitter:card>` 추가 완료
+- **해결 조치**: layout.js에 모든 페이지 하단 공통 SEO 텍스트 섹션 추가 완료 (5개국어)
+- **최초 검토 요청**: 2026-05-06 (거절)
+- **다음 검토 요청 가능일**: **2026년 5월 12일 (화)** ← 중요! 이 날짜 이후에만 재요청 가능
+
+## 검토 요청 제한 규칙
+- 검토 요청 가능 횟수가 모두 소진되면 일정 기간 동안 요청 불가
+- 현재: 2026-05-12까지 대기 필요
+- 재요청 시: AdSense 계정 → 사이트 → oxoxox1.com → 검토 요청 → "위반 사항을 해결했습니다" 선택
+- 검토 소요 기간: 일반적으로 1-2주 (최대 4주)
+
+## 새 도구 추가 시 반드시 확인할 사항 (AdSense 관련)
+1. **`layout.js`의 `tools` 객체에 해당 locale 도구 metadata 등록** (name + desc + cat)
+2. **`layout.js`의 `toolMap`에 경로 추가**
+3. **`sitemap.xml`에 5개 locale URL 추가** (en/es/zh/ko/pt)
+4. **`<title>`과 `<meta name="description">`는 layout.js가 `tool.name`/`tool.desc`로 자동 생성**하므로 별도 작업 불필요
+5. **단, page.js 하단의 SEO 텍스트 섹션은 layout.js의 공통 섹션만으로는 부족할 수 있음** — 계산기 UI만 있는 페이지는 Google이 "콘텐츠 없음"으로 판단 가능
+   - 대책: layout.js에 공통 SEO 섹션을 추가해 모든 페이지에 최소한의 텍스트 콘텐츠 보장
+
+## AdSense 재심사 워크플로 (도구 추가 후)
+```
+도구 추가 및 배포
+  → 1-2일 경과 (Google 크롤러가 새 콘텐츠 색인)
+  → AdSense 계정 → 사이트 → 검토 요청
+  → 1-2주 대기
+  → 승인 or 거절
+  → 거절 시: 구체적 사유 확인 → 수정 → 다음 검토 가능일까지 대기 → 재요청
+```
+<!-- END:sisyphus-adsense -->
