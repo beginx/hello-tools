@@ -58,7 +58,7 @@ export default function DiscountPage() {
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">{t('originalPrice')}</label>
             <input className="os9-input w-full" type="number" step="any" min="0"
-              value={price} onChange={(e) => setPrice(e.target.value)}
+              value={price} onChange={(e) => setPrice(e.target.value)} placeholder={t('placeholderPrice')}
               style={{ fontSize: 16, padding: '10px 8px' }} />
           </div>
 
@@ -66,7 +66,7 @@ export default function DiscountPage() {
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">{t('discountPercent')}</label>
             <input className="os9-input w-full" type="number" step="any" min="0" max="100"
-              value={discount} onChange={(e) => setDiscount(e.target.value)}
+              value={discount} onChange={(e) => setDiscount(e.target.value)} placeholder={t('placeholderPercent')}
               style={{ fontSize: 16, padding: '10px 8px' }} />
           </div>
 

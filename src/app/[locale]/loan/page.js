@@ -73,7 +73,7 @@ export default function LoanPage() {
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">{t('amount')}</label>
             <input className="os9-input w-full" type="number" step="any" min="0"
-              value={amount} onChange={(e) => setAmount(e.target.value)}
+              value={amount} onChange={(e) => setAmount(e.target.value)} placeholder={t('placeholderAmount')}
               style={{ fontSize: 16, padding: '10px 8px' }} />
           </div>
 
@@ -81,7 +81,7 @@ export default function LoanPage() {
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">{t('interestRate')}</label>
             <input className="os9-input w-full" type="number" step="any" min="0"
-              value={rate} onChange={(e) => setRate(e.target.value)}
+              value={rate} onChange={(e) => setRate(e.target.value)} placeholder={t('placeholderRate')}
               style={{ fontSize: 16, padding: '10px 8px' }} />
           </div>
 
@@ -89,7 +89,7 @@ export default function LoanPage() {
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">{t('termYears')}</label>
             <input className="os9-input w-full" type="number" step="any" min="0"
-              value={years} onChange={(e) => setYears(e.target.value)}
+              value={years} onChange={(e) => setYears(e.target.value)} placeholder={t('placeholderTerm')}
               style={{ fontSize: 16, padding: '10px 8px' }} />
           </div>
 
