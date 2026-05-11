@@ -26,6 +26,7 @@ const tools = {
     tip: { name: "Tip Calculator - Free Online Gratuity Calculator - Bill Split Calculator", desc: "Free online tip calculator and gratuity calculator: calculate tip amount, total bill including tip, and per person cost when splitting the bill. Choose 10%, 15%, 18%, or 20% tip or enter a custom percentage. Perfect for restaurant dinner bills, parties, and group dining.", cat: "FinanceApplication" },
     average: { name: "Average Calculator - Mean, Median, Mode Calculator - Free Online", desc: "Free online average calculator: calculate the mean, median, and mode of a set of numbers. Add multiple numbers and instantly see the average, sum, count, median, range, and mode. Perfect for students, teachers, and data analysis. Mac OS 9 retro style.", cat: "MathApplication" },
     age: { name: "Age Calculator - Exact Age in Years, Months, Days - Free Online Birthday Calculator", desc: "Free online age calculator: calculate your exact age in years, months, and days. Enter your date of birth to find out exactly how old you are, total days lived, day of the week you were born, and days until your next birthday. Accurate and easy to use.", cat: "UtilitiesApplication" },
+    grade: { name: "Grade Calculator - GPA Calculator - Free Online Letter Grade Calculator", desc: "Free online grade calculator and GPA calculator: add subjects, scores, and weights to calculate your average score, GPA on a 4.0 scale, and letter grade (A/B/C/D/F). Perfect for students tracking academic performance. Mac OS 9 retro style.", cat: "EducationApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -50,6 +51,7 @@ const tools = {
     tip: { name: "Calculadora de Propinas - Calculadora de Gratificación Gratuita - Dividir Cuenta", desc: "Calculadora de propinas gratuita: calcule el monto de la propina, el total de la cuenta y el costo por persona. Elija 10%, 15%, 18% o 20% de propina o ingrese un porcentaje personalizado.", cat: "FinanceApplication" },
     average: { name: "Calculadora de Promedio - Calcular Media, Mediana, Moda - Gratis", desc: "Calculadora de promedio gratuita: calcule la media, mediana y moda de un conjunto de números. Agregue múltiples números y vea el promedio, suma, mediana, rango y moda al instante. Estilo retro Mac OS 9.", cat: "MathApplication" },
     age: { name: "Calculadora de Edad - Edad Exacta en Años, Meses, Días - Calculadora de Cumpleaños", desc: "Calculadora de edad gratuita: calcule su edad exacta en años, meses y días. Ingrese su fecha de nacimiento para saber su edad, días vividos, día de la semana que nació y días hasta su próximo cumpleaños.", cat: "UtilitiesApplication" },
+    grade: { name: "Calculadora de Calificaciones - Calculadora GPA - Calculadora de Notas", desc: "Calculadora de calificaciones gratuita: agregue materias, puntajes y pesos para calcular su puntaje promedio, GPA en escala 4.0 y calificación por letras. Estilo retro Mac OS 9.", cat: "EducationApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -74,6 +76,7 @@ const tools = {
     tip: { name: "小费计算器 - 免费在线小费计算器 - 账单分摊", desc: "免费在线小费计算器：输入账单金额和小费比例，计算小费金额、总账单和每人分摊费用。支持10%、15%、18%、20%预设比例或自定义。", cat: "FinanceApplication" },
     average: { name: "平均值计算器 - 计算平均值、中位数、众数 - 免费在线", desc: "免费在线平均值计算器：计算一组数字的平均值、中位数和众数。添加多个数字，立即查看平均值、总和、个数、中位数、范围和众数。Mac OS 9 复古风格。", cat: "MathApplication" },
     age: { name: "年龄计算器 - 精确年龄(年/月/日) - 免费在线生日计算器", desc: "免费在线年龄计算器：计算您的精确年龄(年/月/日)。输入出生日期，查看您的年龄、已生存总天数、出生星期和距离下次生日的倒计时。", cat: "UtilitiesApplication" },
+    grade: { name: "成绩计算器 - GPA计算器 - 免费在线成绩等级计算器", desc: "免费成绩计算器：添加科目、成绩和权重，计算您的平均成绩、GPA(4.0标准)和等级(A/B/C/D/F)。Mac OS 9 复古风格。", cat: "EducationApplication" },
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -98,6 +101,7 @@ const tools = {
     tip: { name: "팁 계산기 - 무료 온라인 팁 계산기 - 더치페이 계산기", desc: "무료 온라인 팁 계산기: 팁 금액, 총 계산서, 인당 부담 금액을 계산합니다. 10%, 15%, 18%, 20% 프리셋 또는 직접 입력. 식당 계산서, 더치페이에 완벽한 도구입니다.", cat: "FinanceApplication" },
     average: { name: "평균 계산기 - 평균, 중앙값, 최빈값 계산기 - 무료 온라인", desc: "무료 온라인 평균 계산기: 여러 숫자의 평균, 중앙값, 최빈값을 계산합니다. 숫자를 추가하면 평균, 합계, 개수, 중앙값, 범위, 최빈값을 바로 확인할 수 있습니다. Mac OS 9 레트로 스타일.", cat: "MathApplication" },
     age: { name: "나이 계산기 - 만 나이(년/월/일) - 무료 온라인 생일 계산기", desc: "무료 온라인 나이 계산기: 생년월일을 입력하면 만 나이를 년/월/일로 정확하게 계산합니다. 총 일수, 태어난 요일, 다음 생일까지 남은 날짜도 함께 확인하세요. 윤년 자동 처리.", cat: "UtilitiesApplication" },
+    grade: { name: "성적 계산기 - GPA 계산기 - 무료 온라인 등급 계산기", desc: "무료 성적 계산기: 과목별 점수와 가중치를 입력하여 평균 점수, GPA(4.0 기준), 등급(A/B/C/D/F)을 계산합니다. 학생들의 학업 성적 추적에 완벽한 도구입니다. Mac OS 9 레트로 스타일.", cat: "EducationApplication" },
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -122,13 +126,14 @@ const tools = {
     tip: { name: "Calculadora de Gorjeta - Calculadora de Gratifica\u00e7\u00e3o Gratuita", desc: "Calculadora de gorjeta gratuita: calcule o valor da gorjeta, total da conta e valor por pessoa ao dividir a conta. Escolha 10%, 15%, 18% ou 20% de gorjeta ou insira um percentual personalizado.", cat: "FinanceApplication" },
     average: { name: "Calculadora de M\u00e9dia - Calcular M\u00e9dia, Mediana, Moda - Gr\u00e1tis", desc: "Calculadora de m\u00e9dia gratuita: calcule a m\u00e9dia, mediana e moda de um conjunto de n\u00fameros. Adicione v\u00e1rios n\u00fameros e veja a m\u00e9dia, soma, mediana, amplitude e moda instantaneamente. Estilo retro Mac OS 9.", cat: "MathApplication" },
     age: { name: "Calculadora de Idade - Idade Exata em Anos, Meses, Dias - Calculadora de Anivers\u00e1rio", desc: "Calculadora de idade gratuita: calcule sua idade exata em anos, meses e dias. Informe sua data de nascimento para saber sua idade, dias vividos, dia da semana em que nasceu e dias at\u00e9 seu pr\u00f3ximo anivers\u00e1rio.", cat: "UtilitiesApplication" },
+    grade: { name: "Calculadora de Notas - Calculadora GPA - Calculadora de Conceitos", desc: "Calculadora de notas gratuita: adicione disciplinas, notas e pesos para calcular sua nota m\u00e9dia, GPA em escala 4.0 e conceito (A/B/C/D/F). Estilo retro Mac OS 9.", cat: "EducationApplication" },
   }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade' };
   return toolMap[p] || 'calorie';
 }
 
