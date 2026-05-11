@@ -34,6 +34,14 @@ export default function LoanPage() {
   const locale = params?.locale || 'en';
   const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/loan'; };
+  const fmt = (n) => {
+    if (locale === 'ko') return '₩' + Math.round(n).toLocaleString('ko-KR');
+    if (locale === 'es' || locale === 'pt') {
+      const opts = { style: 'currency', currency: locale === 'es' ? 'EUR' : 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2 };
+      return new Intl.NumberFormat(locale === 'es' ? 'es-ES' : 'pt-BR', opts).format(n);
+    }
+    return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
 
   const [amount, setAmount] = useState('');
   const [rate, setRate] = useState('');
@@ -43,8 +51,6 @@ export default function LoanPage() {
   const calc = () => {
     setResult(calcLoan(amount, rate, years));
   };
-
-  const fmt = (n) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start py-6 px-2" style={{ background: 'var(--os9-bg)' }}>

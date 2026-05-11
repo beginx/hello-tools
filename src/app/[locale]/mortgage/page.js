@@ -68,13 +68,19 @@ function calcMortgage(price, down, ratePct, years, tax, ins) {
   };
 }
 
-const fmt = (n) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-
 export default function MortgagePage() {
   const params = useParams();
   const locale = params?.locale || 'en';
   const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/mortgage'; };
+  const fmt = (n) => {
+    if (locale === 'ko') return '₩' + Math.round(n).toLocaleString('ko-KR');
+    if (locale === 'es' || locale === 'pt') {
+      const opts = { style: 'currency', currency: locale === 'es' ? 'EUR' : 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2 };
+      return new Intl.NumberFormat(locale === 'es' ? 'es-ES' : 'pt-BR', opts).format(n);
+    }
+    return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
 
   const [price, setPrice] = useState('');
   const [down, setDown] = useState('');

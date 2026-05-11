@@ -14,6 +14,14 @@ export default function DiscountPage() {
   const locale = params?.locale || 'en';
   const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/discount'; };
+  const fmt = (n) => {
+    if (locale === 'ko') return '₩' + Math.round(n).toLocaleString('ko-KR');
+    if (locale === 'es' || locale === 'pt') {
+      const opts = { style: 'currency', currency: locale === 'es' ? 'EUR' : 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2 };
+      return new Intl.NumberFormat(locale === 'es' ? 'es-ES' : 'pt-BR', opts).format(n);
+    }
+    return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  };
 
   const [price, setPrice] = useState('');
   const [discount, setDiscount] = useState('');
@@ -79,11 +87,11 @@ export default function DiscountPage() {
             <div className="os9-result" style={{ padding: '16px 12px' }}>
               <div className="flex justify-between items-center mb-3">
                 <span className="os9-label text-sm">{t('finalPrice')}</span>
-                <span className="font-bold text-lg" style={{ color: 'var(--os9-red)' }}>${result.final.toFixed(2)}</span>
+                <span className="font-bold text-lg" style={{ color: 'var(--os9-red)' }}>{fmt(result.final)}</span>
               </div>
               <div className="flex justify-between items-center">
                 <span className="os9-label text-sm">{t('youSave')}</span>
-                <span className="font-bold text-lg" style={{ color: '#22aa22' }}>${result.saved.toFixed(2)}</span>
+                <span className="font-bold text-lg" style={{ color: '#22aa22' }}>{fmt(result.saved)}</span>
               </div>
             </div>
           )}
