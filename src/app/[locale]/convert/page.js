@@ -163,6 +163,19 @@ export default function ConvertPage() {
               <button className="os9-btn w-full text-xs py-2" onClick={copyRes}>{copied ? t('copied') : t('copy')}</button>
             </div>
           )}
+
+          {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/fraction`} className="underline">Fraction Calculator</a>
+                <a href={`/${locale}/percent`} className="underline">Percent Calculator</a>
+                <a href={`/${locale}/currency`} className="underline">Currency Converter</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 520, width: '100%' }}>

@@ -137,6 +137,19 @@ export default function AveragePage() {
           {nums.length === 0 && (
             <p className="text-xs text-center" style={{ opacity: 0.5 }}>{t('error')}</p>
           )}
+
+          {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/grade`} className="underline">Grade Calculator</a>
+                <a href={`/${locale}/percent`} className="underline">Percent Calculator</a>
+                <a href={`/${locale}/fraction`} className="underline">Fraction Calculator</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 420, width: '100%' }}>

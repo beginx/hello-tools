@@ -148,6 +148,19 @@ export default function AgePage() {
             <button className="text-xs underline" style={{ opacity: 0.5, padding: '6px 12px' }}
               onClick={() => { setYear(''); setMonth(''); setDay(''); setResult(null); }}>{t('clear')}</button>
           </div>
+
+          {/* SEO Description */}
+          <p className="text-xs leading-relaxed mt-4 px-1" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+
+          {/* Related Tools (English only) */}
+          <div className="mt-2 px-1 text-xs" style={{ opacity: 0.55 }}>
+            <span style={{ fontWeight: 600 }}>Related Tools:</span>
+            <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+              <a href={`/${locale}/daysuntil`} className="underline">Days Until Calculator</a>
+              <a href={`/${locale}/duedate`} className="underline">Due Date Calculator</a>
+              <a href={`/${locale}/duration`} className="underline">Time Duration Calculator</a>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 420, width: '100%' }}>

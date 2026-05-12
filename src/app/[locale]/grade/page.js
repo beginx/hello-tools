@@ -134,6 +134,19 @@ export default function GradePage() {
               onClick={() => { setSubjects([]); setName(''); setScore(''); setWeight(''); setResult(null); }}>{t('clear')}</button>
           </div>
 
+          {/* SEO Description */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/average`} className="underline">Average Calculator</a>
+                <a href={`/${locale}/fraction`} className="underline">Fraction Calculator</a>
+                <a href={`/${locale}/percent`} className="underline">Percent Calculator</a>
+              </div>
+            </div>
+          </div>
+
           {/* Result */}
           {result && (
             <div className="os9-result" style={{ padding: '16px 12px' }}>

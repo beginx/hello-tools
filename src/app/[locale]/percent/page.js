@@ -181,7 +181,21 @@ export default function PercentPage() {
                   </div>
                 )}
               </div>
-            )}
+)}
+          </div>
+
+          {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/fraction`} className="underline">Fraction Calculator</a>
+                <a href={`/${locale}/grade`} className="underline">Grade Calculator</a>
+                <a href={`/${locale}/discount`} className="underline">Discount Calculator</a>
+                <a href={`/${locale}/tip`} className="underline">Tip Calculator</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

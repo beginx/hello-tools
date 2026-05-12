@@ -11,7 +11,7 @@ const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const MAX_SIZE = 10 * 1024 * 1024; // 10MB
 const TABS = ['resize', 'crop', 'compress', 'convert'];
-const TAB_ICONS = ['\uD83D\uDCCD', '\u2702\uFE0F', '\uD83D\uDCE6', '\uD83D\uDD04']; // 📍, ✂️, 📦, 🔄
+const TAB_ICONS = ['uD83DuDCCD', 'u2702uFE0F', 'uD83DuDCE6', 'uD83DuDD04']; // 📍, ✂️, 📦, 🔄
 
 export default function PhotoPage() {
   const params = useParams();
@@ -358,6 +358,18 @@ export default function PhotoPage() {
               <canvas ref={canvasRef} style={{ display: 'none' }} />
             </>
           )}
+                  {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/pdf`} className="underline">PDF Text Extractor</a>
+                <a href={`/${locale}/qr`} className="underline">QR Code Generator</a>
+                <a href={`/${locale}/password`} className="underline">Password Generator</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 640, width: '100%' }}>

@@ -14,12 +14,12 @@ const TABS = ['tabCount', 'tabCase', 'tabBase64'];
 function countStats(text) {
   return {
     characters: text.length,
-    charNoSpaces: text.replace(/\s/g, '').length,
-    words: text.trim() ? text.trim().split(/\s+/).length : 0,
+    charNoSpaces: text.replace(/s/g, '').length,
+    words: text.trim() ? text.trim().split(/s+/).length : 0,
     sentences: text.split(/[.!?]+/).filter(s => s.trim()).length,
-    paragraphs: text.split(/\n\s*\n/).filter(p => p.trim()).length,
-    lines: text.split('\n').length,
-    digits: (text.match(/\d/g) || []).length,
+    paragraphs: text.split(/ns*n/).filter(p => p.trim()).length,
+    lines: text.split('n').length,
+    digits: (text.match(/d/g) || []).length,
     letters: (text.match(/[a-zA-Z]/g) || []).length,
   };
 }
@@ -43,7 +43,7 @@ export default function TextPage() {
     switch (caseMode) {
       case 'uppercase': return caseInput.toUpperCase();
       case 'lowercase': return caseInput.toLowerCase();
-      case 'titleCase': return caseInput.replace(/\w\S*/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase());
+      case 'titleCase': return caseInput.replace(/wS*/g, w => w[0].toUpperCase() + w.slice(1).toLowerCase());
       case 'toggleCase': return [...caseInput].map(c =>
         c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()
       ).join('');
@@ -196,6 +196,18 @@ export default function TextPage() {
                 )}
               </div>
             )}
+          </div>
+                  {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/wordcounter`} className="underline">Word Counter</a>
+                <a href={`/${locale}/pdf`} className="underline">PDF Text Extractor</a>
+                <a href={`/${locale}/timer`} className="underline">Timer</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

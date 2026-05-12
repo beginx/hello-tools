@@ -262,6 +262,19 @@ export default function TimerPage() {
               </div>
             </div>
           )}
+
+          {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/duration`} className="underline">Time Duration Calculator</a>
+                <a href={`/${locale}/date`} className="underline">Date Calculator</a>
+                <a href={`/${locale}/daysuntil`} className="underline">Days Until Calculator</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

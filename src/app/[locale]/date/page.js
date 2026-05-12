@@ -11,7 +11,7 @@ const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const TABS = ['tabDaysBetween', 'tabDday', 'tabAddSubtract', 'tabAge', 'tabAnniversary'];
 const TAB_KEYS = ['daysBetween', 'dday', 'addSubtract', 'age', 'anniversary'];
-const TAB_ICONS = ['\uD83D\uDCC5', '\u23F3', '\u2795', '\uD83C\uDFB1', '\uD83C\uDF89']; // 📅, ⏳, ➕, 🎱, 🎉
+const TAB_ICONS = ['uD83DuDCC5', 'u23F3', 'u2795', 'uD83CuDFB1', 'uD83CuDF89']; // 📅, ⏳, ➕, 🎱, 🎉
 
 function daysBetween(a, b) {
   const ms = Math.abs(a.getTime() - b.getTime());
@@ -263,6 +263,19 @@ export default function DatePage() {
               )}
             </div>
           )}
+
+          {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/daysuntil`} className="underline">Days Until Calculator</a>
+                <a href={`/${locale}/age`} className="underline">Age Calculator</a>
+                <a href={`/${locale}/duration`} className="underline">Time Duration Calculator</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 520, width: '100%' }}>

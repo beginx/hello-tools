@@ -156,6 +156,18 @@ export default function RetirementPage() {
               )}
             </div>
           )}
+                  {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/compound`} className="underline">Compound Interest Calculator</a>
+                <a href={`/${locale}/sip`} className="underline">SIP Calculator</a>
+                <a href={`/${locale}/simpleinterest`} className="underline">Simple Interest Calculator</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 500, width: '100%' }}>

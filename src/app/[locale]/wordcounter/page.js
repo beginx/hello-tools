@@ -18,12 +18,12 @@ export default function WordCounterPage() {
   const [text, setText] = useState('');
 
   const stats = useMemo(() => {
-    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    const words = text.trim() ? text.trim().split(/s+/).length : 0;
     const chars = text.length;
-    const charsNoSpace = text.replace(/\s/g, '').length;
+    const charsNoSpace = text.replace(/s/g, '').length;
     const sentences = text.trim() ? text.split(/[.!?]+/).filter(s => s.trim().length > 0).length : 0;
-    const paragraphs = text.trim() ? text.split(/\n\s*\n/).filter(p => p.trim().length > 0).length : 0;
-    const lines = text ? text.split(/\n/).length : 0;
+    const paragraphs = text.trim() ? text.split(/ns*n/).filter(p => p.trim().length > 0).length : 0;
+    const lines = text ? text.split(/n/).length : 0;
     const readingTime = Math.max(1, Math.round(words / 200));
     const speakingTime = Math.max(1, Math.round(words / 150));
     return { words, chars, charsNoSpace, sentences, paragraphs, lines, readingTime, speakingTime };
@@ -96,6 +96,18 @@ export default function WordCounterPage() {
               {t('clear')}
             </button>
           )}
+                  {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/text`} className="underline">Text Analyzer</a>
+                <a href={`/${locale}/pdf`} className="underline">PDF Text Extractor</a>
+                <a href={`/${locale}/timer`} className="underline">Timer</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 520, width: '100%' }}>

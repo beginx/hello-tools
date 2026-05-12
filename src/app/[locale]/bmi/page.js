@@ -140,6 +140,18 @@ export default function BMIPage() {
               </div>
             </div>
           )}
+                  {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>Calculate your Body Mass Index (BMI) instantly using your height and weight. This free BMI calculator tells you whether you are underweight, normal, overweight, or obese based on standard BMI categories. Track your health and fitness progress with accurate BMI measurements.</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/idealweight`} className="underline">Ideal Weight Calculator</a>
+                <a href={`/${locale}/bodyfat`} className="underline">Body Fat Calculator</a>
+                <a href={`/${locale}/calorie`} className="underline">Calorie Calculator</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 480, width: '100%' }}>

@@ -141,21 +141,59 @@ const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
 - 재요청 시: AdSense 계정 → 사이트 → oxoxox1.com → 검토 요청 → "위반 사항을 해결했습니다" 선택
 - 검토 소요 기간: 일반적으로 1-2주 (최대 4주)
 
+## SEO 작업 내역 (2026-05-12)
+### 각 page.js 하단에 추가한 콘텐츠
+1. **SEO Description (5개국어)** — 각 도구별 고유한 서비스 설명 60-120단어
+   - `messages/{locale}/{tool}.json`에 `"seoDescription"` 키 추가
+   - page.js 하단에 `<p>{t('seoDescription')}</p>`로 렌더링
+   - BMI 등 `app.json`을 공유하는 기존 도구는 직접 하드코딩 텍스트 사용
+2. **Related Tools (영어 only)** — 관련 도구 3-4개 링크
+   - 내부 링크로 SEO에 직접적 도움, 언어 번역 불필요
+   - `page.js` 하단에 `<a href={\`/\${locale}/tool\`}>` 패턴으로 삽입
+
+### 패턴: page.js 하단 구조
+```
+          {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={...}>Tool Name</a>
+              </div>
+            </div>
+          </div>
+```
+
 ## 새 도구 추가 시 반드시 확인할 사항 (AdSense 관련)
 1. **`layout.js`의 `tools` 객체에 해당 locale 도구 metadata 등록** (name + desc + cat)
 2. **`layout.js`의 `toolMap`에 경로 추가**
 3. **`sitemap.xml`에 5개 locale URL 추가** (en/es/zh/ko/pt)
 4. **`<title>`과 `<meta name="description">`는 layout.js가 `tool.name`/`tool.desc`로 자동 생성**하므로 별도 작업 불필요
-5. **단, page.js 하단의 SEO 텍스트 섹션은 layout.js의 공통 섹션만으로는 부족할 수 있음** — 계산기 UI만 있는 페이지는 Google이 "콘텐츠 없음"으로 판단 가능
-   - 대책: layout.js에 공통 SEO 섹션을 추가해 모든 페이지에 최소한의 텍스트 콘텐츠 보장
+5. **page.js 하단에 SEO Description (5개국어) + Related Tools (영어) 추가** — 위 패턴 참조
+   - 각 도구별로 고유한 `seoDescription` 텍스트 작성 (messages JSON에 5개국어로 추가)
+   - English는 전문가 수준의 60-120단어 설명 작성
+   - ko는 한국어 번역, es/zh/pt는 영어 fallback 사용
+6. **messages JSON이 없는 도구 (BMI 등 기존 25개 앱)** — page.js에 직접 텍스트 하드코딩
 
 ## AdSense 재심사 워크플로 (도구 추가 후)
 ```
 도구 추가 및 배포
   → 1-2일 경과 (Google 크롤러가 새 콘텐츠 색인)
-  → AdSense 계정 → 사이트 → 검토 요청
-  → 1-2주 대기
+  → AdSense 계정 → 사이트 → oxoxox1.com → 검토 요청 → "위반 사항을 해결했습니다" 선택
+  → 1-2주 대기 (최대 4주)
   → 승인 or 거절
   → 거절 시: 구체적 사유 확인 → 수정 → 다음 검토 가능일까지 대기 → 재요청
 ```
+
+## 주의: 대량 JSON 수정 시 BOM 문제
+- PowerShell `Set-Content`는 UTF-8 BOM을 자동 추가함
+- JSON 파일에 BOM이 있으면 Next.js 빌드 시 `Unable to make a module from invalid JSON` 발생
+- **해결**: Python 스크립트로 `data[:3] == b'\xef\xbb\xbf'` 확인 후 제거
+- 또는 `Set-Content` 대신 Python `json.dump` 사용
+
+## 주의: 템플릿 리터럴 이스케이프
+- Python에서 JSX `{` `}`를 포함한 문자열 생성 시 템플릿 리터럴 백틱이 깨질 수 있음
+- `{\`/\${locale}/tool\`}` 패턴이 Python에서 `{\\`/\${locale}/tool\\`}`로 잘못 생성됨
+- **해결**: Python 스크립트로 `\\`` → `` ` `` 일괄 치환 필요
 <!-- END:sisyphus-adsense -->

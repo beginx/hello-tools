@@ -93,6 +93,18 @@ export default function PrivacyPage() {
               <p style={{ opacity: 0.8 }}>{t('changesDesc')}</p>
             </div>
           </div>
+                  {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/age`} className="underline">Age Calculator</a>
+                <a href={`/${locale}/bmi`} className="underline">BMI Calculator</a>
+                <a href={`/${locale}/timer`} className="underline">Timer</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 640, width: '100%' }}>

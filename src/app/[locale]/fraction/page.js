@@ -215,6 +215,19 @@ export default function FractionPage() {
         </div>
       </div>
 
+      {/* SEO Description */}
+      <div className="mt-4 px-1" style={{ maxWidth: 460, width: '100%' }}>
+        <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+        <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+          <span style={{ fontWeight: 600 }}>Related Tools:</span>
+          <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+            <a href={`/${locale}/percent`} className="underline">Percent Calculator</a>
+            <a href={`/${locale}/grade`} className="underline">Grade Calculator</a>
+            <a href={`/${locale}/convert`} className="underline">Unit Converter</a>
+          </div>
+        </div>
+      </div>
+
       {/* SEO Content Section — hidden on small screens, visible on desktop below the calculator */}
       <div className="mt-6" style={{ maxWidth: 460, width: '100%' }}>
         <article className="text-xs leading-relaxed" style={{ opacity: 0.75, lineHeight: 1.7 }}>

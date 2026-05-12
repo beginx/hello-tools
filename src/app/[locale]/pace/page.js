@@ -147,6 +147,18 @@ export default function PacePage() {
             {mode === 'time' && calcTime && <div><div className="os9-big-number">{calcTime.label}</div><div className="text-xs" style={{ opacity: 0.5 }}>{t('totalTime')}</div></div>}
             {mode === 'distance' && calcDistance && <div><div className="os9-big-number">{calcDistance.toFixed(2)}</div><div className="text-xs" style={{ opacity: 0.5 }}>{unit === 'km' ? 'km' : 'mi'}</div></div>}
           </div>
+                  {/* SEO Description + Related Tools */}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
+              <span style={{ fontWeight: 600 }}>Related Tools:</span>
+              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
+                <a href={`/${locale}/duration`} className="underline">Time Duration Calculator</a>
+                <a href={`/${locale}/timer`} className="underline">Timer</a>
+                <a href={`/${locale}/date`} className="underline">Date Calculator</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className="os9-footer" style={{ maxWidth: 460, width: '100%' }}>
