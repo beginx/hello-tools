@@ -243,11 +243,11 @@ export default function LovePage() {
             <label className="os9-label block text-xs mb-1">{t('zodiacOptional')}</label>
             <div className="flex gap-2">
               <select className="os9-select flex-1 text-sm" value={month1} onChange={function(e) { setMonth1(e.target.value); setResult(null); }}>
-                <option value="">{name1 || t('yourName')}</option>
+                <option value="">{t('month')}</option>
                 {MONTHS.map(function(m) { return <option key={m.v} value={m.v}>{m.l}</option>; })}
               </select>
               <select className="os9-select flex-1 text-sm" value={month2} onChange={function(e) { setMonth2(e.target.value); setResult(null); }}>
-                <option value="">{name2 || t('crushName')}</option>
+                <option value="">{t('month')}</option>
                 {MONTHS.map(function(m) { return <option key={m.v} value={m.v}>{m.l}</option>; })}
               </select>
             </div>
