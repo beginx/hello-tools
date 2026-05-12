@@ -38,6 +38,11 @@ const tools = {
     duedate: { name: "Due Date Calculator - Pregnancy Due Date Calculator - Conception Date Estimator", desc: "Free online due date calculator: calculate your estimated due date, conception date, fertile window, and current pregnancy week using Naegele's rule. Enter first day of last menstrual period. Shows trimester schedule. Mac OS 9 retro style.", cat: "HealthApplication" },
     pace: { name: "Pace Calculator - Running Pace Calculator - Speed Distance Time Calculator", desc: "Free online pace calculator for runners: calculate running pace (min/km), speed (km/h), time, or distance. Enter any two values to find the third. Perfect for marathon training, 5K, 10K, and half marathon planning. Mac OS 9 retro style.", cat: "HealthApplication" },
     sip: { name: "SIP Calculator - Systematic Investment Plan Calculator - Mutual Fund Returns", desc: "Free online SIP calculator: estimate the maturity amount of your systematic investment plan. Enter monthly investment, time period, and expected return rate. Shows total invested vs estimated returns with year-by-year growth table. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    vat: { name: "VAT Calculator - Value Added Tax Calculator - GST Calculator", desc: "Free online VAT calculator: add or remove VAT/GST from any amount. Choose from 10 common VAT rates worldwide including UK, EU, India, Australia, Japan. Shows net amount, VAT amount, and gross amount. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    simpleinterest: { name: "Simple Interest Calculator - Easy Interest Calculator - Loan Interest", desc: "Free online simple interest calculator: calculate interest earned on any principal amount. Enter principal, interest rate, and time period in years, months, or days. Shows total interest and final amount. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    period: { name: "Period Calculator - Menstrual Cycle Calculator - Ovulation Calendar", desc: "Free online period calculator: track your menstrual cycle and predict next period, ovulation day, and fertile window. Enter last period date, cycle length, and period length. Shows days until next period. Mac OS 9 retro style.", cat: "HealthApplication" },
+    markup: { name: "Markup Calculator - Margin and Markup Calculator - Profit Calculator", desc: "Free online markup calculator: calculate selling price, profit, and margin from cost and markup percentage. Perfect for retail pricing, e-commerce, and small business. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    waterintake: { name: "Water Intake Calculator - Daily Water Intake - How Much Water to Drink", desc: "Free online water intake calculator: calculate how much water you should drink daily based on your weight and exercise level. Shows results in ml, cups, and fl oz. Uses medical guidelines (33ml per kg). Mac OS 9 retro style.", cat: "HealthApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -74,6 +79,12 @@ const tools = {
     duedate: { name: "Calculadora de Fecha de Parto - Embarazo", desc: "Calculadora de fecha de parto gratuita: calcule su fecha probable de parto, fecha de concepción y semana actual de embarazo usando la regla de Naegele. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     pace: { name: "Calculadora de Ritmo - Ritmo de Carrera", desc: "Calculadora de ritmo gratuita para corredores: calcule ritmo (min/km), velocidad (km/h), tiempo o distancia. Perfecta para entrenamiento de maratón. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     sip: { name: "Calculadora SIP - Plan de Inversión Sistemática", desc: "Calculadora SIP gratuita: estime el monto de vencimiento de su plan de inversión sistemática. Ingrese inversión mensual, plazo y rendimiento esperado. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    vat: { name: "Calculadora de IVA - Impuesto al Valor Agregado", desc: "Calculadora de IVA gratuita: agregue o quite IVA de cualquier cantidad. Elija entre 10 tasas comunes. Muestra monto neto, IVA y monto bruto. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    simpleinterest: { name: "Calculadora de Interés Simple", desc: "Calculadora de interés simple gratuita: calcule intereses sobre cualquier capital. Ingrese capital, tasa y plazo. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    period: { name: "Calculadora de Período Menstrual", desc: "Calculadora de período menstrual gratuita: prediga su próximo período y ventana fértil. Estilo retro Mac OS 9.", cat: "HealthApplication" },
+    markup: { name: "Calculadora de Margen - Margen de Ganancia", desc: "Calculadora de margen gratuita: calcule precio de venta, ganancia y margen. Perfecta para comercio minorista. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    waterintake: { name: "Calculadora de Agua Diaria", desc: "Calculadora de agua gratuita: calcule cuánta agua debe beber según su peso y ejercicio. Estilo retro Mac OS 9.", cat: "HealthApplication" },
+
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -110,6 +121,12 @@ const tools = {
     duedate: { name: "预产期计算器 - 怀孕预产期估算", desc: "免费在线预产期计算器：使用Naegele规则计算预产期、受孕日期和当前孕周。显示孕期阶段。Mac OS 9 复古风格。", cat: "HealthApplication" },
     pace: { name: "配速计算器 - 跑步配速计算", desc: "免费在线跑步配速计算器：计算配速、速度、时间或距离。输入任意两个值推算出第三个。适合马拉松训练。Mac OS 9 复古风格。", cat: "HealthApplication" },
     sip: { name: "SIP计算器 - 系统投资计划", desc: "免费在线SIP计算器：估算系统投资计划的到期金额。输入每月投资、期限和预期回报率。Mac OS 9 复古风格。", cat: "FinanceApplication" },
+    vat: { name: "增值税计算器 - GST计算器", desc: "免费在线增值税计算器：添加或扣除增值税。选择10种常见税率。显示不含税金额、增值税和含税金额。Mac OS 9 复古风格。", cat: "FinanceApplication" },
+    simpleinterest: { name: "单利计算器", desc: "免费在线单利计算器：计算本金的利息。输入本金、利率和期限。显示总利息和最终金额。Mac OS 9 复古风格。", cat: "FinanceApplication" },
+    period: { name: "生理周期计算器", desc: "免费在线生理周期计算器：预测下次月经、排卵日和排卵期。Mac OS 9 复古风格。", cat: "HealthApplication" },
+    markup: { name: "加价率计算器 - 利润率计算", desc: "免费在线加价率计算器：从成本和加价率计算售价、利润和毛利率。Mac OS 9 复古风格。", cat: "FinanceApplication" },
+    waterintake: { name: "每日饮水量计算器", desc: "免费在线每日饮水量计算器：根据体重和运动量计算每日饮水量。Mac OS 9 复古风格。", cat: "HealthApplication" },
+
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -146,6 +163,12 @@ const tools = {
     duedate: { name: "출산 예정일 계산기 - 임신 주수 계산", desc: "무료 온라인 출산 예정일 계산기: Naegele 법칙으로 예정일, 수정일, 현재 주수를 계산합니다. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
     pace: { name: "페이스 계산기 - 러닝 페이스 계산", desc: "무료 온라인 러닝 페이스 계산기: 페이스, 속도, 시간, 거리 중 두 값을 입력하면 나머지를 계산합니다. 마라톤 트레이닝에 완벽. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
     sip: { name: "SIP 계산기 - 적립식 투자 계산", desc: "무료 온라인 SIP 계산기: 적립식 투자의 만기 금액을 추정합니다. 월 투자액, 기간, 예상 수익률 입력. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
+    vat: { name: "부가세 계산기 - VAT 계산기", desc: "무료 온라인 부가세 계산기: 부가세 포함/분리 계산. 10가지 국가별 VAT 세율 지원. 공급가액, 부가세액, 총 금액 표시. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
+    simpleinterest: { name: "단리 계산기 - 간편 이자 계산기", desc: "무료 온라인 단리 계산기: 원금, 이자율, 기간을 입력하여 이자와 총 금액을 계산합니다. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
+    period: { name: "생리 주기 계산기 - 월경 주기 계산", desc: "무료 온라인 생리 주기 계산기: 다음 생리일과 배란일을 예측합니다. 생리 주기와 기간 입력. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
+    markup: { name: "마진율 계산기 - 이익률 계산", desc: "무료 온라인 마진율 계산기: 원가와 마진율로 판매가, 이익, 마진율을 계산합니다. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
+    waterintake: { name: "하루 물 섭취량 계산기", desc: "무료 온라인 하루 물 섭취량 계산기: 체중과 운동량에 따른 하루 물 권장량을 계산합니다. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
+
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -188,7 +211,7 @@ const tools = {
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary', '/overtime': 'overtime', '/retirement': 'retirement', '/duedate': 'duedate', '/pace': 'pace', '/sip': 'sip' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary', '/overtime': 'overtime', '/retirement': 'retirement', '/duedate': 'duedate', '/pace': 'pace', '/sip': 'sip', '/vat': 'vat', '/simpleinterest': 'simpleinterest', '/period': 'period', '/markup': 'markup', '/waterintake': 'waterintake' };
   return toolMap[p] || 'calorie';
 }
 
