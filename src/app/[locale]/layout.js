@@ -45,6 +45,7 @@ const tools = {
     waterintake: { name: "Water Intake Calculator - Daily Water Intake - How Much Water to Drink", desc: "Free online water intake calculator: calculate how much water you should drink daily based on your weight and exercise level. Shows results in ml, cups, and fl oz. Uses medical guidelines (33ml per kg). Mac OS 9 retro style.", cat: "HealthApplication" },
     salestax: { name: "Sales Tax Calculator - US State Sales Tax Calculator - Free Online", desc: "Free online US sales tax calculator: calculate sales tax for any US state. Add tax to a price or remove tax from a total. Includes 2026 state sales tax rates and average combined rates for all 50 states. Mac OS 9 retro style.", cat: "FinanceApplication" },
     petage: { name: "Pet Age Calculator - Dog Years to Human Years & Cat Age Calculator - Free Online", desc: "Free online pet age calculator: convert dog years and cat years to human years. Enter your pet's age, breed size (small, medium, large, giant), and species to get an accurate human-equivalent age. Uses AVMA veterinary formulas. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
+    love: { name: "Love Calculator - Love Percentage & Zodiac Compatibility - Free Online", desc: "Free online love calculator: calculate love compatibility between two names and zodiac signs. Get your love percentage, FLAMES result, and zodiac match score. Fun to share with friends and crushes. Mac OS 9 retro style.", cat: "EntertainmentApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -88,6 +89,7 @@ const tools = {
     waterintake: { name: "Calculadora de Agua Diaria", desc: "Calculadora de agua gratuita: calcule cuánta agua debe beber según su peso y ejercicio. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     salestax: { name: "Calculadora de Impuesto a las Ventas - Impuesto Estatal EE.UU.", desc: "Calculadora de impuesto a las ventas gratuita: calcule el impuesto a las ventas para cualquier estado de EE.UU. Agregue o quite impuesto de un precio. Incluye tasas de 2026 para los 50 estados. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
     petage: { name: "Calculadora de Edad de Mascotas - Edad de Perros y Gatos en Años Humanos", desc: "Calculadora gratuita de edad de mascotas: convierta años de perros y gatos a años humanos. Ingrese la edad, tamaño y especie de su mascota. Utiliza fórmulas veterinarias AVMA. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    love: { name: "Calculadora de Amor - Compatibilidad de Nombres y Zodiaco - Gratis", desc: "Calculadora de amor gratuita: calcule la compatibilidad amorosa entre dos nombres y signos zodiacales. Obtenga su porcentaje de amor, resultado FLAMES y puntuación zodiacal. Estilo retro Mac OS 9.", cat: "EntertainmentApplication" },
 
   },
   zh: {
@@ -132,6 +134,7 @@ const tools = {
     waterintake: { name: "每日饮水量计算器", desc: "免费在线每日饮水量计算器：根据体重和运动量计算每日饮水量。Mac OS 9 复古风格。", cat: "HealthApplication" },
     salestax: { name: "销售税计算器 - 美国各州销售税计算器", desc: "免费在线美国销售税计算器：为任何美国州计算销售税。对价格加税或从总额中退税。包含2026年各州销售税率。Mac OS 9 复古风格。", cat: "FinanceApplication" },
     petage: { name: "宠物年龄计算器 - 狗年与猫年转人类年龄计算器", desc: "免费在线宠物年龄计算器：将狗年和猫年转换为人类年龄。输入宠物年龄、体型(小型/中型/大型/巨型)和物种，获得准确的人类等效年龄。基于AVMA兽医公式。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
+    love: { name: "爱情计算器 - 姓名配对与星座配对 - 免费在线", desc: "免费在线爱情计算器：通过姓名和星座计算爱情匹配度。获取爱情百分比、FLAMES结果和星座配对分数。适合与朋友分享的趣味工具。Mac OS 9 复古风格。", cat: "EntertainmentApplication" },
 
   },
   ko: {
@@ -176,6 +179,7 @@ const tools = {
     waterintake: { name: "하루 물 섭취량 계산기", desc: "무료 온라인 하루 물 섭취량 계산기: 체중과 운동량에 따른 하루 물 권장량을 계산합니다. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
     salestax: { name: "판매세 계산기 - 미국 주별 판매세 계산기", desc: "무료 온라인 미국 판매세 계산기: 미국 50개 주의 판매세를 계산합니다. 가격에 세금 추가 또는 총액에서 세금 제거. 2026년 주별 판매세율 포함. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
     petage: { name: "반려동물 나이 계산기 - 개나이 고양이나이 사람나이 변환", desc: "무료 온라인 반려동물 나이 계산기: 개와 고양이의 나이를 사람 나이로 변환합니다. 반려동물의 나이, 품종 크기(소형/중형/대형/초대형), 종을 입력하면 정확한 사람 환산 나이를 알려드립니다. AVMA 수의학 공식 기반. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
+    love: { name: "사랑 계산기 - 이름 궁합 & 별자리 궁합 - 무료 온라인", desc: "무료 온라인 사랑 계산기: 두 사람의 이름과 별자리로 연애 궁합을 계산합니다. 사랑 점수, FLAMES 결과, 별자리 궁합을 한 번에 확인. 친구나 짝꿍과 재미로 공유하세요. Mac OS 9 레트로 스타일.", cat: "EntertainmentApplication" },
 
   },
   pt: {
@@ -215,13 +219,14 @@ const tools = {
     sip: { name: "Calculadora SIP - Plano de Investimento Sistem\u00e1tico", desc: "Calculadora SIP gratuita: estime o valor de vencimento do seu plano de investimento sistem\u00e1tico. Insira investimento mensal, prazo e retorno esperado. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
     salestax: { name: "Calculadora de Imposto sobre Vendas - Imposto Estadual EUA", desc: "Calculadora de imposto sobre vendas gratuita: calcule o imposto sobre vendas para qualquer estado dos EUA. Adicione ou remova imposto de um pre\u00e7o. Inclui taxas de 2026 para todos os 50 estados. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
     petage: { name: "Calculadora de Idade de Animais - Idade de C\u00e3es e Gatos em Anos Humanos", desc: "Calculadora gratuita de idade de animais de estima\u00e7\u00e3o: converta anos de c\u00e3es e gatos em anos humanos. Insira a idade, porte (pequeno, m\u00e9dio, grande, gigante) e esp\u00e9cie. Usa f\u00f3rmulas veterin\u00e1rias AVMA. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    love: { name: "Calculadora de Amor - Compatibilidade de Nomes e Zod\u00edaco", desc: "Calculadora de amor gratuita: calcule a compatibilidade amorosa entre dois nomes e signos do zod\u00edaco. Obtenha sua porcentagem de amor, resultado FLAMES e pontua\u00e7\u00e3o zodiacal. Estilo retro Mac OS 9.", cat: "EntertainmentApplication" },
   }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary', '/overtime': 'overtime', '/retirement': 'retirement', '/duedate': 'duedate', '/pace': 'pace', '/sip': 'sip', '/vat': 'vat', '/simpleinterest': 'simpleinterest', '/period': 'period', '/markup': 'markup', '/waterintake': 'waterintake', '/salestax': 'salestax', '/petage': 'petage' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary', '/overtime': 'overtime', '/retirement': 'retirement', '/duedate': 'duedate', '/pace': 'pace', '/sip': 'sip', '/vat': 'vat', '/simpleinterest': 'simpleinterest', '/period': 'period', '/markup': 'markup', '/waterintake': 'waterintake', '/salestax': 'salestax', '/petage': 'petage', '/love': 'love' };
   return toolMap[p] || 'calorie';
 }
 
