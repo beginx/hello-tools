@@ -67,8 +67,8 @@ export default function SimpleInterestPage() {
             <div>
               <label className="os9-label">{t('period')}</label>
               <div className="flex gap-2">
-                <input className="os9-input flex-1" type="number" min="0" value={period} onChange={(e) => setPeriod(e.target.value)} />
-                <select className="os9-select w-auto" value={periodUnit} onChange={(e) => setPeriodUnit(e.target.value)}>
+                <input className="os9-input" type="number" min="0" value={period} onChange={(e) => setPeriod(e.target.value)} style={{ flex: 3, minWidth: 0 }} />
+                <select className="os9-select" value={periodUnit} onChange={(e) => setPeriodUnit(e.target.value)} style={{ flex: 1, minWidth: 0 }}>
                   <option value="years">{t('years')}</option>
                   <option value="months">{t('months')}</option>
                   <option value="days">{t('days')}</option>
