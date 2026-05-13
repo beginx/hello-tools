@@ -1,0 +1,17 @@
+{
+  "title": "EMI 계산기",
+  "subtitle": "대출 월상환액 계산 — 원리금균등분할상환",
+  "loanAmount": "대출 금액 ($)",
+  "interestRate": "연이율 (%)",
+  "tenureYears": "대출 기간 (년)",
+  "tenureMonths": "대출 기간 (개월)",
+  "tenureUnit": "기간 단위",
+  "calculate": "계산",
+  "clear": "지우기",
+  "monthlyEmi": "월 상환액 (EMI)",
+  "totalInterest": "총 이자",
+  "totalPayment": "총 납입액 (원금 + 이자)",
+  "error": "올바른 양수를 입력해주세요",
+  "seoDescription": "무료 온라인 EMI 계산기: 주택담보대출, 자동차대출, 신용대출, 학자금대출의 월 상환액(EMI)을 계산합니다. 대출 금액, 연이율, 상환 기간을 입력하면 월 상환액, 총 이자, 총 상환액을 즉시 확인할 수 있습니다. 대출 상품 비교, 월 예산 계획, 대출 실제 비용 이해에 완벽한 도구입니다. Mac OS 9 레트로 스타일. 회원가입 불필요, 브라우저에서 완전히 동작합니다.",
+  "relatedTitle": "관련 도구"
+}

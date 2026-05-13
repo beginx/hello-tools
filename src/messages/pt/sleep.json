@@ -1,0 +1,18 @@
+{
+  "title": "Calculadora de Sono",
+  "subtitle": "Encontre seu Melhor Horário para Dormir ou Acordar",
+  "modeWake": "Preciso acordar às",
+  "modeBed": "Vou dormir às",
+  "fallAsleep": "Minutos para adormecer",
+  "calculate": "Calcular",
+  "clear": "Limpar",
+  "bestBedtimes": "Melhores Horários para Dormir",
+  "bestWaketimes": "Melhores Horários para Acordar",
+  "recommendation": "Para acordar descansado, procure acordar ao final de um ciclo de sono.",
+  "hoursLabel": "Sono",
+  "cyclesLabel": "Ciclos",
+  "amTime": "AM",
+  "pmTime": "PM",
+  "seoDescription": "Calculadora de sono gratuita: encontre o melhor horário para dormir e acordar usando a ciência do ciclo do sono. Baseada em ciclos de 90 minutos. Estilo retro Mac OS 9.",
+  "relatedTitle": "Ferramentas Relacionadas"
+}

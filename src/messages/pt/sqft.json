@@ -1,0 +1,19 @@
+{
+  "title": "Calculadora de Metragem Quadrada",
+  "subtitle": "Calcule a Área em Pés Quadrados",
+  "selectShape": "Selecionar Forma",
+  "rectangle": "Retângulo / Quadrado",
+  "circle": "Círculo",
+  "triangle": "Triângulo",
+  "length": "Comprimento (ft)",
+  "width": "Largura (ft)",
+  "radius": "Raio (ft)",
+  "base": "Base (ft)",
+  "height": "Altura (ft)",
+  "calculate": "Calcular",
+  "clear": "Limpar",
+  "areaResult": "Área Total",
+  "sqft": "pés²",
+  "seoDescription": "Calculadora de metragem quadrada gratuita: calcule a área de qualquer cômodo, casa ou propriedade em pés quadrados. Suporta retângulo, quadrado, círculo e triângulo. Estilo retro Mac OS 9.",
+  "relatedTitle": "Ferramentas Relacionadas"
+}

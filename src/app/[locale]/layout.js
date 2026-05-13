@@ -46,6 +46,9 @@ const tools = {
     salestax: { name: "Sales Tax Calculator - US State Sales Tax Calculator - Free Online", desc: "Free online US sales tax calculator: calculate sales tax for any US state. Add tax to a price or remove tax from a total. Includes 2026 state sales tax rates and average combined rates for all 50 states. Mac OS 9 retro style.", cat: "FinanceApplication" },
     petage: { name: "Pet Age Calculator - Dog Years to Human Years & Cat Age Calculator - Free Online", desc: "Free online pet age calculator: convert dog years and cat years to human years. Enter your pet's age, breed size (small, medium, large, giant), and species to get an accurate human-equivalent age. Uses AVMA veterinary formulas. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
     love: { name: "Love Calculator - Love Percentage & Zodiac Compatibility - Free Online", desc: "Free online love calculator: calculate love compatibility between two names and zodiac signs. Get your love percentage, FLAMES result, and zodiac match score. Fun to share with friends and crushes. Mac OS 9 retro style.", cat: "EntertainmentApplication" },
+    emi: { name: "EMI Calculator - Loan EMI Calculator - Monthly Payment Calculator - Free Online", desc: "Free online EMI calculator: calculate your monthly loan EMI (Equated Monthly Installment) for home loans, car loans, personal loans, and education loans. Enter loan amount, interest rate, and tenure to see EMI, total interest, and total payment with amortization schedule. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    sqft: { name: "Square Footage Calculator - Sq Ft Calculator - Room Area Calculator - Free Online", desc: "Free online square footage calculator: calculate the area of any room, house, or property in square feet. Supports rectangle, square, circle, and L-shaped rooms. Perfect for flooring, painting, tiling, and real estate. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
+    sleep: { name: "Sleep Calculator - Best Bedtime Calculator - Wake Up Refreshed - Free Online", desc: "Free online sleep calculator: find the best bedtime and wake-up time using sleep cycle science. Based on 90-minute sleep cycles, it calculates optimal times to wake up between cycles. Enter when you need to wake up or go to bed. Mac OS 9 retro style.", cat: "HealthApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -90,7 +93,9 @@ const tools = {
     salestax: { name: "Calculadora de Impuesto a las Ventas - Impuesto Estatal EE.UU.", desc: "Calculadora de impuesto a las ventas gratuita: calcule el impuesto a las ventas para cualquier estado de EE.UU. Agregue o quite impuesto de un precio. Incluye tasas de 2026 para los 50 estados. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
     petage: { name: "Calculadora de Edad de Mascotas - Edad de Perros y Gatos en Años Humanos", desc: "Calculadora gratuita de edad de mascotas: convierta años de perros y gatos a años humanos. Ingrese la edad, tamaño y especie de su mascota. Utiliza fórmulas veterinarias AVMA. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
     love: { name: "Calculadora de Amor - Compatibilidad de Nombres y Zodiaco - Gratis", desc: "Calculadora de amor gratuita: calcule la compatibilidad amorosa entre dos nombres y signos zodiacales. Obtenga su porcentaje de amor, resultado FLAMES y puntuación zodiacal. Estilo retro Mac OS 9.", cat: "EntertainmentApplication" },
-
+    emi: { name: "Calculadora de EMI - Cuota Mensual de Préstamo - Calculadora de Pago Mensual", desc: "Calculadora de EMI gratuita: calcule su cuota mensual (EMI) para préstamos hipotecarios, de auto, personales y educativos. Ingrese monto, tasa de interés y plazo. Muestra tabla de amortización. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    sqft: { name: "Calculadora de Metraje Cuadrado - Calculadora de Área de Habitación", desc: "Calculadora de metraje cuadrado gratuita: calcule el área de cualquier habitación, casa o propiedad en pies cuadrados. Soporta rectángulo, cuadrado, círculo y forma de L. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    sleep: { name: "Calculadora de Sueño - Mejor Hora de Acostarse - Despertar Descansado", desc: "Calculadora de sueño gratuita: encuentre la mejor hora para acostarse y despertarse usando la ciencia del ciclo del sueño. Basada en ciclos de 90 minutos. Estilo retro Mac OS 9.", cat: "HealthApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -135,7 +140,9 @@ const tools = {
     salestax: { name: "销售税计算器 - 美国各州销售税计算器", desc: "免费在线美国销售税计算器：为任何美国州计算销售税。对价格加税或从总额中退税。包含2026年各州销售税率。Mac OS 9 复古风格。", cat: "FinanceApplication" },
     petage: { name: "宠物年龄计算器 - 狗年与猫年转人类年龄计算器", desc: "免费在线宠物年龄计算器：将狗年和猫年转换为人类年龄。输入宠物年龄、体型(小型/中型/大型/巨型)和物种，获得准确的人类等效年龄。基于AVMA兽医公式。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
     love: { name: "爱情计算器 - 姓名配对与星座配对 - 免费在线", desc: "免费在线爱情计算器：通过姓名和星座计算爱情匹配度。获取爱情百分比、FLAMES结果和星座配对分数。适合与朋友分享的趣味工具。Mac OS 9 复古风格。", cat: "EntertainmentApplication" },
-
+    emi: { name: "EMI计算器 - 贷款月供计算器 - 房贷车贷计算", desc: "免费在线EMI计算器：计算贷款月供(等额本息)。支持房贷、车贷、个人贷款和教育贷款。输入金额、利率和期限，查看月供、总利息和还款计划表。Mac OS 9 复古风格。", cat: "FinanceApplication" },
+    sqft: { name: "面积计算器 - 平方英尺计算器 - 房间面积计算", desc: "免费在线面积计算器：计算房间、房屋或房产面积(平方英尺)。支持长方形、正方形、圆形和L形房间。适合地板、油漆、瓷砖和房地产使用。Mac OS 9 复古风格。", cat: "UtilitiesApplication" },
+    sleep: { name: "睡眠计算器 - 最佳就寝时间 - 醒来精神饱满", desc: "免费在线睡眠计算器：通过睡眠周期科学找到最佳入睡和起床时间。基于90分钟睡眠周期，计算周期之间最佳醒来时间。Mac OS 9 复古风格。", cat: "HealthApplication" },
   },
   ko: {
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
@@ -180,7 +187,9 @@ const tools = {
     salestax: { name: "판매세 계산기 - 미국 주별 판매세 계산기", desc: "무료 온라인 미국 판매세 계산기: 미국 50개 주의 판매세를 계산합니다. 가격에 세금 추가 또는 총액에서 세금 제거. 2026년 주별 판매세율 포함. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
     petage: { name: "반려동물 나이 계산기 - 개나이 고양이나이 사람나이 변환", desc: "무료 온라인 반려동물 나이 계산기: 개와 고양이의 나이를 사람 나이로 변환합니다. 반려동물의 나이, 품종 크기(소형/중형/대형/초대형), 종을 입력하면 정확한 사람 환산 나이를 알려드립니다. AVMA 수의학 공식 기반. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
     love: { name: "사랑 계산기 - 이름 궁합 & 별자리 궁합 - 무료 온라인", desc: "무료 온라인 사랑 계산기: 두 사람의 이름과 별자리로 연애 궁합을 계산합니다. 사랑 점수, FLAMES 결과, 별자리 궁합을 한 번에 확인. 친구나 짝꿍과 재미로 공유하세요. Mac OS 9 레트로 스타일.", cat: "EntertainmentApplication" },
-
+    emi: { name: "EMI 계산기 - 대출 월상환액 계산기 - 월 납입금 계산", desc: "무료 온라인 EMI 계산기: 주택담보대출, 자동차대출, 신용대출, 학자금대출의 월 상환액(EMI)을 계산합니다. 대출 금액, 금리, 기간을 입력하면 월 상환액, 총 이자, 총 납입액을 상환 일정표와 함께 보여줍니다. Mac OS 9 레트로 스타일.", cat: "FinanceApplication" },
+    sqft: { name: "평방피트 계산기 - 면적 계산기 - 방 면적 계산기", desc: "무료 온라인 평방피트 계산기: 방, 주택 또는 부동산의 면적을 평방피트로 계산합니다. 직사각형, 정사각형, 원형, L자형 방을 지원합니다. 바닥재, 페인트, 타일, 부동산에 완벽합니다. Mac OS 9 레트로 스타일.", cat: "UtilitiesApplication" },
+    sleep: { name: "수면 계산기 - 최적 취침 시간 계산 - 개운한 기상", desc: "무료 온라인 수면 계산기: 수면 주기 과학에 기반하여 최적의 취침 및 기상 시간을 찾아줍니다. 90분 수면 주기 기반으로 주기 사이에 가장 개운하게 일어날 수 있는 시간을 계산합니다. Mac OS 9 레트로 스타일.", cat: "HealthApplication" },
   },
   pt: {
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -220,13 +229,16 @@ const tools = {
     salestax: { name: "Calculadora de Imposto sobre Vendas - Imposto Estadual EUA", desc: "Calculadora de imposto sobre vendas gratuita: calcule o imposto sobre vendas para qualquer estado dos EUA. Adicione ou remova imposto de um pre\u00e7o. Inclui taxas de 2026 para todos os 50 estados. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
     petage: { name: "Calculadora de Idade de Animais - Idade de C\u00e3es e Gatos em Anos Humanos", desc: "Calculadora gratuita de idade de animais de estima\u00e7\u00e3o: converta anos de c\u00e3es e gatos em anos humanos. Insira a idade, porte (pequeno, m\u00e9dio, grande, gigante) e esp\u00e9cie. Usa f\u00f3rmulas veterin\u00e1rias AVMA. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
     love: { name: "Calculadora de Amor - Compatibilidade de Nomes e Zod\u00edaco", desc: "Calculadora de amor gratuita: calcule a compatibilidade amorosa entre dois nomes e signos do zod\u00edaco. Obtenha sua porcentagem de amor, resultado FLAMES e pontua\u00e7\u00e3o zodiacal. Estilo retro Mac OS 9.", cat: "EntertainmentApplication" },
+    emi: { name: "Calculadora de EMI - Parcela Mensal de Empr\u00e9stimo - Calculadora de Pagamento Mensal", desc: "Calculadora de EMI gratuita: calcule sua parcela mensal (EMI) para empr\u00e9stimos imobili\u00e1rios, de carro, pessoais e estudantis. Insira valor, taxa e prazo. Mostra tabela de amortiza\u00e7\u00e3o. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    sqft: { name: "Calculadora de Metragem Quadrada - Calculadora de \u00c1rea de C\u00f4modo", desc: "Calculadora de metragem quadrada gratuita: calcule a \u00e1rea de qualquer c\u00f4modo, casa ou propriedade em p\u00e9s quadrados. Suporta ret\u00e2ngulo, quadrado, c\u00edrculo e formato L. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
+    sleep: { name: "Calculadora de Sono - Melhor Hor\u00e1rio para Dormir - Acordar Descansado", desc: "Calculadora de sono gratuita: encontre o melhor hor\u00e1rio para dormir e acordar usando a ci\u00eancia do ciclo do sono. Baseada em ciclos de 90 minutos. Estilo retro Mac OS 9.", cat: "HealthApplication" },
   }
 };
 
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary', '/overtime': 'overtime', '/retirement': 'retirement', '/duedate': 'duedate', '/pace': 'pace', '/sip': 'sip', '/vat': 'vat', '/simpleinterest': 'simpleinterest', '/period': 'period', '/markup': 'markup', '/waterintake': 'waterintake', '/salestax': 'salestax', '/petage': 'petage', '/love': 'love' };
+  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/percent': 'percent', '/currency': 'currency', '/random': 'random', '/text': 'text', '/timer': 'timer', '/discount': 'discount', '/loan': 'loan', '/compound': 'compound', '/mortgage': 'mortgage', '/bodyfat': 'bodyfat', '/fraction': 'fraction', '/tip': 'tip', '/average': 'average', '/age': 'age', '/grade': 'grade', '/duration': 'duration', '/daysuntil': 'daysuntil', '/wordcounter': 'wordcounter', '/idealweight': 'idealweight', '/fuelcost': 'fuelcost', '/salary': 'salary', '/overtime': 'overtime', '/retirement': 'retirement', '/duedate': 'duedate', '/pace': 'pace', '/sip': 'sip', '/vat': 'vat', '/simpleinterest': 'simpleinterest', '/period': 'period', '/markup': 'markup', '/waterintake': 'waterintake', '/salestax': 'salestax', '/petage': 'petage', '/love': 'love', '/emi': 'emi', '/sqft': 'sqft', '/sleep': 'sleep' };
   return toolMap[p] || 'calorie';
 }
 

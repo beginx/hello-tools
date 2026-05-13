@@ -1,0 +1,17 @@
+{
+  "title": "Calculadora de EMI",
+  "subtitle": "Calcule sua Parcela Mensal de Empréstimo",
+  "loanAmount": "Valor do Empréstimo ($)",
+  "interestRate": "Taxa de Juros Anual (%)",
+  "tenureYears": "Prazo (Anos)",
+  "tenureMonths": "Prazo (Meses)",
+  "tenureUnit": "Unidade de Prazo",
+  "calculate": "Calcular",
+  "clear": "Limpar",
+  "monthlyEmi": "EMI Mensal",
+  "totalInterest": "Juros Totais a Pagar",
+  "totalPayment": "Pagamento Total (Principal + Juros)",
+  "error": "Insira números positivos válidos",
+  "seoDescription": "Calculadora de EMI gratuita: calcule sua parcela mensal (EMI) para empréstimos imobiliários, de carro, pessoais e estudantis. Insira valor do empréstimo, taxa de juros anual e prazo em anos ou meses para ver instantaneamente seu EMI mensal, juros totais e valor total do reembolso. Estilo retro Mac OS 9.",
+  "relatedTitle": "Ferramentas Relacionadas"
+}

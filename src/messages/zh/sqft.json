@@ -1,0 +1,19 @@
+{
+  "title": "面积计算器",
+  "subtitle": "计算平方英尺面积 — 房间、房屋、房产",
+  "selectShape": "选择形状",
+  "rectangle": "长方形 / 正方形",
+  "circle": "圆形",
+  "triangle": "三角形",
+  "length": "长度 (ft)",
+  "width": "宽度 (ft)",
+  "radius": "半径 (ft)",
+  "base": "底边 (ft)",
+  "height": "高度 (ft)",
+  "calculate": "计算",
+  "clear": "清除",
+  "areaResult": "总面积",
+  "sqft": "平方英尺",
+  "seoDescription": "免费在线面积计算器：计算房间、房屋或房产的平方英尺面积。支持长方形、正方形、圆形和三角形。适合地板、油漆、瓷砖和房地产使用。Mac OS 9 复古风格。无需注册。",
+  "relatedTitle": "相关工具"
+}

@@ -1,0 +1,17 @@
+{
+  "title": "EMI计算器",
+  "subtitle": "计算贷款月供 — 等额本息",
+  "loanAmount": "贷款金额 ($)",
+  "interestRate": "年利率 (%)",
+  "tenureYears": "贷款期限 (年)",
+  "tenureMonths": "贷款期限 (月)",
+  "tenureUnit": "期限单位",
+  "calculate": "计算",
+  "clear": "清除",
+  "monthlyEmi": "每月月供 (EMI)",
+  "totalInterest": "总利息",
+  "totalPayment": "总还款额 (本金 + 利息)",
+  "error": "请输入有效的正数",
+  "seoDescription": "免费在线EMI计算器：计算房贷、车贷、个人贷款和助学贷款的月供(等额本息)。输入贷款金额、年利率和还款期限，立即查看月供、总利息和总还款额。完美适合比较贷款方案和规划月度预算。Mac OS 9 复古风格。无需注册。",
+  "relatedTitle": "相关工具"
+}

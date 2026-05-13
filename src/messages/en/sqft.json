@@ -1,0 +1,19 @@
+{
+  "title": "Square Footage Calculator",
+  "subtitle": "Calculate Area in Square Feet — Room, House, Property",
+  "selectShape": "Select Shape",
+  "rectangle": "Rectangle / Square",
+  "circle": "Circle",
+  "triangle": "Triangle",
+  "length": "Length (ft)",
+  "width": "Width (ft)",
+  "radius": "Radius (ft)",
+  "base": "Base (ft)",
+  "height": "Height (ft)",
+  "calculate": "Calculate",
+  "clear": "Clear",
+  "areaResult": "Total Area",
+  "sqft": "sq ft",
+  "seoDescription": "Free online square footage calculator: calculate the area of any room, house, or property in square feet. Supports multiple shapes including rectangle, square, circle, and triangle. Perfect for flooring estimates, painting projects, tiling, carpet installation, real estate listings, and home improvement planning. Simply select the shape and enter the dimensions to get instant results. No signup required, works entirely in your browser. Mac OS 9 retro style interface.",
+  "relatedTitle": "Related Tools"
+}

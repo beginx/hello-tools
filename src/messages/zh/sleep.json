@@ -1,0 +1,18 @@
+{
+  "title": "睡眠计算器",
+  "subtitle": "找到最佳就寝或起床时间",
+  "modeWake": "我需要起床时间",
+  "modeBed": "我就寝时间",
+  "fallAsleep": "入睡所需时间（分钟）",
+  "calculate": "计算",
+  "clear": "清除",
+  "bestBedtimes": "最佳就寝时间",
+  "bestWaketimes": "最佳起床时间",
+  "recommendation": "为了醒来精神饱满，请在睡眠周期结束时醒来。",
+  "hoursLabel": "睡眠",
+  "cyclesLabel": "周期",
+  "amTime": "上午",
+  "pmTime": "下午",
+  "seoDescription": "免费在线睡眠计算器：通过睡眠周期科学找到最佳入睡和起床时间。基于90分钟睡眠周期。Mac OS 9 复古风格。无需注册。",
+  "relatedTitle": "相关工具"
+}

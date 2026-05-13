@@ -1,0 +1,17 @@
+{
+  "title": "Calculadora de EMI",
+  "subtitle": "Calcule su Cuota Mensual de Préstamo",
+  "loanAmount": "Monto del Préstamo ($)",
+  "interestRate": "Tasa de Interés Anual (%)",
+  "tenureYears": "Plazo (Años)",
+  "tenureMonths": "Plazo (Meses)",
+  "tenureUnit": "Unidad de Plazo",
+  "calculate": "Calcular",
+  "clear": "Limpiar",
+  "monthlyEmi": "EMI Mensual",
+  "totalInterest": "Interés Total a Pagar",
+  "totalPayment": "Pago Total (Capital + Interés)",
+  "error": "Ingrese números positivos válidos",
+  "seoDescription": "Calculadora de EMI gratuita: calcule su cuota mensual (EMI) para préstamos hipotecarios, de auto, personales y educativos. Ingrese el monto del préstamo, tasa de interés anual y plazo de pago en años o meses para ver instantáneamente su EMI mensual, interés total y monto total de reembolso. Perfecta para comparar ofertas de préstamos y planificar su presupuesto mensual. Estilo retro Mac OS 9.",
+  "relatedTitle": "Herramientas Relacionadas"
+}

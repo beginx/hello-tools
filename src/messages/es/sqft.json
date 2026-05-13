@@ -1,0 +1,19 @@
+{
+  "title": "Calculadora de Metraje Cuadrado",
+  "subtitle": "Calcule el Área en Pies Cuadrados",
+  "selectShape": "Seleccionar Forma",
+  "rectangle": "Rectángulo / Cuadrado",
+  "circle": "Círculo",
+  "triangle": "Triángulo",
+  "length": "Largo (ft)",
+  "width": "Ancho (ft)",
+  "radius": "Radio (ft)",
+  "base": "Base (ft)",
+  "height": "Altura (ft)",
+  "calculate": "Calcular",
+  "clear": "Limpiar",
+  "areaResult": "Área Total",
+  "sqft": "pies²",
+  "seoDescription": "Calculadora de metraje cuadrado gratuita: calcule el área de cualquier habitación, casa o propiedad en pies cuadrados. Soporta rectángulo, cuadrado, círculo y triángulo. Perfecta para pisos, pintura, azulejos y bienes raíces. Estilo retro Mac OS 9.",
+  "relatedTitle": "Herramientas Relacionadas"
+}

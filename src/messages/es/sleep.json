@@ -1,0 +1,18 @@
+{
+  "title": "Calculadora de Sueño",
+  "subtitle": "Encuentre su Mejor Hora de Acostarse o Despertar",
+  "modeWake": "Debo despertar a las",
+  "modeBed": "Me acuesto a las",
+  "fallAsleep": "Minutos para dormirme",
+  "calculate": "Calcular",
+  "clear": "Limpiar",
+  "bestBedtimes": "Mejores Horas de Acostarse",
+  "bestWaketimes": "Mejores Horas de Despertar",
+  "recommendation": "Para despertar descansado, procure despertar al final de un ciclo de sueño.",
+  "hoursLabel": "Sueño",
+  "cyclesLabel": "Ciclos",
+  "amTime": "AM",
+  "pmTime": "PM",
+  "seoDescription": "Calculadora de sueño gratuita: encuentre la mejor hora para acostarse o despertar usando la ciencia del ciclo del sueño. Basada en ciclos de 90 minutos. Estilo retro Mac OS 9.",
+  "relatedTitle": "Herramientas Relacionadas"
+}
