@@ -73,22 +73,22 @@ export default function EmiPage() {
 
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">{t('loanAmount')}</label>
-            <input className="os9-input w-full" type="number" step="any" min="0"
+            <input className="os9-input w-full" type="number" step="any" min="0" placeholder="0"
               value={amount} onChange={function(e) { setAmount(e.target.value); }}
               style={{ fontSize: 16, padding: '10px 8px' }} />
           </div>
 
           <div className="mb-4">
             <label className="os9-label block text-xs mb-1">{t('interestRate')}</label>
-            <input className="os9-input w-full" type="number" step="any" min="0"
+            <input className="os9-input w-full" type="number" step="any" min="0" placeholder="0"
               value={rate} onChange={function(e) { setRate(e.target.value); }}
               style={{ fontSize: 16, padding: '10px 8px' }} />
           </div>
 
           <div className="mb-4">
-            <label className="os9-label block text-xs mb-1">{t('tenureUnit === "years" ? tenureYears : tenureMonths' in pageMsgs ? 'placeholder' : '')}</label>
+            <label className="os9-label block text-xs mb-1">{t(tenureUnit === 'years' ? 'tenureYears' : 'tenureMonths')}</label>
             <div className="flex gap-2">
-              <input className="os9-input flex-1" type="number" step="1" min="0"
+              <input className="os9-input flex-1" type="number" step="1" min="0" placeholder="0"
                 value={tenure} onChange={function(e) { setTenure(e.target.value); }}
                 style={{ fontSize: 16, padding: '10px 8px' }} />
               <select className="os9-select !w-auto text-sm" value={tenureUnit}

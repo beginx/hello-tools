@@ -84,13 +84,13 @@ export default function SqftPage() {
             <>
               <div className="mb-4">
                 <label className="os9-label block text-xs mb-1">{t('length')}</label>
-                <input className="os9-input w-full" type="number" step="any" min="0"
+                <input className="os9-input w-full" type="number" step="any" min="0" placeholder="0"
                   value={length} onChange={function(e) { setLength(e.target.value); }}
                   style={{ fontSize: 16, padding: '10px 8px' }} />
               </div>
               <div className="mb-4">
                 <label className="os9-label block text-xs mb-1">{t('width')}</label>
-                <input className="os9-input w-full" type="number" step="any" min="0"
+                <input className="os9-input w-full" type="number" step="any" min="0" placeholder="0"
                   value={width} onChange={function(e) { setWidth(e.target.value); }}
                   style={{ fontSize: 16, padding: '10px 8px' }} />
               </div>
@@ -100,7 +100,7 @@ export default function SqftPage() {
           {shape === 'circle' && (
             <div className="mb-4">
               <label className="os9-label block text-xs mb-1">{t('radius')}</label>
-              <input className="os9-input w-full" type="number" step="any" min="0"
+              <input className="os9-input w-full" type="number" step="any" min="0" placeholder="0"
                 value={radius} onChange={function(e) { setRadius(e.target.value); }}
                 style={{ fontSize: 16, padding: '10px 8px' }} />
             </div>
@@ -110,13 +110,13 @@ export default function SqftPage() {
             <>
               <div className="mb-4">
                 <label className="os9-label block text-xs mb-1">{t('base')}</label>
-                <input className="os9-input w-full" type="number" step="any" min="0"
+                <input className="os9-input w-full" type="number" step="any" min="0" placeholder="0"
                   value={base} onChange={function(e) { setBase(e.target.value); }}
                   style={{ fontSize: 16, padding: '10px 8px' }} />
               </div>
               <div className="mb-4">
                 <label className="os9-label block text-xs mb-1">{t('height')}</label>
-                <input className="os9-input w-full" type="number" step="any" min="0"
+                <input className="os9-input w-full" type="number" step="any" min="0" placeholder="0"
                   value={height} onChange={function(e) { setHeight(e.target.value); }}
                   style={{ fontSize: 16, padding: '10px 8px' }} />
               </div>
