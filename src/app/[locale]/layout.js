@@ -287,6 +287,9 @@ export default async function LocaleLayout({ children, params }) {
           dangerouslySetInnerHTML={{ __html: schemaJson }}
           suppressHydrationWarning
         />
+        {/* Google AdSense Auto Ads */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8178172082493004"
+          crossOrigin="anonymous"></script>
       </head>
       <body className="min-h-full flex flex-col" style={{ background: 'var(--os9-bg)' }}>
         {children}
