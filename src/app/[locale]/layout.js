@@ -45,6 +45,8 @@ const tools = {
     pregnancy: { name: "Calculadora de Fecha de Parto - Embarazo", desc: "Calculadora gratuita de fecha de parto: estime su fecha de parto y semanas de embarazo. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     ovulation: { name: "Calculadora de Ovulación - Ventana Fértil", desc: "Calculadora de ovulación gratuita: calcule su ventana fértil y día de ovulación. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     cagr: { name: "Calculadora de CAGR - Tasa de Crecimiento Anual", desc: "Calculadora de CAGR gratuita: calcule la tasa de crecimiento anual compuesta de sus inversiones. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    gpa: { name: "Calculadora de GPA - Promedio de Calificaciones", desc: "Calculadora de GPA gratuita: calcule su promedio de calificaciones en escala 4.0, 4.3 o 4.5. Perfecta para estudiantes universitarios. Estilo retro Mac OS 9.", cat: "EducationApplication" },
+    autoloan: { name: "Calculadora de Préstamo de Auto", desc: "Calculadora gratuita de préstamo de auto: calcule pagos mensuales, intereses y costo total. Perfecta para compradores de autos. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -105,6 +107,8 @@ const tools = {
     pregnancy: { name: "Calculadora de Data de Parto - Gravidez", desc: "Calculadora gratuita de data de parto: estime sua data de parto e semanas de gravidez. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     ovulation: { name: "Calculadora de Ovula\u00e7\u00e3o - Janela F\u00e9rtil", desc: "Calculadora de ovula\u00e7\u00e3o gratuita: calcule sua janela f\u00e9rtil e dia da ovula\u00e7\u00e3o. Estilo retro Mac OS 9.", cat: "HealthApplication" },
     cagr: { name: "Calculadora de CAGR - Taxa de Crescimento Anual", desc: "Calculadora de CAGR gratuita: calcule a taxa de crescimento anual composta dos seus investimentos. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    gpa: { name: "Calculadora de GPA - Média de Notas", desc: "Calculadora de GPA gratuita: calcule sua média de notas nas escalas 4.0, 4.3 ou 4.5. Perfeita para estudantes universitários. Estilo retro Mac OS 9.", cat: "EducationApplication" },
+    autoloan: { name: "Calculadora de Empréstimo de Carro", desc: "Calculadora gratuita de empréstimo de carro: calcule parcelas, juros e custo total. Perfeita para compradores de carros. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   },
 };
 
