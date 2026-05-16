@@ -148,7 +148,7 @@ export default function BMIPage() {
               <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
                 <a href={`/${locale}/idealweight`} className="underline">Ideal Weight Calculator</a>
                 <a href={`/${locale}/bodyfat`} className="underline">Body Fat Calculator</a>
-                <a href={`/${locale}/calorie`} className="underline">Calorie Calculator</a>
+                <a href={`/${locale}/calorieburn`} className="underline">Calorie Burn Calculator</a>
               </div>
             </div>
           </div>

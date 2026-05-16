@@ -152,7 +152,7 @@ export default function IdealWeightPage() {
               <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
                 <a href={`/${locale}/bmi`} className="underline">BMI Calculator</a>
                 <a href={`/${locale}/bodyfat`} className="underline">Body Fat Calculator</a>
-                <a href={`/${locale}/calorie`} className="underline">Calorie Calculator</a>
+                <a href={`/${locale}/calorieburn`} className="underline">Calorie Burn Calculator</a>
                 <a href={`/${locale}/waterintake`} className="underline">Water Intake Calculator</a>
               </div>
             </div>
