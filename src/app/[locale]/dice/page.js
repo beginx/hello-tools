@@ -1,8 +1,13 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/dice.json';
+import esMsgs from '../../../messages/es/dice.json';
+import zhMsgs from '../../../messages/zh/dice.json';
+import koMsgs from '../../../messages/ko/dice.json';
+import ptMsgs from '../../../messages/pt/dice.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 const DICE_TYPES = [
   { sides: 4, key: 'd4' },
@@ -19,9 +24,9 @@ function rollDie(sides) {
 }
 
 export default function DicePage() {
-  const t = useTranslations('dice');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/dice'; };
 
   const [selectedDie, setSelectedDie] = useState('d6');
@@ -70,7 +75,6 @@ export default function DicePage() {
             </select>
           </div>
 
-          {/* Dice type selector */}
           <div className="mb-4">
             <label className="os9-label">{t('custom')}</label>
             <div className="flex flex-wrap gap-2">
@@ -85,7 +89,6 @@ export default function DicePage() {
             </div>
           </div>
 
-          {/* Dice count */}
           <div className="mb-4">
             <label className="os9-label">{t('count')}</label>
             <input className="os9-input" type="number" min={1} max={20} value={diceCount}
@@ -96,7 +99,6 @@ export default function DicePage() {
             {rolling ? t('rolling') : t('roll')}
           </button>
 
-          {/* Results */}
           {results && (
             <>
               <hr className="os9-divider" />
@@ -125,6 +127,26 @@ export default function DicePage() {
             </>
           )}
         </div>
+      </div>
+      <div className="os9-window" style={{maxWidth:440,width:'100%',marginTop:12}}>
+        <div className="os9-window-body" style={{padding:'10px 14px'}}>
+          <p className="text-xs leading-relaxed" style={{opacity:0.65}}>{t('seoDescription')}</p>
+        </div>
+      </div>
+      <div className="os9-footer" style={{maxWidth:440,width:'100%',fontSize:10,textAlign:'center',opacity:0.6,marginTop:12}}>
+        <a href={'/' + locale} className="underline">Home</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/coinflip'} className="underline">Coin Flip</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/ratio'} className="underline">Ratio</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/speed'} className="underline">Speed</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/ohm'} className="underline">Ohm</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/lotto'} className="underline">Lotto</a>
+        <span className="mx-2">|</span>
+        hello-tools 2026
       </div>
     </div>
   );

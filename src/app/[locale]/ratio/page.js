@@ -1,8 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/ratio.json';
+import esMsgs from '../../../messages/es/ratio.json';
+import zhMsgs from '../../../messages/zh/ratio.json';
+import koMsgs from '../../../messages/ko/ratio.json';
+import ptMsgs from '../../../messages/pt/ratio.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 function gcd(a, b) {
   a = Math.abs(a);
@@ -12,9 +17,9 @@ function gcd(a, b) {
 }
 
 export default function RatioPage() {
-  const t = useTranslations('ratio');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/ratio'; };
 
   const [mode, setMode] = useState('simplify');
@@ -30,7 +35,7 @@ export default function RatioPage() {
       const numB = parseInt(b) || 0;
       if (numA <= 0 || numB <= 0) return;
       const g = gcd(numA, numB);
-      setResult({ type: 'simplify', a: numA / g, b: numB / g, original: numA + ':' + numB });
+      setResult({ type: 'simplify', a: numA / g, b: numB / g });
     } else {
       const numA = parseInt(a) || 0;
       const numB = parseInt(b) || 0;
@@ -54,9 +59,6 @@ export default function RatioPage() {
 
   const clear = () => { setA(''); setB(''); setC(''); setD(''); setResult(null); };
 
-  const showC = mode === 'find';
-  const showD = mode === 'find';
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-start py-8 px-4" style={{ background: 'var(--os9-bg)' }}>
       <div className="os9-window" style={{ maxWidth: 420, width: '100%' }}>
@@ -79,7 +81,6 @@ export default function RatioPage() {
             </select>
           </div>
 
-          {/* Mode */}
           <div className="mb-4">
             <label className="os9-label">{t('modeLabel')}</label>
             <div className="flex gap-2">
@@ -90,7 +91,6 @@ export default function RatioPage() {
             </div>
           </div>
 
-          {/* Inputs */}
           <div className="flex items-center gap-2 mb-3">
             <div className="flex-1">
               <label className="os9-label">{t('aLabel')}</label>
@@ -103,7 +103,7 @@ export default function RatioPage() {
             </div>
           </div>
 
-          {showC && showD && (
+          {mode === 'find' && (
             <div className="flex items-center gap-2 mb-4">
               <div className="flex-1">
                 <label className="os9-label">{t('cLabel')}</label>
@@ -118,13 +118,10 @@ export default function RatioPage() {
           )}
 
           <div className="flex gap-2">
-            <button className="os9-btn os9-btn-primary flex-1 text-base py-3" onClick={calculate}>
-              {t('calculate')}
-            </button>
+            <button className="os9-btn os9-btn-primary flex-1 text-base py-3" onClick={calculate}>{t('calculate')}</button>
             <button className="os9-btn !px-4" onClick={clear}>{t('clear')}</button>
           </div>
 
-          {/* Result */}
           {result && (
             <>
               <hr className="os9-divider" />
@@ -145,6 +142,26 @@ export default function RatioPage() {
             </>
           )}
         </div>
+      </div>
+      <div className="os9-window" style={{maxWidth:420,width:'100%',marginTop:12}}>
+        <div className="os9-window-body" style={{padding:'10px 14px'}}>
+          <p className="text-xs leading-relaxed" style={{opacity:0.65}}>{t('seoDescription')}</p>
+        </div>
+      </div>
+      <div className="os9-footer" style={{maxWidth:420,width:'100%',fontSize:10,textAlign:'center',opacity:0.6,marginTop:12}}>
+        <a href={'/' + locale} className="underline">Home</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/coinflip'} className="underline">Coin Flip</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/dice'} className="underline">Dice Roller</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/speed'} className="underline">Speed</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/ohm'} className="underline">Ohm</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/lotto'} className="underline">Lotto</a>
+        <span className="mx-2">|</span>
+        hello-tools 2026
       </div>
     </div>
   );

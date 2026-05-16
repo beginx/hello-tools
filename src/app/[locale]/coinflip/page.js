@@ -1,13 +1,18 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/coinflip.json';
+import esMsgs from '../../../messages/es/coinflip.json';
+import zhMsgs from '../../../messages/zh/coinflip.json';
+import koMsgs from '../../../messages/ko/coinflip.json';
+import ptMsgs from '../../../messages/pt/coinflip.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 export default function CoinflipPage() {
-  const t = useTranslations('coinflip');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/coinflip'; };
 
   const [result, setResult] = useState(null);
@@ -54,7 +59,6 @@ export default function CoinflipPage() {
             </select>
           </div>
 
-          {/* Coin display */}
           <div className="flex flex-col items-center mb-6">
             <div className="w-36 h-36 rounded-full flex items-center justify-center mb-3 transition-all duration-300"
               style={{
@@ -85,7 +89,6 @@ export default function CoinflipPage() {
             {t('flip')}
           </button>
 
-          {/* Statistics */}
           {total > 0 && (
             <>
               <hr className="os9-divider" />
@@ -98,7 +101,6 @@ export default function CoinflipPage() {
                   <span>{t('totalHeads')}: <strong>{heads}</strong> ({total > 0 ? (heads/total*100).toFixed(1) : 0}%)</span>
                   <span>{t('totalTails')}: <strong>{tails}</strong> ({total > 0 ? (tails/total*100).toFixed(1) : 0}%)</span>
                 </div>
-                {/* progress bar */}
                 <div className="flex h-3 rounded-full overflow-hidden mt-2" style={{ background: '#ddd', border: '1px solid #aaa' }}>
                   <div style={{ width: total > 0 ? (heads/total*100) + '%' : '50%', background: 'var(--os9-accent)', transition: 'width 0.3s' }} />
                   <div style={{ width: total > 0 ? (tails/total*100) + '%' : '50%', background: '#888', transition: 'width 0.3s' }} />
@@ -112,6 +114,26 @@ export default function CoinflipPage() {
             </>
           )}
         </div>
+      </div>
+      <div className="os9-window" style={{maxWidth:400,width:'100%',marginTop:12}}>
+        <div className="os9-window-body" style={{padding:'10px 14px'}}>
+          <p className="text-xs leading-relaxed" style={{opacity:0.65}}>{t('seoDescription')}</p>
+        </div>
+      </div>
+      <div className="os9-footer" style={{maxWidth:400,width:'100%',fontSize:10,textAlign:'center',opacity:0.6,marginTop:12}}>
+        <a href={'/' + locale} className="underline">Home</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/dice'} className="underline">Dice Roller</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/ratio'} className="underline">Ratio</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/speed'} className="underline">Speed</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/ohm'} className="underline">Ohm</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/lotto'} className="underline">Lotto</a>
+        <span className="mx-2">|</span>
+        hello-tools 2026
       </div>
     </div>
   );

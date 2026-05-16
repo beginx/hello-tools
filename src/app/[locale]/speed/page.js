@@ -1,33 +1,29 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/speed.json';
+import esMsgs from '../../../messages/es/speed.json';
+import zhMsgs from '../../../messages/zh/speed.json';
+import koMsgs from '../../../messages/ko/speed.json';
+import ptMsgs from '../../../messages/pt/speed.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
 
 export default function SpeedPage() {
-  const t = useTranslations('speed');
   const params = useParams();
   const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/speed'; };
 
-  // Mode: 'speed' (calc speed from dist+time), 'dist' (calc dist from speed+time), 'time' (calc time from speed+dist)
   const [mode, setMode] = useState('speed');
-
-  // For speed calculation: need distance + time -> result speed
-  // For distance: speed + time -> result distance
-  // For time: speed + distance -> result time
-
   const [distVal, setDistVal] = useState('');
   const [timeVal, setTimeVal] = useState('');
   const [speedVal, setSpeedVal] = useState('');
-
   const [distUnit, setDistUnit] = useState('km');
   const [timeUnit, setTimeUnit] = useState('h');
   const [speedUnit, setSpeedUnit] = useState('kmh');
-
   const [result, setResult] = useState(null);
 
-  // Convert everything to base: distance in km, time in h
   function toBaseKmH(val, unit) {
     if (unit === 'km') return val;
     if (unit === 'mi') return val * 1.60934;
@@ -69,40 +65,32 @@ export default function SpeedPage() {
       const d = parseFloat(distVal);
       const t = parseFloat(timeVal);
       if (d > 0 && t > 0) {
-        const dBase = toBaseKmH(d, distUnit);
-        const tBase = toBaseH(t, timeUnit);
-        const sBase = dBase / tBase;
-        setResult({ type: 'speed', value: sBase });
+        setResult({ type: 'speed', value: toBaseKmH(d, distUnit) / toBaseH(t, timeUnit) });
       }
     } else if (mode === 'distance') {
       const s = parseFloat(speedVal);
       const t = parseFloat(timeVal);
       if (s > 0 && t > 0) {
-        const tBase = toBaseH(t, timeUnit);
-        let dBase = s * tBase;
-        // s is in speedUnit — need to convert
-        if (speedUnit === 'mph') dBase = dBase * 1.60934;
-        else if (speedUnit === 'ms') dBase = dBase * 3.6;
-        setResult({ type: 'distance', value: dBase });
+        let sBase = s;
+        if (speedUnit === 'mph') sBase = s * 1.60934;
+        else if (speedUnit === 'ms') sBase = s * 3.6;
+        setResult({ type: 'distance', value: sBase * toBaseH(t, timeUnit) });
       }
     } else if (mode === 'time') {
       const d = parseFloat(distVal);
       const s = parseFloat(speedVal);
       if (d > 0 && s > 0) {
-        const dBase = toBaseKmH(d, distUnit);
         let sBase = s;
         if (speedUnit === 'mph') sBase = s * 1.60934;
         else if (speedUnit === 'ms') sBase = s * 3.6;
-        const tBase = dBase / sBase;
-        setResult({ type: 'time', value: tBase });
+        setResult({ type: 'time', value: toBaseKmH(d, distUnit) / sBase });
       }
     }
   };
 
   const clear = () => { setDistVal(''); setTimeVal(''); setSpeedVal(''); setResult(null); };
 
-  const modeDistUnit = distUnit;
-  const modeTimeUnit = timeUnit;
+  const speedUnitLabel = speedUnit === 'kmh' ? t('unitKmph') : speedUnit === 'mph' ? t('unitMiph') : t('unitMs');
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start py-8 px-4" style={{ background: 'var(--os9-bg)' }}>
@@ -126,98 +114,70 @@ export default function SpeedPage() {
             </select>
           </div>
 
-          {/* Mode tabs */}
           <div className="os9-tab-group mb-3">
             {['speed', 'distance', 'time'].map(m => (
               <button key={m} className={'os9-tab text-xs ' + (mode === m ? 'os9-tab-active' : '')}
                 onClick={() => { setMode(m); setResult(null); }}>
-                {t(modeLabel(m))}
+                {t(m === 'speed' ? 'speedLabel' : m === 'distance' ? 'distanceLabel' : 'timeLabel')}
               </button>
             ))}
           </div>
 
-          {/* Inputs based on mode */}
           {mode === 'speed' && (
             <>
-              <div className="mb-3">
-                <label className="os9-label">{t('distanceLabel')}</label>
+              <div className="mb-3"><label className="os9-label">{t('distanceLabel')}</label>
                 <div className="flex gap-2">
-                  <input className="os9-input flex-1" type="number" min={0} step="any" value={distVal}
-                    onChange={(e) => setDistVal(e.target.value)} placeholder="0" />
+                  <input className="os9-input flex-1" type="number" min={0} step="any" value={distVal} onChange={(e) => setDistVal(e.target.value)} placeholder="0" />
                   <select className="os9-select !w-auto" value={distUnit} onChange={(e) => setDistUnit(e.target.value)}>
-                    <option value="km">{t('unitKm')}</option>
-                    <option value="mi">{t('unitMi')}</option>
-                    <option value="m">{t('unitM')}</option>
+                    <option value="km">{t('unitKm')}</option><option value="mi">{t('unitMi')}</option><option value="m">{t('unitM')}</option>
                   </select>
                 </div>
               </div>
-              <div className="mb-3">
-                <label className="os9-label">{t('timeLabel')}</label>
+              <div className="mb-3"><label className="os9-label">{t('timeLabel')}</label>
                 <div className="flex gap-2">
-                  <input className="os9-input flex-1" type="number" min={0} step="any" value={timeVal}
-                    onChange={(e) => setTimeVal(e.target.value)} placeholder="0" />
+                  <input className="os9-input flex-1" type="number" min={0} step="any" value={timeVal} onChange={(e) => setTimeVal(e.target.value)} placeholder="0" />
                   <select className="os9-select !w-auto" value={timeUnit} onChange={(e) => setTimeUnit(e.target.value)}>
-                    <option value="h">{t('unitH')}</option>
-                    <option value="min">{t('unitMin')}</option>
-                    <option value="s">{t('unitS')}</option>
+                    <option value="h">{t('unitH')}</option><option value="min">{t('unitMin')}</option><option value="s">{t('unitS')}</option>
                   </select>
                 </div>
               </div>
             </>
           )}
-
           {mode === 'distance' && (
             <>
-              <div className="mb-3">
-                <label className="os9-label">{t('speedLabel')}</label>
+              <div className="mb-3"><label className="os9-label">{t('speedLabel')}</label>
                 <div className="flex gap-2">
-                  <input className="os9-input flex-1" type="number" min={0} step="any" value={speedVal}
-                    onChange={(e) => setSpeedVal(e.target.value)} placeholder="0" />
+                  <input className="os9-input flex-1" type="number" min={0} step="any" value={speedVal} onChange={(e) => setSpeedVal(e.target.value)} placeholder="0" />
                   <select className="os9-select !w-auto" value={speedUnit} onChange={(e) => setSpeedUnit(e.target.value)}>
-                    <option value="kmh">{t('unitKmh')}</option>
-                    <option value="mph">{t('unitMph')}</option>
-                    <option value="ms">{t('unitMs')}</option>
+                    <option value="kmh">{t('unitKmh')}</option><option value="mph">{t('unitMph')}</option><option value="ms">{t('unitMs')}</option>
                   </select>
                 </div>
               </div>
-              <div className="mb-3">
-                <label className="os9-label">{t('timeLabel')}</label>
+              <div className="mb-3"><label className="os9-label">{t('timeLabel')}</label>
                 <div className="flex gap-2">
-                  <input className="os9-input flex-1" type="number" min={0} step="any" value={timeVal}
-                    onChange={(e) => setTimeVal(e.target.value)} placeholder="0" />
+                  <input className="os9-input flex-1" type="number" min={0} step="any" value={timeVal} onChange={(e) => setTimeVal(e.target.value)} placeholder="0" />
                   <select className="os9-select !w-auto" value={timeUnit} onChange={(e) => setTimeUnit(e.target.value)}>
-                    <option value="h">{t('unitH')}</option>
-                    <option value="min">{t('unitMin')}</option>
-                    <option value="s">{t('unitS')}</option>
+                    <option value="h">{t('unitH')}</option><option value="min">{t('unitMin')}</option><option value="s">{t('unitS')}</option>
                   </select>
                 </div>
               </div>
             </>
           )}
-
           {mode === 'time' && (
             <>
-              <div className="mb-3">
-                <label className="os9-label">{t('distanceLabel')}</label>
+              <div className="mb-3"><label className="os9-label">{t('distanceLabel')}</label>
                 <div className="flex gap-2">
-                  <input className="os9-input flex-1" type="number" min={0} step="any" value={distVal}
-                    onChange={(e) => setDistVal(e.target.value)} placeholder="0" />
+                  <input className="os9-input flex-1" type="number" min={0} step="any" value={distVal} onChange={(e) => setDistVal(e.target.value)} placeholder="0" />
                   <select className="os9-select !w-auto" value={distUnit} onChange={(e) => setDistUnit(e.target.value)}>
-                    <option value="km">{t('unitKm')}</option>
-                    <option value="mi">{t('unitMi')}</option>
-                    <option value="m">{t('unitM')}</option>
+                    <option value="km">{t('unitKm')}</option><option value="mi">{t('unitMi')}</option><option value="m">{t('unitM')}</option>
                   </select>
                 </div>
               </div>
-              <div className="mb-3">
-                <label className="os9-label">{t('speedLabel')}</label>
+              <div className="mb-3"><label className="os9-label">{t('speedLabel')}</label>
                 <div className="flex gap-2">
-                  <input className="os9-input flex-1" type="number" min={0} step="any" value={speedVal}
-                    onChange={(e) => setSpeedVal(e.target.value)} placeholder="0" />
+                  <input className="os9-input flex-1" type="number" min={0} step="any" value={speedVal} onChange={(e) => setSpeedVal(e.target.value)} placeholder="0" />
                   <select className="os9-select !w-auto" value={speedUnit} onChange={(e) => setSpeedUnit(e.target.value)}>
-                    <option value="kmh">{t('unitKmh')}</option>
-                    <option value="mph">{t('unitMph')}</option>
-                    <option value="ms">{t('unitMs')}</option>
+                    <option value="kmh">{t('unitKmh')}</option><option value="mph">{t('unitMph')}</option><option value="ms">{t('unitMs')}</option>
                   </select>
                 </div>
               </div>
@@ -225,53 +185,43 @@ export default function SpeedPage() {
           )}
 
           <div className="flex gap-2 mb-4">
-            <button className="os9-btn os9-btn-primary flex-1 text-base py-3" onClick={calculate}>
-              {t('calculate')}
-            </button>
+            <button className="os9-btn os9-btn-primary flex-1 text-base py-3" onClick={calculate}>{t('calculate')}</button>
             <button className="os9-btn !px-4" onClick={clear}>{t('clear')}</button>
           </div>
 
-          {/* Result */}
           {result && (
             <>
               <hr className="os9-divider" />
               <div className="os9-result text-center">
-                <p className="os9-label mb-1">
-                  {mode === 'speed' ? t('speedLabel') : mode === 'distance' ? t('distanceLabel') : t('timeLabel')}
-                </p>
-                {result.type === 'speed' && (
-                  <div>
-                    <p className="os9-big-number">{formatVal(result.value)}</p>
-                    <p className="text-xs mt-1" style={{ opacity: 0.6 }}>
-                      {speedUnit === 'kmh' ? t('unitKmph') : speedUnit === 'mph' ? t('unitMiph') : t('unitMs')}
-                    </p>
-                  </div>
-                )}
-                {result.type === 'distance' && (
-                  <div>
-                    <p className="os9-big-number">{formatVal(fromBaseKmH(result.value, distUnit))}</p>
-                    <p className="text-xs mt-1" style={{ opacity: 0.6 }}>{distUnit === 'km' ? t('unitKm') : distUnit === 'mi' ? t('unitMi') : t('unitM')}</p>
-                  </div>
-                )}
-                {result.type === 'time' && (
-                  <div>
-                    <p className="os9-big-number">{formatVal(fromBaseH(result.value, 'h'))}</p>
-                    <p className="text-xs mt-1" style={{ opacity: 0.6 }}>{t('unitH')}</p>
-                    <p className="text-xs mt-1" style={{ opacity: 0.5 }}>
-                      ({formatVal(fromBaseH(result.value, 'min'))} {t('unitMin')} / {formatVal(fromBaseH(result.value, 's'))} {t('unitS')})
-                    </p>
-                  </div>
-                )}
+                <p className="os9-label mb-1">{mode === 'speed' ? t('speedLabel') : mode === 'distance' ? t('distanceLabel') : t('timeLabel')}</p>
+                {result.type === 'speed' && <><p className="os9-big-number">{formatVal(result.value)}</p><p className="text-xs mt-1" style={{opacity:0.6}}>{speedUnitLabel}</p></>}
+                {result.type === 'distance' && <><p className="os9-big-number">{formatVal(fromBaseKmH(result.value, distUnit))}</p><p className="text-xs mt-1" style={{opacity:0.6}}>{distUnit === 'km' ? t('unitKm') : distUnit === 'mi' ? t('unitMi') : t('unitM')}</p></>}
+                {result.type === 'time' && <><p className="os9-big-number">{formatVal(fromBaseH(result.value, 'h'))}</p><p className="text-xs mt-1" style={{opacity:0.6}}>{t('unitH')}</p></>}
               </div>
             </>
           )}
         </div>
       </div>
+      <div className="os9-window" style={{maxWidth:440,width:'100%',marginTop:12}}>
+        <div className="os9-window-body" style={{padding:'10px 14px'}}>
+          <p className="text-xs leading-relaxed" style={{opacity:0.65}}>{t('seoDescription')}</p>
+        </div>
+      </div>
+      <div className="os9-footer" style={{maxWidth:440,width:'100%',fontSize:10,textAlign:'center',opacity:0.6,marginTop:12}}>
+        <a href={'/' + locale} className="underline">Home</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/coinflip'} className="underline">Coin Flip</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/dice'} className="underline">Dice Roller</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/ratio'} className="underline">Ratio</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/ohm'} className="underline">Ohm</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/lotto'} className="underline">Lotto</a>
+        <span className="mx-2">|</span>
+        hello-tools 2026
+      </div>
     </div>
   );
-}
-
-function modeLabel(m) {
-  const map = { speed: 'speedLabel', distance: 'distanceLabel', time: 'timeLabel' };
-  return map[m] || 'speedLabel';
 }

@@ -86,7 +86,7 @@ function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
   const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/ohm': 'ohm', '/coinflip': 'coinflip', '/dice': 'dice', '/ratio': 'ratio', '/speed': 'speed' };
-  return toolMap[p] || 'calorie';
+  return toolMap[p] || 'calorie';  // calorie is default landing page
 }
 
 export default async function LocaleLayout({ children, params }) {

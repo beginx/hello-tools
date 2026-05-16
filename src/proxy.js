@@ -13,7 +13,15 @@ export default function proxy(request) {
   if (!pathLocale) {
     const acceptLang = request.headers.get('accept-language') || '';
     const detected = locales.find(l => acceptLang.includes(l)) || defaultLocale;
-    const newUrl = new URL(`/${detected}${pathname}${search}`, request.url);
+    // Redirect root to /time (highest search volume tool)
+    const targetPath = pathname === '/' || pathname === '' ? '/time' : pathname;
+    const newUrl = new URL(`/${detected}${targetPath}${search}`, request.url);
+    return Response.redirect(newUrl, 307);
+  }
+
+  // Redirect /[locale] to /[locale]/time for better SEO
+  if (pathname.match(/^\/[a-z]{2}$/)) {
+    const newUrl = new URL(`${pathname}/time${search}`, request.url);
     return Response.redirect(newUrl, 307);
   }
 
