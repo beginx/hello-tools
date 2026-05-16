@@ -25,6 +25,8 @@ const tools = {
     ovulation: { name: "Ovulation Calculator - Fertile Window &amp; Ovulation Day", desc: "Free online ovulation calculator: track your fertile window, ovulation day, and next period. Based on your cycle length for family planning and fertility awareness. Mac OS 9 retro style.", cat: "HealthApplication" },
     cagr: { name: "CAGR Calculator - Compound Annual Growth Rate", desc: "Free online CAGR calculator: calculate Compound Annual Growth Rate for investments. Enter initial value, final value, and years to find your average annual return. Perfect for stocks, funds, and business growth analysis. Mac OS 9 retro style.", cat: "FinanceApplication" },
     gpa: { name: "GPA Calculator - Grade Point Average", desc: "Free online GPA calculator: calculate your Grade Point Average on 4.0, 4.3, or 4.5 scale. Add courses with custom names, credits, and letter grades. Perfect for college and university students. Mac OS 9 retro style.", cat: "EducationApplication" },
+    autoloan: { name: "Auto Loan Calculator - Car Loan Payments", desc: "Free online auto loan calculator: estimate your monthly car payments, total interest, and total loan cost. Enter vehicle price, down payment, interest rate, and loan term. Perfect for new and used car buyers. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    investment: { name: "Investment Calculator - Project Your Growth", desc: "Free online investment calculator: project how your investments grow with initial amount and monthly contributions. Perfect for retirement planning and wealth building. Mac OS 9 retro style.", cat: "FinanceApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
@@ -47,6 +49,7 @@ const tools = {
     cagr: { name: "Calculadora de CAGR - Tasa de Crecimiento Anual", desc: "Calculadora de CAGR gratuita: calcule la tasa de crecimiento anual compuesta de sus inversiones. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
     gpa: { name: "Calculadora de GPA - Promedio de Calificaciones", desc: "Calculadora de GPA gratuita: calcule su promedio de calificaciones en escala 4.0, 4.3 o 4.5. Perfecta para estudiantes universitarios. Estilo retro Mac OS 9.", cat: "EducationApplication" },
     autoloan: { name: "Calculadora de Préstamo de Auto", desc: "Calculadora gratuita de préstamo de auto: calcule pagos mensuales, intereses y costo total. Perfecta para compradores de autos. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    investment: { name: "Calculadora de Inversión - Proyección de Crecimiento", desc: "Calculadora de inversión gratuita: proyecte el crecimiento de sus inversiones con aportes iniciales y mensuales. Perfecta para planificación financiera. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   },
   zh: {
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
@@ -109,6 +112,7 @@ const tools = {
     cagr: { name: "Calculadora de CAGR - Taxa de Crescimento Anual", desc: "Calculadora de CAGR gratuita: calcule a taxa de crescimento anual composta dos seus investimentos. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
     gpa: { name: "Calculadora de GPA - Média de Notas", desc: "Calculadora de GPA gratuita: calcule sua média de notas nas escalas 4.0, 4.3 ou 4.5. Perfeita para estudantes universitários. Estilo retro Mac OS 9.", cat: "EducationApplication" },
     autoloan: { name: "Calculadora de Empréstimo de Carro", desc: "Calculadora gratuita de empréstimo de carro: calcule parcelas, juros e custo total. Perfeita para compradores de carros. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
+    investment: { name: "Calculadora de Investimento - Projeção de Crescimento", desc: "Calculadora de investimento gratuita: projete o crescimento dos seus investimentos. Perfeita para planejamento financeiro. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   },
 };
 
