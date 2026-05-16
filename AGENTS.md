@@ -197,3 +197,53 @@ const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
 - `{\`/\${locale}/tool\`}` 패턴이 Python에서 `{\\`/\${locale}/tool\\`}`로 잘못 생성됨
 - **해결**: Python 스크립트로 `\\`` → `` ` `` 일괄 치환 필요
 <!-- END:sisyphus-adsense -->
+
+<!-- BEGIN:sisyphus-sitemap-critical -->
+# 중요: sitemap.xml 손상 방지 규칙 (2026-05-16)
+
+## 발견된 문제
+`sitemap.xml`에 `=======` 구분선이 포함되어 있었음. 이는 git merge conflict marker 또는 사람이 수동 편집 시 넣은 구분선으로 추정.
+
+## 위험성
+- XML 파싱 에러 발생 → Search Console에서 sitemap 색인 실패
+- 일부 URL이 Google에 등록되지 않음
+- 페이지가 200으로 응답해도 검색에 노출되지 않음
+
+## 절대 금지: XML/JSON 파일 내 구분선
+- `sitemap.xml`에 다음 문자를 절대 넣지 말 것:
+  - `=======` (git merge marker)
+  - `>>>>>>>` (git conflict marker)
+  - `<<<<<<<` (git conflict marker)
+  - `---` (YAML/문서 구분선)
+  - `----` (YAML/문서 구분선)
+  - 사람이 보기 좋으라고 넣은 주석성 구분선도 금지
+
+## sitemap 수정 시 반드시 검증
+```bash
+# sitemap.xml에 XML 파싱 에러가 없는지 확인
+python -c "
+import xml.etree.ElementTree as ET
+try:
+    ET.parse('public/sitemap.xml')
+    print('sitemap.xml: VALID XML')
+except Exception as e:
+    print(f'sitemap.xml: INVALID - {e}')
+"
+```
+
+## sitemap URL 카운트 검증
+sitemap에 새 도구를 추가한 후에는 반드시 총 URL 개수를 확인:
+- 기본 5개 (en/es/zh/ko/pt): 5
+- 도구 N개 × 5개국어: N × 5
+- 합계 = 5 + (N × 5)
+
+현재 23개 도구 × 5 = 115 + 기본 5 = 120개 URL
+(2026-05-16 기준: 49개 도구 × 5 = 245 + 기본 5 = 250 URL)
+
+## sitemap 재제출 워크플로
+sitemap 변경 후 반드시:
+1. XML 유효성 검증 (위 명령어)
+2. Git commit + push → Vercel 배포
+3. Search Console에서 sitemap 재제출: https://search.google.com/search-console/sitemaps?resource_id=https://oxoxox1.com/
+4. 1-2일 후 인덱싱 상태 확인
+<!-- END:sisyphus-sitemap-critical -->
