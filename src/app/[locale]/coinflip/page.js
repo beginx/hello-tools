@@ -133,6 +133,8 @@ export default function CoinflipPage() {
         <span className="mx-2">|</span>
         <a href={'/' + locale + '/lotto'} className="underline">Lotto</a>
         <span className="mx-2">|</span>
+        <a href={'/' + locale + '/tdee'} className="underline">TDEE</a>
+        <span className="mx-2">|</span>
         hello-tools 2026
       </div>
     </div>
