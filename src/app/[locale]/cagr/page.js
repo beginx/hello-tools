@@ -50,10 +50,10 @@ export default function CagrPage() {
           <div className="flex justify-between items-center mb-4">
             <select className="os9-select !w-auto" value={locale} onChange={(e) => changeLang(e.target.value)}>
               <option value="en">English</option>
-              <option value="es">Espa\u00f1ol</option>
-              <option value="zh">\u4e2d\u6587</option>
-              <option value="ko">\ud55c\uad6d\uc5b4</option>
-              <option value="pt">Portugu\u00eas</option>
+              <option value="es">Español</option>
+              <option value="zh">中文</option>
+              <option value="ko">한국어</option>
+              <option value="pt">Português</option>
             </select>
           </div>
 
@@ -94,9 +94,15 @@ export default function CagrPage() {
       <div className="os9-footer" style={{maxWidth:400,width:'100%',fontSize:10,textAlign:'center',opacity:0.6,marginTop:12}}>
         <a href={'/' + locale} className="underline">Home</a>
         <span className="mx-2">|</span>
-        <a href={'/' + locale + '/dice'} className="underline">Dice</a>
+        <a href={'/' + locale + '/sip'} className="underline">SIP</a>
         <span className="mx-2">|</span>
-        <a href={'/' + locale + '/lotto'} className="underline">Lotto</a>
+        <a href={'/' + locale + '/compound'} className="underline">Compound</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/simpleinterest'} className="underline">Simple Interest</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/loan'} className="underline">Loan</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/mortgage'} className="underline">Mortgage</a>
         <span className="mx-2">|</span>
         hello-tools 2026
       </div>

@@ -59,10 +59,10 @@ export default function OvulationPage() {
           <div className="flex justify-between items-center mb-4">
             <select className="os9-select !w-auto" value={locale} onChange={(e) => changeLang(e.target.value)}>
               <option value="en">English</option>
-              <option value="es">Espa\u00f1ol</option>
-              <option value="zh">\u4e2d\u6587</option>
-              <option value="ko">\ud55c\uad6d\uc5b4</option>
-              <option value="pt">Portugu\u00eas</option>
+              <option value="es">Español</option>
+              <option value="zh">中文</option>
+              <option value="ko">한국어</option>
+              <option value="pt">Português</option>
             </select>
           </div>
 
@@ -105,9 +105,15 @@ export default function OvulationPage() {
       <div className="os9-footer" style={{maxWidth:400,width:'100%',fontSize:10,textAlign:'center',opacity:0.6,marginTop:12}}>
         <a href={'/' + locale} className="underline">Home</a>
         <span className="mx-2">|</span>
-        <a href={'/' + locale + '/dice'} className="underline">Dice</a>
+        <a href={'/' + locale + '/pregnancy'} className="underline">Pregnancy</a>
         <span className="mx-2">|</span>
-        <a href={'/' + locale + '/lotto'} className="underline">Lotto</a>
+        <a href={'/' + locale + '/duedate'} className="underline">Due Date</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/bmi'} className="underline">BMI</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/tdee'} className="underline">TDEE</a>
+        <span className="mx-2">|</span>
+        <a href={'/' + locale + '/age'} className="underline">Age Calculator</a>
         <span className="mx-2">|</span>
         hello-tools 2026
       </div>
