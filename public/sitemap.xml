@@ -420,13 +420,12 @@
   <url><loc>https://oxoxox1.com/zh/sqft</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/ko/sqft</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://oxoxox1.com/pt/sqft</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <!-- Sleep Calculator -->
-  <url><loc>https://oxoxox1.com/en/sleep</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://oxoxox1.com/es/sleep</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://oxoxox1.com/zh/sleep</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://oxoxox1.com/ko/sleep</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://oxoxox1.com/pt/sleep</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-=======
+<!-- Sleep Calculator -->
+  <url><loc>https://oxoxox1.com/en/sleep</loc><lastmod>2026-05-16</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://oxoxox1.com/es/sleep</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/zh/sleep</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/ko/sleep</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oxoxox1.com/pt/sleep</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <!-- Coin Flip -->
   <url><loc>https://oxoxox1.com/en/coinflip</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://oxoxox1.com/es/coinflip</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
