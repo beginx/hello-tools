@@ -16,7 +16,7 @@ export default function InvestmentPage() {
   const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
   const changeLang = (l) => { window.location.href = '/' + l + '/investment'; };
   const fmt = (n) => {
-    if (locale === 'ko') return '\u20a9' + Math.round(n).toLocaleString('ko-KR');
+    if (locale === 'ko') return '₩' + Math.round(n).toLocaleString('ko-KR');
     if (locale === 'es' || locale === 'pt') {
       const opts = { style: 'currency', currency: locale === 'es' ? 'EUR' : 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 2 };
       return new Intl.NumberFormat(locale === 'es' ? 'es-ES' : 'pt-BR', opts).format(n);
@@ -103,10 +103,10 @@ export default function InvestmentPage() {
           <div className="flex justify-between items-center mb-4">
             <select className="os9-select !w-auto text-sm" value={locale} onChange={(e) => changeLang(e.target.value)}>
               <option value="en">English</option>
-              <option value="es">Espa\u00f1ol</option>
-              <option value="zh">\u4e2d\u6587</option>
-              <option value="ko">\ud55c\uad6d\uc5b4</option>
-              <option value="pt">Portugu\u00eas</option>
+              <option value="es">Español</option>
+              <option value="zh">中文</option>
+              <option value="ko">한국어</option>
+              <option value="pt">Português</option>
             </select>
           </div>
 
