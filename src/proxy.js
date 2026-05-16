@@ -18,6 +18,9 @@ export default function proxy(request) {
   }
 
   request.headers.set('x-pathname', pathname);
+
+  // Let next-intl know about the detected locale
+  request.headers.set('x-next-intl-locale', pathLocale);
 }
 
 export const config = {
