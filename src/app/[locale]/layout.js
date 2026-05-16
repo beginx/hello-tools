@@ -24,6 +24,7 @@ const tools = {
     pregnancy: { name: "Pregnancy Due Date Calculator - Due Date &amp; Conception", desc: "Free online pregnancy due date calculator: estimate your due date, conception date, and current pregnancy week using Naegele's rule. Track your trimester and pregnancy progress. Mac OS 9 retro style.", cat: "HealthApplication" },
     ovulation: { name: "Ovulation Calculator - Fertile Window &amp; Ovulation Day", desc: "Free online ovulation calculator: track your fertile window, ovulation day, and next period. Based on your cycle length for family planning and fertility awareness. Mac OS 9 retro style.", cat: "HealthApplication" },
     cagr: { name: "CAGR Calculator - Compound Annual Growth Rate", desc: "Free online CAGR calculator: calculate Compound Annual Growth Rate for investments. Enter initial value, final value, and years to find your average annual return. Perfect for stocks, funds, and business growth analysis. Mac OS 9 retro style.", cat: "FinanceApplication" },
+    gpa: { name: "GPA Calculator - Grade Point Average", desc: "Free online GPA calculator: calculate your Grade Point Average on 4.0, 4.3, or 4.5 scale. Add courses with custom names, credits, and letter grades. Perfect for college and university students. Mac OS 9 retro style.", cat: "EducationApplication" },
   },
   es: {
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
