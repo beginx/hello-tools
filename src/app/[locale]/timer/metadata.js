@@ -14,8 +14,19 @@ export default async function generateMetadata({ params }) {
     ko: '무료 온라인 스톱워치 및 카운트다운 타이머. 랩 기록과 함께 경과 시간 측정, 또는 카운트다운 타이머 설정.',
     pt: 'Cronômetro online gratuito e temporizador de contagem regressiva. Meça o tempo decorrido com registro de voltas.'
   };
+  const title = titles[locale] || titles.en;
+  const description = descs[locale] || descs.en;
   return {
-    title: titles[locale] || titles.en,
-    description: descs[locale] || descs.en,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      url: `https://oxoxox1.com/${locale}/timer`,
+    },
+    alternates: {
+      canonical: `https://oxoxox1.com/${locale}/timer`,
+    },
   };
 }
