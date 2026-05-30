@@ -217,6 +217,76 @@ export default function CalorieCalculatorPage() {
           )}
         </div>
       </div>
+
+      {/* Rich Content Section for SEO */}
+      <div className="os9-window mt-4" style={{ maxWidth: 520, width: '100%' }}>
+        <div className="os9-titlebar">
+          <span className="tracking-[0.5px] text-sm">About hello-tools</span>
+        </div>
+        <div className="os9-window-body">
+          <h2 className="text-lg font-bold mb-3">Free Online Tools for Everyone</h2>
+          
+          <div className="mb-4">
+            <p className="text-sm" style={{ opacity: 0.85, lineHeight: 1.6 }}>
+              hello-tools is a collection of free online calculators and utilities designed to make your daily tasks easier. Whether you need to calculate your BMI, convert units, generate QR codes, or manage your finances, we have the right tool for you.
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Health & Fitness Tools</h3>
+            <ul className="text-sm list-disc pl-5" style={{ opacity: 0.85, lineHeight: 1.8 }}>
+              <li><strong>BMI Calculator:</strong> Calculate your Body Mass Index and check your weight status</li>
+              <li><strong>Calorie Calculator:</strong> Calculate your daily calorie needs based on your activity level</li>
+              <li><strong>TDEE Calculator:</strong> Find your Total Daily Energy Expenditure</li>
+              <li><strong>BMR Calculator:</strong> Calculate your Basal Metabolic Rate</li>
+              <li><strong>Pregnancy Due Date:</strong> Estimate your baby's due date</li>
+            </ul>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Financial Tools</h3>
+            <ul className="text-sm list-disc pl-5" style={{ opacity: 0.85, lineHeight: 1.8 }}>
+              <li><strong>Loan Calculator:</strong> Calculate monthly payments and total interest</li>
+              <li><strong>Mortgage Calculator:</strong> Estimate your mortgage payments</li>
+              <li><strong>Investment Calculator:</strong> Plan your investment returns</li>
+              <li><strong>Currency Converter:</strong> Convert between world currencies</li>
+              <li><strong>Tip Calculator:</strong> Calculate tips for restaurants</li>
+            </ul>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Productivity Tools</h3>
+            <ul className="text-sm list-disc pl-5" style={{ opacity: 0.85, lineHeight: 1.8 }}>
+              <li><strong>Timer & Stopwatch:</strong> Time your activities with precision</li>
+              <li><strong>Date Calculator:</strong> Calculate days between dates</li>
+              <li><strong>Unit Converter:</strong> Convert between different units of measurement</li>
+              <li><strong>QR Code Generator:</strong> Create QR codes for any text or URL</li>
+              <li><strong>Password Generator:</strong> Create strong, secure passwords</li>
+            </ul>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Why Choose hello-tools?</h3>
+            <ul className="text-sm list-disc pl-5" style={{ opacity: 0.85, lineHeight: 1.8 }}>
+              <li><strong>100% Free:</strong> All tools are completely free to use</li>
+              <li><strong>No Registration:</strong> Use tools without creating an account</li>
+              <li><strong>Privacy Focused:</strong> Your data stays in your browser</li>
+              <li><strong>Mobile Friendly:</strong> Works perfectly on all devices</li>
+              <li><strong>Fast & Reliable:</strong> Instant results with no waiting</li>
+            </ul>
+          </div>
+
+          <div className="mb-2">
+            <h3 className="font-bold mb-2">Frequently Asked Questions</h3>
+            <div className="text-sm" style={{ opacity: 0.85, lineHeight: 1.6 }}>
+              <p className="mb-2"><strong>Q: Are these tools really free?</strong><br/>A: Yes, all tools on hello-tools are completely free with no hidden charges.</p>
+              <p className="mb-2"><strong>Q: Is my data safe?</strong><br/>A: Yes, all calculations happen in your browser. We don't store any of your personal data.</p>
+              <p className="mb-2"><strong>Q: Can I use these tools on mobile?</strong><br/>A: Yes, all tools are optimized for mobile devices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="os9-footer" style={{ maxWidth: 520, width: '100%' }}>
         <a href={'/' + locale + '/bmi'} className="underline" style={{ opacity: 0.7 }}>BMI Calculator</a>
         <span className="mx-2">|</span>
