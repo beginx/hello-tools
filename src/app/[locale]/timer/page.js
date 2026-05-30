@@ -278,6 +278,73 @@ export default function TimerPage() {
         </div>
       </div>
 
+      {/* Rich Content Section for SEO */}
+      <div className="os9-window mt-4" style={{ maxWidth: 420, width: '100%' }}>
+        <div className="os9-titlebar">
+          <span className="tracking-[0.5px] text-sm">How to Use</span>
+        </div>
+        <div className="os9-window-body">
+          <h2 className="text-lg font-bold mb-3">How to Use This Timer</h2>
+          
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Step 1: Choose Your Mode</h3>
+            <p className="text-sm" style={{ opacity: 0.85, lineHeight: 1.6 }}>
+              Select between Stopwatch and Timer modes. Use Stopwatch to measure elapsed time going up from zero. Use Timer for a countdown that goes down to zero.
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Step 2: Set Time (Countdown Mode)</h3>
+            <p className="text-sm" style={{ opacity: 0.85, lineHeight: 1.6 }}>
+              In Timer mode, set your desired countdown time using the hours, minutes, and seconds inputs. Use the up/down arrows to adjust values quickly.
+            </p>
+            <ul className="text-sm mt-2 list-disc pl-5" style={{ opacity: 0.8 }}>
+              <li>5-minute timer: Set minutes to 5</li>
+              <li>10-minute timer: Set minutes to 10</li>
+              <li>1-hour timer: Set hours to 1</li>
+              <li>30-second timer: Set seconds to 30</li>
+            </ul>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Step 3: Start & Control</h3>
+            <p className="text-sm" style={{ opacity: 0.85, lineHeight: 1.6 }}>
+              Click the Start button to begin. You can pause at any time, then resume from where you left off. Click Reset to clear all time and start fresh.
+            </p>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Key Features</h3>
+            <ul className="text-sm list-disc pl-5" style={{ opacity: 0.85, lineHeight: 1.8 }}>
+              <li>Dual mode: Stopwatch and Countdown Timer</li>\              <li>Precision timing to 1/100th second</li>
+              <li>Lap time recording for stopwatch</li>
+              <li>Mobile-optimized responsive design</li>
+              <li>No installation required - works in browser</li>
+              <li>Completely free with no limitations</li>
+            </ul>
+          </div>
+
+          <div className="mb-4">
+            <h3 className="font-bold mb-2">Common Uses</h3>
+            <ul className="text-sm list-disc pl-5" style={{ opacity: 0.85, lineHeight: 1.8 }}>
+              <li><strong>Fitness:</strong> Interval training, stretching timers, running pace</li>
+              <li><strong>Study:</strong> Pomodoro technique, exam practice, reading time</li>
+              <li><strong>Cooking:</strong> Boiling, baking, fermentation timing</li>
+              <li><strong>Work:</strong> Meeting timers, focus sessions, break management</li>
+            </ul>
+          </div>
+
+          <div className="mb-2">
+            <h3 className="font-bold mb-2">Frequently Asked Questions</h3>
+            <div className="text-sm" style={{ opacity: 0.85, lineHeight: 1.6 }}>
+              <p className="mb-2"><strong>Q: Can I turn off the timer sound?</strong><br/>A: Yes, disable browser notifications or mute your system volume.</p>
+              <p className="mb-2"><strong>Q: Does it work on mobile?</strong><br/>A: Yes, fully optimized for smartphones and tablets.</p>
+              <p className="mb-2"><strong>Q: Is the timing accurate?</strong><br/>A: Yes, uses high-precision browser timers accurate to milliseconds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Footer */}
       <div className="os9-footer" style={{ maxWidth: 420, width: '100%' }}>
         <a href={'/' + locale} className="underline" style={{ opacity: 0.7, fontSize: 12 }}>Tools</a>
