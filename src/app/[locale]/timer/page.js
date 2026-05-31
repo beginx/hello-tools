@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { useParams } from 'next/navigation';
+import { OS9Window, SEODescription, Footer, LanguageSelector } from '../../../components';
 import enMsg from '../../../messages/en/timer.json';
 import esMsg from '../../../messages/es/timer.json';
 import zhMsg from '../../../messages/zh/timer.json';
@@ -119,25 +120,10 @@ export default function TimerPage() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-start py-6 px-2" style={{ background: 'var(--os9-bg)' }}>
-      <div className="os9-window" style={{ maxWidth: 420, width: '100%' }}>
-        <div className="os9-titlebar relative">
-          <div className="os9-window-controls">
-            <div className="os9-dot os9-dot-close" />
-            <div className="os9-dot os9-dot-minimize" />
-            <div className="os9-dot os9-dot-zoom" />
-          </div>
-          <span className="tracking-[0.5px] text-sm">{t('title')}</span>
-        </div>
-        <div className="os9-window-body">
+      <OS9Window title={t('title')}>
           {/* Language selector */}
           <div className="flex justify-between items-center mb-4">
-            <select className="os9-select !w-auto text-sm" value={locale} onChange={(e) => changeLang(e.target.value)}>
-              <option value="en">English</option>
-              <option value="es">Español</option>
-              <option value="zh">中文</option>
-              <option value="ko">한국어</option>
-              <option value="pt">Português</option>
-            </select>
+            <LanguageSelector locale={locale} onChange={changeLang} />
           </div>
 
           {/* Mode Toggle */}
@@ -264,19 +250,16 @@ export default function TimerPage() {
           )}
 
           {/* SEO Description + Related Tools */}
-          <div className="mt-4 px-1">
-            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
-            <div className="mt-2 text-xs" style={{ opacity: 0.55 }}>
-              <span style={{ fontWeight: 600 }}>Related Tools:</span>
-              <div className="flex flex-wrap gap-x-2 gap-y-0.5 mt-0.5">
-                <a href={`/${locale}/duration`} className="underline">Time Duration Calculator</a>
-                <a href={`/${locale}/date`} className="underline">Date Calculator</a>
-                <a href={`/${locale}/daysuntil`} className="underline">Days Until Calculator</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          <SEODescription
+            description={t('seoDescription')}
+            locale={locale}
+            relatedTools={[
+              { href: '/duration', name: 'Time Duration Calculator' },
+              { href: '/date', name: 'Date Calculator' },
+              { href: '/daysuntil', name: 'Days Until Calculator' },
+            ]}
+          />
+      </OS9Window>
 
       {/* Rich Content Section for SEO */}
       <div className="os9-window mt-4" style={{ maxWidth: 420, width: '100%' }}>
@@ -346,17 +329,7 @@ export default function TimerPage() {
       </div>
 
       {/* Footer */}
-      <div className="os9-footer" style={{ maxWidth: 420, width: '100%' }}>
-        <a href={'/' + locale} className="underline" style={{ opacity: 0.7, fontSize: 12 }}>Tools</a>
-        <span className="mx-1" style={{ opacity: 0.4 }}>|</span>
-        <a href={'/' + locale + '/timer'} className="underline" style={{ opacity: 0.7, fontSize: 12 }}>Timer</a>
-        <span className="mx-1" style={{ opacity: 0.4 }}>|</span>
-        <a href={'/' + locale + '/convert'} className="underline" style={{ opacity: 0.7, fontSize: 12 }}>Convert</a>
-        <span className="mx-1" style={{ opacity: 0.4 }}>|</span>
-        <a href={'/' + locale + '/percent'} className="underline" style={{ opacity: 0.7, fontSize: 12 }}>Percent</a>
-        <span className="mx-1" style={{ opacity: 0.4 }}>|</span>
-        hello-tools 2026
-      </div>
+      <Footer locale={locale} />
     </div>
   );
 }
