@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 const tools = {
   en: {
     calorie: { name: "Calorie Calculator - BMR, TDEE & Macros", desc: "Free online calorie calculator: calculate BMR, TDEE, BMI, and macronutrients (protein, carbs, fat) for weight loss, maintenance or muscle gain. Mac OS 9 retro style.", cat: "HealthApplication, Nutrition" },
+    timer: { name: "Stopwatch & Timer - Countdown and Stopwatch", desc: "Free online stopwatch and countdown timer: measure elapsed time or set a countdown in hours, minutes, and seconds. Perfect for cooking, workouts, study sessions, and productivity timing. Mac OS 9 retro style.", cat: "UtilitiesApplication" },
     bmi: { name: "BMI Calculator - Body Mass Index", desc: "Free online BMI calculator: calculate your Body Mass Index and check your weight category. Color-coded gauge and healthy weight range.", cat: "HealthApplication" },
     convert: { name: "Unit Converter - Length, Weight, Temperature", desc: "Free online unit converter: convert length (cm to inches, meters to feet), weight (kg to lbs), temperature (C to F), volume, area, speed, pressure.", cat: "UtilitiesApplication" },
     date: { name: "Date Calculator - Days Between Dates, D-Day, Age", desc: "Free online date calculator: calculate days between dates, D-Day countdown, add/subtract days, calculate age and anniversaries.", cat: "UtilitiesApplication" },
@@ -115,7 +116,7 @@ const tools = {
 function getToolKey(pathname) {
   if (!pathname) return 'calorie';
   const p = pathname.replace(/^\/[a-z]{2}(\/|$)/, '/').replace(/\/$/, '');
-  const toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/ohm': 'ohm', '/coinflip': 'coinflip', '/dice': 'dice', '/ratio': 'ratio', '/speed': 'speed', '/tdee': 'tdee', '/calorieburn': 'calorieburn', '/pregnancy': 'pregnancy', '/ovulation': 'ovulation', '/cagr': 'cagr' };
+  const toolMap = { '/timer': 'timer', '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/ohm': 'ohm', '/coinflip': 'coinflip', '/dice': 'dice', '/ratio': 'ratio', '/speed': 'speed', '/tdee': 'tdee', '/calorieburn': 'calorieburn', '/pregnancy': 'pregnancy', '/ovulation': 'ovulation', '/cagr': 'cagr' };
   return toolMap[p] || 'calorie';  // calorie is default landing page
 }
 
