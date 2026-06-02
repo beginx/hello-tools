@@ -28,6 +28,7 @@ const tools = {
     gpa: { name: "GPA Calculator - Grade Point Average", desc: "Free online GPA calculator: calculate your Grade Point Average on 4.0, 4.3, or 4.5 scale. Add courses with custom names, credits, and letter grades. Perfect for college and university students. Mac OS 9 retro style.", cat: "EducationApplication" },
   },
   es: {
+    timer: { name: "Cron\u00f3metro y Temporizador - Cuenta atr\u00e1s", desc: "Cron\u00f3metro y temporizador de cuenta atr\u00e1s gratuito: mida el tiempo transcurrido o establezca una cuenta atr\u00e1s. Perfecto para cocinar, hacer ejercicio, estudiar y productividad. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
     calorie: { name: "Calculadora de Calor\u00edas - BMR, TDEE y Macros", desc: "Calculadora de calor\u00edas gratuita: calcula BMR, TDEE, IMC y macronutrientes.", cat: "HealthApplication, Nutrition" },
     bmi: { name: "Calculadora de IMC - \u00cdndice de Masa Corporal", desc: "Calculadora de IMC gratuita: calcule su \u00cdndice de Masa Corporal.", cat: "HealthApplication" },
     convert: { name: "Conversor de Unidades - Longitud, Peso, Temperatura", desc: "Conversor de unidades gratuito: longitud, peso, temperatura, volumen, \u00e1rea, velocidad, presi\u00f3n.", cat: "UtilitiesApplication" },
@@ -50,6 +51,7 @@ const tools = {
     autoloan: { name: "Calculadora de Préstamo de Auto", desc: "Calculadora gratuita de préstamo de auto: calcule pagos mensuales, intereses y costo total. Perfecta para compradores de autos. Estilo retro Mac OS 9.", cat: "FinanceApplication" },
   },
   zh: {
+    timer: { name: "\u79d2\u8868\u548c\u8ba1\u65f6\u5668 - \u5012\u8ba1\u65f6\u548c\u7801\u8868", desc: "\u514d\u8d39\u7684\u5728\u7ebf\u79d2\u8868\u548c\u5012\u8ba1\u65f6\u5668\uff1a\u6d4b\u91cf\u7ecf\u8fc7\u65f6\u95f4\u6216\u8bbe\u7f6e\u5012\u8ba1\u65f6\u3002\u9002\u5408\u70f9\u996a\u3001\u953b\u70bc\u3001\u5b66\u4e60\u548c\u751f\u4ea7\u529b\u8ba1\u65f6\u3002Mac OS 9 \u590d\u53e4\u98ce\u683c\u3002", cat: "UtilitiesApplication" },
     calorie: { name: "\u5361\u8def\u91cc\u8ba1\u7b97\u5668 - BMR\u3001TDEE\u548c\u5b8f\u517b\u6210\u5206", desc: "\u514d\u8d39\u5728\u7ebf\u5361\u8def\u91cc\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97BMR\u3001TDEE\u3001BMI\u548c\u5b8f\u517b\u6210\u5206\u3002", cat: "HealthApplication, Nutrition" },
     bmi: { name: "BMI\u8ba1\u7b97\u5668 - \u8eab\u4f53\u8d28\u91cf\u6307\u6570", desc: "\u8ba1\u7b97\u60a8\u7684\u8eab\u4f53\u8d28\u91cf\u6307\u6570\uff08BMI\uff09\u3002", cat: "HealthApplication" },
     convert: { name: "\u5355\u4f4d\u6362\u7b97\u5668 - \u957f\u5ea6\u3001\u91cd\u91cf\u3001\u6e29\u5ea6", desc: "\u514d\u8d39\u5355\u4f4d\u6362\u7b97\u5668\uff1a\u957f\u5ea6\u3001\u91cd\u91cf\u3001\u6e29\u5ea6\u3001\u4f53\u79ef\u3002", cat: "UtilitiesApplication" },
@@ -70,6 +72,7 @@ const tools = {
     cagr: { name: "CAGR\u8ba1\u7b97\u5668 - \u5e74\u590d\u5408\u589e\u957f\u7387", desc: "\u514d\u8d39\u5728\u7ebfCAGR\u8ba1\u7b97\u5668\uff1a\u8ba1\u7b97\u6295\u8d44\u7684\u5e74\u590d\u5408\u589e\u957f\u7387\u3002\u8f93\u5165\u521d\u59cb\u503c\u3001\u6700\u7ec8\u503c\u548c\u5e74\u6570\u3002Mac OS 9\u590d\u53e4\u98ce\u683c\u3002", cat: "FinanceApplication" },
   },
   ko: {
+    timer: { name: "\uc2a4\ud1b1\uc6cc\uce58 & \ud0c0\uc774\uba38 - \uce74\uc6b4\ud2b8\ub2e4\uc6b4 \ubc0f \uc2a4\ud1b1\uc6cc\uce58", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uc2a4\ud1b1\uc6cc\uce58 \ubc0f \uce74\uc6b4\ud2b8\ub2e4\uc6b4 \ud0c0\uc774\uba38: \uacbd\uacfc \uc2dc\uac04 \uce21\uc815 \ub610\ub294 \uce74\uc6b4\ud2b8\ub2e4\uc6b4 \uc124\uc815. \uc694\ub9ac, \uc6b4\ub3d9, \uacf5\ubd80, \uc5c5\ubb34 \uc0dd\uc0b0\uc131\uc5d0 \uc801\ud569\ud569\ub2c8\ub2e4. Mac OS 9 \ub808\ud2b8\ub85c \uc2a4\ud0c0\uc77c.", cat: "UtilitiesApplication" },
     calorie: { name: "\uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30 - BMR, TDEE & \uc601\uc591\uc18c", desc: "\ubb34\ub8cc \uc628\ub77c\uc778 \uce7c\ub85c\ub9ac \uacc4\uc0b0\uae30: BMR, TDEE, BMI, \uc601\uc591\uc18c\ub97c \uacc4\uc0b0\ud569\ub2c8\ub2e4.", cat: "HealthApplication, Nutrition" },
     bmi: { name: "BMI \uacc4\uc0b0\uae30 - \uccb4\uc9c8\ub7c9\uc9c0\uc218", desc: "\ubb34\ub8cc BMI \uacc4\uc0b0\uae30: \uccb4\uc9c8\ub7c9\uc9c0\uc218\ub97c \uacc4\uc0b0\ud558\uace0 \uccb4\uc911 \uce74\ud14c\uace0\ub9ac\ub97c \ud655\uc778\ud558\uc138\uc694.", cat: "HealthApplication" },
     convert: { name: "\ub2e8\uc704 \ubcc0\ud658\uae30 - \uae38\uc774\u00b7\ubb34\uac8c\u00b7\uc628\ub3c4", desc: "\ubb34\ub8cc \ub2e8\uc704 \ubcc0\ud658\uae30: \uae38\uc774, \ubb34\uac8c, \uc628\ub3c4, \ubd80\ud53c, \uba74\uc801, \uc18d\ub3c4, \uc555\ub825.", cat: "UtilitiesApplication" },
@@ -90,6 +93,7 @@ const tools = {
     cagr: { name: "CAGR \uacc4\uc0b0\uae30 - \uc5f0\ud3c9\uade0 \uc131\uc7a5\ub960", desc: "\ubb34\ub8cc CAGR \uacc4\uc0b0\uae30: \ud22c\uc790\uc758 \uc5f0\ud3c9\uade0 \uc131\uc7a5\ub960\uc744 \uacc4\uc0b0\ud569\ub2c8\ub2e4. \ucd08\uae30\uac12, \ucd5c\uc885\uac12, \ub144\uc218\ub97c \uc785\ub825\ud558\uc138\uc694. Mac OS 9 \ub808\ud2b8\ub85c \uc2a4\ud0c0\uc77c.", cat: "FinanceApplication" },
   },
   pt: {
+    timer: { name: "Cron\u00f4metro e Temporizador - Contagem Regressiva", desc: "Cron\u00f4metro e temporizador de contagem regressiva gratuito: me\u00e7a o tempo decorrido ou defina uma contagem regressiva. Perfeito para cozinhar, exerc\u00edcios, estudos e produtividade. Estilo retr\u00f4 Mac OS 9.", cat: "UtilitiesApplication" },
     calorie: { name: "Calculadora de Calorias - BMR, TDEE e Macros", desc: "Calculadora de calorias gratuita: calcule BMR, TDEE, IMC e macronutrientes.", cat: "HealthApplication, Nutrition" },
     bmi: { name: "Calculadora de IMC - \u00cdndice de Massa Corporal", desc: "Calculadora de IMC gratuita: calcule seu \u00cdndice de Massa Corporal.", cat: "HealthApplication" },
     convert: { name: "Conversor de Unidades - Comprimento, Peso", desc: "Conversor de unidades gratuito: comprimento, peso, temperatura.", cat: "UtilitiesApplication" },
