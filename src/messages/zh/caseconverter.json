@@ -1,0 +1,20 @@
+{
+  "title": "Conversor de Caixa",
+  "convert": "Converter",
+  "clear": "Limpar",
+  "input": "Digite o texto",
+  "output": "Texto convertido",
+  "copy": "Copiar",
+  "seoDescription": "Conversor online gratuito de caixa de texto.",
+  "howToUse": "Como Usar",
+  "howToUseTitle": "Como Usar o Conversor",
+  "keyFeatures": "Recursos",
+  "commonUses": "Usos",
+  "faq": "FAQ",
+  "key": "pascal",
+  "label": "PascalCase",
+  "className": "mx-2",
+  "children": "|",
+  "href": "/",
+  "footer": "hello-tools 2026"
+}

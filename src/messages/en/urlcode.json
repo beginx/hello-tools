@@ -1,0 +1,19 @@
+{
+  "title": "Codificador URL",
+  "encode": "Codificar",
+  "decode": "Decodificar",
+  "input": "Entrada",
+  "output": "Saída",
+  "copy": "Copiar",
+  "swap": "Trocar",
+  "seoDescription": "Codificador URL online gratuito.",
+  "howToUse": "Como Usar",
+  "howToUseTitle": "Como Usar o Codificador URL",
+  "keyFeatures": "Recursos",
+  "commonUses": "Usos",
+  "faq": "FAQ",
+  "className": "mx-2",
+  "children": "|",
+  "href": "/",
+  "footer": "hello-tools 2026"
+}

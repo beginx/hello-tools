@@ -1,0 +1,21 @@
+{
+  "title": "Conversor de Tamanho de Dados",
+  "convert": "Converter",
+  "copy": "Copiar",
+  "input": "Valor",
+  "from": "De",
+  "bytes": "Bytes",
+  "seoDescription": "Conversor gratuito de tamanho de dados.",
+  "howToUse": "Como Usar",
+  "howToUseTitle": "Como Usar o Conversor",
+  "keyFeatures": "Recursos",
+  "commonUses": "Usos",
+  "faq": "FAQ",
+  "className": "mx-2",
+  "children": "|",
+  "key": "pb",
+  "value": "pt",
+  "placeholder": "1",
+  "href": "/",
+  "footer": "hello-tools 2026"
+}

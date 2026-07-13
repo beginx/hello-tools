@@ -1,0 +1,22 @@
+{
+  "title": "Calculadora de Tempo",
+  "add": "Somar",
+  "subtract": "Subtrair",
+  "result": "Resultado",
+  "hours": "Horas",
+  "minutes": "Minutos",
+  "seconds": "Segundos",
+  "totalHours": "Total Horas",
+  "totalMinutes": "Total Minutos",
+  "totalSeconds": "Total Segundos",
+  "seoDescription": "Calculadora de tempo gratuita. Some ou subtraia horas, minutos e segundos.",
+  "howToUse": "Como Usar",
+  "howToUseTitle": "Como Usar",
+  "keyFeatures": "Funcionalidades",
+  "commonUses": "Usos",
+  "faq": "FAQ",
+  "className": "mx-2",
+  "children": "|",
+  "href": "/",
+  "footer": "hello-tools 2026"
+}

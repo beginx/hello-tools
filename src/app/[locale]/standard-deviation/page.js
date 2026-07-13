@@ -1,0 +1,66 @@
+'use client';
+
+import { useState, useCallback } from 'react';
+import { useParams } from 'next/navigation';
+import enMsgs from '../../../messages/en/standard-deviation.json';
+import esMsgs from '../../../messages/es/standard-deviation.json';
+import zhMsgs from '../../../messages/zh/standard-deviation.json';
+import koMsgs from '../../../messages/ko/standard-deviation.json';
+import ptMsgs from '../../../messages/pt/standard-deviation.json';
+const pageMsgs = { en: enMsgs, es: esMsgs, zh: zhMsgs, ko: koMsgs, pt: ptMsgs };
+
+export default function StandardDeviationPage() {
+  const params = useParams();
+  const locale = params?.locale || 'en';
+  const t = (k) => (pageMsgs[locale] || pageMsgs.en)[k] || k;
+  const changeLang = (l) => { window.location.href = '/' + l + '/standard-deviation'; };
+
+  const [input, setInput] = useState('');
+  const [result, setResult] = useState(null);
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-start py-6 px-2" style={{ background: 'var(--os9-bg)' }}>
+      <div className="os9-window" style={{ maxWidth: 520, width: '100%' }}>
+        <div className="os9-titlebar relative">
+          <div className="os9-window-controls">
+            <div className="os9-dot os9-dot-close" />
+            <div className="os9-dot os9-dot-minimize" />
+            <div className="os9-dot os9-dot-zoom" />
+          </div>
+          <span className="tracking-[0.5px] text-sm">{t('title')}</span>
+        </div>
+        <div className="os9-window-body">
+          <div className="flex justify-between items-center mb-4">
+            <select className="os9-select !w-auto text-sm" value={locale} onChange={(e) => changeLang(e.target.value)}>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="zh">中文</option>
+              <option value="ko">한국어</option>
+              <option value="pt">Português</option>
+            </select>
+          </div>
+          <div className="mb-3">
+    <label className="os9-label">{t('inputLabel') || 'Enter numbers'}</label>
+    <textarea className="os9-input w-full" rows={4} value={input} onChange={(e) => setInput(e.target.value)} placeholder={'e.g. 12, 15, 18, 20, 22'} />
+  </div>
+  <button className="os9-btn os9-btn-primary w-full mb-3" onClick={calculate}>{t('calculate')}</button>
+  {result && <div className="os9-result mb-3"><div className="grid grid-cols-2 gap-2 text-sm">
+    <div><div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>{t('count') || 'Count'}</div><div>{result.count}</div></div>
+    <div><div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>{t('sum') || 'Sum'}</div><div>{result.sum.toFixed(4)}</div></div>
+    <div><div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>{t('mean') || 'Mean'}</div><div>{result.mean.toFixed(4)}</div></div>
+    <div><div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>{t('stdPop') || 'Std Dev (Pop)'}</div><div>{result.stdPop.toFixed(4)}</div></div>
+    <div><div className="text-[10px] uppercase tracking-wider" style={{ opacity: 0.6 }}>{t('stdSample') || 'Std Dev (Sample)'}</div><div>{result.stdSample.toFixed(4)}</div></div>
+  </div></div>}
+          <div className="mt-4 px-1">
+            <p className="text-xs leading-relaxed" style={{ opacity: 0.65 }}>{t('seoDescription')}</p>
+          </div>
+        </div>
+      </div>
+      <div className="os9-footer" style={{ maxWidth: 520, width: '100%', textAlign: 'center', fontSize: 10, opacity: 0.6, marginTop: 12 }}>
+        <a href={"/" + locale} className="underline" style={{ opacity: 0.7 }}>Home</a>
+        <span className="mx-2">|</span>
+        {t('footer') || 'hello-tools 2026'}
+      </div>
+    </div>
+  );
+}

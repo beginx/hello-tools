@@ -1,0 +1,23 @@
+{
+  "title": "Contador de Caracteres",
+  "chars": "Caracteres",
+  "words": "Palavras",
+  "lines": "Linhas",
+  "sentences": "Frases",
+  "spaces": "Espaços",
+  "noSpaces": "Caracteres (sem espaços)",
+  "input": "Digite seu texto",
+  "seoDescription": "Contador de caracteres online gratuito.",
+  "howToUse": "Como Usar",
+  "howToUseTitle": "Como Usar",
+  "keyFeatures": "Recursos",
+  "commonUses": "Usos",
+  "faq": "FAQ",
+  "className": "mx-2",
+  "children": "|",
+  "value": "pt",
+  "resize": "vertical",
+  "placeholder": "Enter your text here...",
+  "href": "/",
+  "footer": "hello-tools 2026"
+}

@@ -1,0 +1,20 @@
+{
+  "title": "Seletor de Emojis",
+  "search": "Buscar emojis...",
+  "copy": "Clique para copiar",
+  "copied": "Copiado!",
+  "categories": "Categorias",
+  "all": "Todos",
+  "recent": "Recentes",
+  "noResults": "Nenhum encontrado",
+  "seoDescription": "Seletor de emojis gratuito. Busque e copie emojis instantaneamente.",
+  "howToUse": "Como usar",
+  "howToUseTitle": "Como usar o seletor",
+  "keyFeatures": "Recursos",
+  "commonUses": "Usos",
+  "faq": "Perguntas",
+  "className": "mx-2",
+  "children": "|",
+  "href": "/",
+  "footer": "hello-tools 2026"
+}
