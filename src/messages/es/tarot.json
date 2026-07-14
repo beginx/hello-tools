@@ -4,6 +4,11 @@
   "drawing": "Drawing...",
   "reversed": "Reversed",
   "upright": "Upright",
-  "seoDescription": "Free online tarot card reading: draw a random tarot card for daily guidance. 22 Major Arcana cards with upright and reversed meanings. Mac OS 9 retro style.",
+  "past": "Past",
+  "present": "Present",
+  "future": "Future",
+  "singleCard": "Single Card",
+  "threeCard": "3-Card Spread",
+  "seoDescription": "Free online tarot card reading: draw single or three-card spreads for insight. Major Arcana tarot cards with detailed meanings for self-reflection and entertainment.",
   "footer": "hello-tools 2026"
 }
