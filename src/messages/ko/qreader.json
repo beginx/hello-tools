@@ -1,5 +1,10 @@
 {
-  "title": "Qreader",
-  "seoDescription": "Qreader tool for quick calculations and conversions.",
+  "title": "QR Code Reader",
+  "uploadImage": "Upload Image",
+  "result": "Result",
+  "copy": "Copy",
+  "noQrFound": "No QR code found",
+  "error": "Error reading QR",
+  "seoDescription": "Free online QR code reader: upload an image to decode QR codes. Supports various QR code formats. No camera required. Mac OS 9 retro style.",
   "footer": "hello-tools 2026"
 }

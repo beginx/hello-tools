@@ -1,5 +1,14 @@
 {
-  "title": "Json",
-  "seoDescription": "Json tool for quick calculations and conversions.",
+  "title": "JSON Formatter",
+  "format": "Format",
+  "minify": "Minify",
+  "input": "Input",
+  "output": "Output",
+  "copy": "Copy",
+  "copied": "Copied!",
+  "valid": "Valid JSON",
+  "invalid": "Invalid JSON",
+  "error": "Invalid JSON",
+  "seoDescription": "Free online JSON formatter: format, beautify, and minify JSON data. Validates JSON syntax and highlights errors. Perfect for developers and API debugging. Mac OS 9 retro style.",
   "footer": "hello-tools 2026"
 }

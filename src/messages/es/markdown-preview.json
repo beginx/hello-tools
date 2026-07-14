@@ -1,15 +1,7 @@
 {
-  "title": "Visualizador Markdown",
-  "input": "Markdown",
-  "preview": "Visualização",
-  "seoDescription": "Visualizador Markdown online gratuito. Veja HTML ao vivo.",
-  "howToUse": "Como Usar",
-  "howToUseTitle": "Como Usar",
-  "keyFeatures": "Funcionalidades",
-  "commonUses": "Usos",
-  "faq": "FAQ",
-  "className": "mx-2",
-  "children": "|",
-  "href": "/",
+  "title": "Markdown Preview",
+  "markdown": "Markdown",
+  "placeholder": "# Heading\n\n**Bold** and *italic*\n\n- Item 1\n- Item 2",
+  "seoDescription": "Free online Markdown preview: write Markdown and see live HTML preview. Supports headings, bold, italic, code, lists, and links. Mac OS 9 retro style.",
   "footer": "hello-tools 2026"
 }

@@ -1,13 +1,5 @@
 {
-  "title": "Calculadora Científica",
-  "seoDescription": "Calculadora científica gratuita com funções trigonométricas, logaritmos, raiz quadrada, potências, fatorial, pi e e.",
-  "howToUse": "Como Usar",
-  "howToUseTitle": "Como Usar",
-  "keyFeatures": "Funcionalidades",
-  "commonUses": "Usos",
-  "faq": "FAQ",
-  "className": "mx-2",
-  "children": "|",
-  "href": "/",
+  "title": "Scientific Calculator",
+  "seoDescription": "Free online scientific calculator: trigonometric functions (sin, cos, tan), logarithms (ln, log), constants (π, e), powers, parentheses. Mac OS 9 retro style.",
   "footer": "hello-tools 2026"
 }

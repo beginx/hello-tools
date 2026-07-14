@@ -1,17 +1,9 @@
 {
-  "title": "Teste MBTI",
-  "start": "Começar",
-  "prev": "Anterior",
-  "next": "Próximo",
-  "result": "Seu Tipo MBTI",
-  "restart": "Refazer",
-  "seoDescription": "Teste MBTI gratuito online.",
-  "howToUse": "Como Usar",
-  "howToUseTitle": "Como Fazer o Teste",
-  "keyFeatures": "Recursos",
-  "commonUses": "Usos",
-  "faq": "FAQ",
-  "className": "os9-btn os9-btn-success",
-  "children": "매우 그렇다",
+  "title": "MBTI Personality Test",
+  "start": "Start Test",
+  "question": "Question",
+  "result": "Your personality type",
+  "restart": "Restart",
+  "seoDescription": "Free online MBTI personality test: discover your Myers-Briggs personality type. 8 questions based on Jungian psychology. Mac OS 9 retro style.",
   "footer": "hello-tools 2026"
 }

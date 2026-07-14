@@ -1,16 +1,10 @@
 {
-  "title": "Calculadora Zodíaco Chinês",
-  "year": "Ano de Nascimento",
-  "calculate": "Meu Signo",
-  "result": "Seu Signo do Zodíaco Chinês",
-  "seoDescription": "Calculadora gratuita do zodíaco chinês.",
-  "howToUse": "Como Usar",
-  "howToUseTitle": "Como Usar a Calculadora",
-  "keyFeatures": "Recursos",
-  "commonUses": "Usos",
-  "faq": "FAQ",
-  "className": "mx-2",
-  "children": "|",
-  "href": "/",
+  "title": "Zodiac Sign Calculator",
+  "month": "Month",
+  "day": "Day",
+  "year": "Year",
+  "findSign": "Find Sign",
+  "yourSign": "Your Zodiac Sign",
+  "seoDescription": "Free online zodiac sign calculator: find your Western zodiac sign by birth date. Includes dates, symbols, and characteristics for all 12 signs. Mac OS 9 retro style.",
   "footer": "hello-tools 2026"
 }
