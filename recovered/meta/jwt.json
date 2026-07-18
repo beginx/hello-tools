@@ -1,5 +1,0 @@
-{
-  "name": "JWT Decoder - Decode JSON Web Tokens",
-  "description": "Free online JWT decoder: decode and inspect JSON Web Tokens instantly. View header, payload, signature, and check token expiration. All decoding happens in browser.",
-  "category": "DeveloperApplication"
-}
