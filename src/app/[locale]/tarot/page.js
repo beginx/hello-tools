@@ -133,4 +133,4 @@ export default function TarotPage() {
       </div>
     </div>
   );
-}// redeploy 2026. 07. 18. (토) 12:08:24 KST
+}
