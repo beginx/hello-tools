@@ -1,0 +1,23 @@
+{
+  "title": "Comparador de Textos - Diff Online",
+  "originalLabel": "Texto original",
+  "modifiedLabel": "Texto modificado",
+  "compare": "Comparar",
+  "clear": "Limpar",
+  "added": "Adicionado",
+  "removed": "Removido",
+  "unchanged": "Inalterado",
+  "lineByLine": "Linha por linha",
+  "swap": "Trocar",
+  "pasteSample": "Colar exemplo",
+  "seoDescription": "Comparador de textos gratuito. Compare dois textos e veja diferenças.",
+  "howToUse": "Como usar",
+  "howToUseTitle": "Como usar o comparador",
+  "keyFeatures": "Recursos",
+  "commonUses": "Usos",
+  "faq": "FAQ",
+  "type": "rem",
+  "className": "mx-2",
+  "children": "|",
+  "href": "/"
+}

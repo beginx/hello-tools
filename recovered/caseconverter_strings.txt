@@ -1,0 +1,2 @@
+PascalCase
+camelCase

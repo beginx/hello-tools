@@ -1,0 +1,19 @@
+{
+  "title": "Conversor Romano",
+  "toRoman": "Número → Romano",
+  "toNumber": "Romano → Número",
+  "input": "Valor",
+  "output": "Resultado",
+  "copy": "Copiar",
+  "seoDescription": "Conversor gratuito de algarismos romanos.",
+  "howToUse": "Como Usar",
+  "howToUseTitle": "Como Usar",
+  "keyFeatures": "Recursos",
+  "commonUses": "Usos",
+  "faq": "FAQ",
+  "className": "mx-2",
+  "children": "|",
+  "value": "pt",
+  "placeholder": "toRoman",
+  "href": "/"
+}

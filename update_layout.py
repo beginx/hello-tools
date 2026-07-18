@@ -1,75 +1,126 @@
+#!/usr/bin/env python3
+"""Update layout.js with 43 new tools in tools object and toolMap"""
 import re
 
-BASE = r'C:\Users\1one\Documents\dev\hello-tools'
-LAYOUT_PATH = BASE + r'\src\app\[locale]\layout.js'
-
-with open(LAYOUT_PATH, 'r', encoding='utf-8') as f:
+# Read current layout.js
+with open('src/app/[locale]/layout.js', 'r', encoding='utf-8') as f:
     content = f.read()
 
-# Spanish block: after ohm entry
-es_new = """ohm: { name: "Calculadora de Ley de Ohm - Voltaje, Corriente, Resistencia", desc: "Calculadora de Ley de Ohm gratuita: calcule voltaje (V), corriente (I), resistencia (R) y potencia (P). Ingrese dos valores para encontrar los otros. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
-    tdee: { name: "Calculadora de TDEE - Gasto Energ\u00e9tico Total", desc: "Calculadora de TDEE gratuita: calcule su Gasto Energ\u00e9tico Total, BMR y consumo cal\u00f3rico recomendado. Estilo retro Mac OS 9.", cat: "HealthApplication, Nutrition" },
-    calorieburn: { name: "Calculadora de Calor\u00edas Quemadas - Ejercicio", desc: "Calculadora gratuita de calor\u00edas quemadas: estime las calor\u00edas quemadas en diversos ejercicios. Estilo retro Mac OS 9.", cat: "HealthApplication, Fitness" },
-    duedate: { name: "Calculadora de Fecha de Parto - Embarazo", desc: "Calculadora gratuita de fecha de parto: estime su fecha de parto y semanas de embarazo. Estilo retro Mac OS 9.", cat: "HealthApplication" },
-    ovulation: { name: "Calculadora de Ovulaci\u00f3n - Ventana F\u00e9rtil", desc: "Calculadora de ovulaci\u00f3n gratuita: calcule su ventana f\u00e9rtil y d\u00eda de ovulaci\u00f3n. Estilo retro Mac OS 9.", cat: "HealthApplication" },
-    cagr: { name: "Calculadora de CAGR - Tasa de Crecimiento Anual", desc: "Calculadora de CAGR gratuita: calcule la tasa de crecimiento anual compuesta de sus inversiones. Estilo retro Mac OS 9.", cat: "FinanceApplication" },"""
+# New tools to add (English definitions)
+new_tools_en = {
+    'base64': { 'name': 'Base64 Encoder/Decoder - Encode & Decode Text', 'desc': 'Free online Base64 encoder and decoder: encode text to Base64 or decode Base64 strings back to text. Supports UTF-8 encoding. Perfect for developers, APIs, and data encoding. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'urlcode': { 'name': 'URL Encoder/Decoder - Percent Encoding', 'desc': 'Free online URL encoder and decoder: encode special characters in URLs or decode percent-encoded strings. Perfect for web developers and API testing. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'uuid': { 'name': 'UUID Generator - Generate UUID v4', 'desc': 'Free online UUID generator: generate Version 4 UUIDs (Universally Unique Identifiers) in bulk. Cryptographically secure random UUIDs for databases, APIs, and distributed systems. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'hash': { 'name': 'Hash Generator - SHA-256, SHA-512, SHA-1', 'desc': 'Free online hash generator: generate SHA-256, SHA-512, SHA-1 hashes from text input. Secure cryptographic hashing for passwords, data integrity, and verification. Mac OS 9 retro style.', 'cat': 'SecurityApplication' },
+    'jwt': { 'name': 'JWT Decoder - Decode JSON Web Tokens', 'desc': 'Free online JWT decoder: decode JSON Web Tokens to view header and payload. Debug and verify JWT tokens instantly. No data sent to server. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication, SecurityApplication' },
+    'json': { 'name': 'JSON Formatter - Format & Minify JSON', 'desc': 'Free online JSON formatter: format, beautify, and minify JSON data. Validates JSON syntax and highlights errors. Perfect for developers and API debugging. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'numberbase': { 'name': 'Number Base Converter - Binary, Octal, Decimal, Hex', 'desc': 'Free online number base converter: convert between binary, octal, decimal, and hexadecimal. Supports large numbers and batch conversion. Perfect for programmers and students. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'roman': { 'name': 'Roman Numeral Converter - Numbers to Roman', 'desc': 'Free online Roman numeral converter: convert numbers to Roman numerals and vice versa. Supports numbers 1-3999. Perfect for students, historians, and date conversion. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'caseconverter': { 'name': 'Case Converter - Uppercase, Lowercase, Title Case', 'desc': 'Free online case converter: convert text to UPPERCASE, lowercase, Title Case, tOGGLE cASE, and InVeRsE. Instant text case transformation. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'charcount': { 'name': 'Character Counter - Count Characters, Words, Lines', 'desc': 'Free online character counter: count characters, words, lines, and paragraphs in text. Real-time counting with character limit tracking. Perfect for writers, students, and social media. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'lorem': { 'name': 'Lorem Ipsum Generator - Placeholder Text', 'desc': 'Free online Lorem Ipsum generator: generate placeholder text for design and development. Customizable paragraphs, words, and characters. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'diff': { 'name': 'Diff Checker - Compare Text Differences', 'desc': 'Free online diff checker: compare two texts and highlight differences. Side-by-side and inline diff views. Perfect for code review, document comparison, and version control. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'datasize': { 'name': 'Data Size Converter - Bytes, KB, MB, GB, TB', 'desc': 'Free online data size converter: convert between bytes, KB, MB, GB, TB, and PB. Accurate binary and decimal conversions. Perfect for storage planning and bandwidth calculation. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'standard-deviation': { 'name': 'Standard Deviation Calculator - Population & Sample', 'desc': 'Free online standard deviation calculator: calculate population and sample standard deviation, variance, mean, and sum. Enter comma-separated numbers. Mac OS 9 retro style.', 'cat': 'EducationApplication' },
+    'inflation': { 'name': 'Inflation Calculator - CPI & Historical Value', 'desc': 'Free online inflation calculator: calculate the purchasing power of money over time using US CPI data. See how inflation affects your savings and investments. Mac OS 9 retro style.', 'cat': 'FinanceApplication' },
+    'bac': { 'name': 'BAC Calculator - Blood Alcohol Content', 'desc': 'Free online BAC calculator: estimate your Blood Alcohol Content based on weight, gender, drinks consumed, and time elapsed. For educational purposes only. Mac OS 9 retro style.', 'cat': 'HealthApplication' },
+    'creditcard': { 'name': 'Credit Card Payoff Calculator - Debt Repayment', 'desc': 'Free online credit card payoff calculator: calculate months to pay off credit card debt and total interest paid. Plan your debt-free journey. Mac OS 9 retro style.', 'cat': 'FinanceApplication' },
+    'time-calc': { 'name': 'Time Calculator - Add/Subtract Hours & Minutes', 'desc': 'Free online time calculator: add or subtract hours and minutes. Calculate time durations and intervals. Perfect for work schedules and time tracking. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'cooking': { 'name': 'Cooking Converter - Cups, Tablespoons, ml, oz', 'desc': 'Free online cooking converter: convert between cups, tablespoons, teaspoons, milliliters, liters, fluid ounces, and pints. Perfect for recipe scaling. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'timezone': { 'name': 'Time Zone Converter - World Time Conversion', 'desc': 'Free online time zone converter: convert time between world time zones. Supports major cities and UTC offsets. Perfect for scheduling international meetings. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'whatismyip': { 'name': 'What Is My IP - Public IP Address Lookup', 'desc': 'Free online IP address lookup: see your public IP address, location, and ISP. No tracking, no logs. Instant IP detection. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'mbti': { 'name': 'MBTI Personality Test - 16 Personalities', 'desc': 'Free online MBTI personality test: discover your Myers-Briggs personality type. 8 questions based on Jungian psychology. Mac OS 9 retro style.', 'cat': 'EducationApplication' },
+    'zodiac': { 'name': 'Zodiac Sign Calculator - Find Your Star Sign', 'desc': 'Free online zodiac sign calculator: find your Western zodiac sign by birth date. Includes dates, symbols, and characteristics for all 12 signs. Mac OS 9 retro style.', 'cat': 'EntertainmentApplication' },
+    'tarot': { 'name': 'Tarot Card Reading - Free Daily Card', 'desc': 'Free online tarot card reading: draw a random tarot card for daily guidance. 22 Major Arcana cards with upright and reversed meanings. Mac OS 9 retro style.', 'cat': 'EntertainmentApplication' },
+    'emoji': { 'name': 'Emoji Picker - Copy & Paste Emojis', 'desc': 'Free online emoji picker: browse and copy 300+ emojis. Search by keyword, categorize by type. One-click copy to clipboard. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'pomodoro': { 'name': 'Pomodoro Timer - Focus & Productivity Timer', 'desc': 'Free online Pomodoro timer: 25/5 minute work/break cycles. Customizable intervals, session tracking, and sound notifications. Boost your productivity. Mac OS 9 retro style.', 'cat': 'ProductivityApplication' },
+    'scientific-calc': { 'name': 'Scientific Calculator - Functions & Constants', 'desc': 'Free online scientific calculator: trigonometric functions (sin, cos, tan), logarithms (ln, log), constants (π, e), powers, parentheses. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'ascii-art': { 'name': 'ASCII Art Generator - Text to ASCII Art', 'desc': 'Free online ASCII art generator: convert text to ASCII art banners. Multiple font styles: standard, slant, banner, small. Perfect for terminal headers and code comments. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'regex': { 'name': 'Regex Tester - Test Regular Expressions', 'desc': 'Free online regex tester: test regular expressions with real-time matching. Supports JavaScript regex syntax with flags. Highlights matches and capture groups. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'markdown-preview': { 'name': 'Markdown Preview - Live Markdown Editor', 'desc': 'Free online Markdown preview: write Markdown and see live HTML preview. Supports headings, bold, italic, code, lists, and links. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'colorpicker': { 'name': 'Color Picker - HEX, RGB, HSL Converter', 'desc': 'Free online color picker: pick colors visually and convert between HEX, RGB, and HSL formats. HSV color wheel with saturation/value picker. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'color-contrast': { 'name': 'Color Contrast Checker - WCAG AA/AAA Compliance', 'desc': 'Free online color contrast checker: test foreground/background color combinations for WCAG 2.1 AA and AAA compliance. Real-time contrast ratio calculation. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'qreader': { 'name': 'QR Code Reader - Scan QR Codes from Image', 'desc': 'Free online QR code reader: upload an image to decode QR codes. Supports various QR code formats. No camera required. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'namegen': { 'name': 'Name Generator - Fantasy, Sci-Fi, Realistic Names', 'desc': 'Free online name generator: generate fantasy names, sci-fi names, realistic names, Japanese names, and business names. Perfect for writers, gamers, and creators. Mac OS 9 retro style.', 'cat': 'EntertainmentApplication' },
+    'typing-test': { 'name': 'Typing Test - WPM & Accuracy', 'desc': 'Free online typing test: measure your words per minute (WPM) and accuracy. Timed tests (15/30/60s) and word-count tests. Real-time feedback. Mac OS 9 retro style.', 'cat': 'EducationApplication' },
+    'solitaire': { 'name': 'Solitaire - Classic Klondike Card Game', 'desc': 'Free online Solitaire (Klondike): play the classic card game in your browser. Drag and drop, auto-complete, undo, and score tracking. Mac OS 9 retro style.', 'cat': 'EntertainmentApplication' },
+    'minesweeper': { 'name': 'Minesweeper - Classic Puzzle Game', 'desc': 'Free online Minesweeper: clear the minefield without detonating mines. Three difficulties (Easy/Medium/Hard), flagging, and timer. Mac OS 9 retro style.', 'cat': 'EntertainmentApplication' },
+    'checkers': { 'name': 'Checkers - Play vs Computer', 'desc': 'Free online Checkers (Draughts): play against a simple AI. Standard 8x8 board, king pieces, forced captures. Mac OS 9 retro style.', 'cat': 'EntertainmentApplication' },
+    'artillery': { 'name': 'Artillery Game - Turn-Based Tank Battle', 'desc': 'Free online Artillery game: two-player tank battle with angle and power controls. Procedural terrain, wind effects, and projectile physics. Mac OS 9 retro style.', 'cat': 'EntertainmentApplication' },
+    'video-poker': { 'name': 'Video Poker - Jacks or Better', 'desc': 'Free online Video Poker (Jacks or Better): classic casino poker game. Bet 1-5 credits, hold/draw cards, win payouts for pairs of Jacks or better. Mac OS 9 retro style.', 'cat': 'EntertainmentApplication' },
+    'about': { 'name': 'About hello-tools - Free Online Tools', 'desc': 'About hello-tools: a collection of 100+ free online calculators, converters, and utilities. No ads, no tracking, no signup. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+    'guide': { 'name': 'User Guide - How to Use hello-tools', 'desc': 'User guide for hello-tools: how to navigate, use tools, switch languages, and troubleshoot common issues. Mac OS 9 retro style.', 'cat': 'UtilitiesApplication' },
+}
 
-# Chinese block
-zh_new = """ohm: { name: "\\u6b27\\u59c6\\u5b9a\\u5f8b\\u8ba1\\u7b97\\u5668 - \\u7535\\u538b\\u3001\\u7535\\u6d41\\u3001\\u7535\\u963b", desc: "\\u514d\\u8d39\\u6b27\\u59c6\\u5b9a\\u5f8b\\u8ba1\\u7b97\\u5668\\uff1a\\u8ba1\\u7b97\\u7535\\u538b(V)\\u3001\\u7535\\u6d41(I)\\u3001\\u7535\\u963b(R)\\u548c\\u529f\\u7387(P)\\u3002\\u8f93\\u5165\\u4efb\\u610f\\u4e24\\u4e2a\\u503c\\u627e\\u51fa\\u5176\\u4ed6\\u503c\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "UtilitiesApplication" },
-    tdee: { name: "TDEE\\u8ba1\\u7b97\\u5668 - \\u6bcf\\u65e5\\u80fd\\u91cf\\u603b\\u6d88\\u8017", desc: "\\u514d\\u8d39\\u5728\\u7ebfTDEE\\u8ba1\\u7b97\\u5668\\uff1a\\u8ba1\\u7b97\\u60a8\\u7684\\u6bcf\\u65e5\\u80fd\\u91cf\\u603b\\u6d88\\u8017\\u3001BMR\\u548c\\u63a8\\u8350\\u5361\\u8def\\u91cc\\u6444\\u5165\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "HealthApplication, Nutrition" },
-    calorieburn: { name: "\\u5361\\u8def\\u91cc\\u6d88\\u8017\\u8ba1\\u7b97\\u5668 - \\u8fd0\\u52a8\\u6d88\\u8017", desc: "\\u514d\\u8d39\\u5728\\u7ebf\\u5361\\u8def\\u91cc\\u6d88\\u8017\\u8ba1\\u7b97\\u5668\\uff1a\\u4f30\\u7b97\\u8dd1\\u6b65\\u3001\\u6b65\\u884c\\u3001\\u9a91\\u884c\\u3001\\u6e38\\u6cf3\\u7b49\\u8fd0\\u52a8\\u7684\\u5361\\u8def\\u91cc\\u6d88\\u8017\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "HealthApplication, Fitness" },
-    duedate: { name: "\\u9884\\u4ea7\\u671f\\u8ba1\\u7b97\\u5668 - \\u6000\\u5b55\\u65e5\\u671f", desc: "\\u514d\\u8d39\\u5728\\u7ebf\\u9884\\u4ea7\\u671f\\u8ba1\\u7b97\\u5668\\uff1a\\u4f30\\u7b97\\u9884\\u4ea7\\u671f\\u3001\\u53d7\\u5b55\\u65e5\\u671f\\u548c\\u5f53\\u524d\\u6000\\u5b55\\u5468\\u6570\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "HealthApplication" },
-    ovulation: { name: "\\u6392\\u5375\\u671f\\u8ba1\\u7b97\\u5668 - \\u6392\\u5375\\u65e5\\u548c\\u53d7\\u5b55\\u7a97\\u53e3", desc: "\\u514d\\u8d39\\u5728\\u7ebf\\u6392\\u5375\\u671f\\u8ba1\\u7b97\\u5668\\uff1a\\u8ffd\\u8e2a\\u60a8\\u7684\\u53d7\\u5b55\\u7a97\\u53e3\\u3001\\u6392\\u5375\\u65e5\\u548c\\u4e0b\\u6b21\\u6708\\u7ecf\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "HealthApplication" },
-    cagr: { name: "CAGR\\u8ba1\\u7b97\\u5668 - \\u5e74\\u590d\\u5408\\u589e\\u957f\\u7387", desc: "\\u514d\\u8d39\\u5728\\u7ebfCAGR\\u8ba1\\u7b97\\u5668\\uff1a\\u8ba1\\u7b97\\u6295\\u8d44\\u7684\\u5e74\\u590d\\u5408\\u589e\\u957f\\u7387\\u3002\\u8f93\\u5165\\u521d\\u59cb\\u503c\\u3001\\u6700\\u7ec8\\u503c\\u548c\\u5e74\\u6570\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "FinanceApplication" },"""
+# Minimal fallback for other locales (will use English as base)
+new_tools_fallback = {}
+for k, v in new_tools_en.items():
+    new_tools_fallback[k] = { 'name': v['name'], 'desc': v['desc'], 'cat': v['cat'] }
 
-# Korean block - use actual Korean characters
-ko_new = """ohm: { name: "\\uc62c\\uc758 \\ubc95\\uce59 \\uacc4\\uc0b0\\uae30 - \\uc804\\uc559, \\uc804\\ub958, \\uc800\\ud56d", desc: "\\ubb34\\ub8cc \\uc628\\ub77c\\uc778 \\uc62c\\uc758 \\ubc95\\uce59 \\uacc4\\uc0b0\\uae30: \\uc804\\uc559(V), \\uc804\\ub958(I), \\uc800\\ud56d(R), \\uc804\\ub825(P)\\uc744 \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. \\ub450 \\uac12\\uc744 \\uc785\\ub825\\ud558\\uba74 \\ub098\\uba38\\uc9c0\\ub97c \\ucc3e\\uc544\\ub4dc\\ub9bd\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "UtilitiesApplication" },
-    tdee: { name: "TDEE \\uacc4\\uc0b0\\uae30 - \\ucd1d \\uc5d0\\ub108\\uc9c0 \\uc18c\\ube44\\ub7c9 & BMR", desc: "\\ubb34\\ub8cc \\uc628\\ub77c\\uc778 TDEE \\uacc4\\uc0b0\\uae30: \\ucd1d \\uc5d0\\ub108\\uc9c0 \\uc18c\\ube44\\ub7c9, BMR, \\uad8c\\uc7a5 \\uce7c\\ub85c\\ub9ac \\uc12d\\ucde8\\ub7c9\\uc744 \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "HealthApplication, Nutrition" },
-    calorieburn: { name: "\\uce7c\\ub85c\\ub9ac \\uc18c\\ubaa8 \\uacc4\\uc0b0\\uae30 - \\uc6b4\\ub3d9\\ubcc4 \\uce7c\\ub85c\\ub9ac", desc: "\\ubb34\\ub8cc \\uce7c\\ub85c\\ub9ac \\uc18c\\ubaa8 \\uacc4\\uc0b0\\uae30: \\ub2ec\\ub9ac\\uae30, \\uac77\\uae30, \\uc790\\uc804\\uac70, \\uc218\\uc601 \\ub4f1 \\uc6b4\\ub3d9\\ubcc4 \\uce7c\\ub85c\\ub9ac \\uc18c\\ubaa8\\ub7c9\\uc744 \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "HealthApplication, Fitness" },
-    duedate: { name: "\\ucd9c\\uc0b0\\uc608\\uc815\\uc77c \\uacc4\\uc0b0\\uae30 - \\uc784\\uc2e0 \\uae30\\uac04", desc: "\\ubb34\\ub8cc \\ucd9c\\uc0b0\\uc608\\uc815\\uc77c \\uacc4\\uc0b0\\uae30: Naegele \\uaddc\\uce59\\uc744 \\uc774\\uc6a9\\ud55c \\ucd9c\\uc0b0\\uc608\\uc815\\uc77c, \\uc218\\uc815\\uc77c, \\ud604\\uc7ac \\uc784\\uc2e0 \\uc8fc\\ucc28\\ub97c \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "HealthApplication" },
-    ovulation: { name: "\\ubc30\\ub780\\uc77c \\uacc4\\uc0b0\\uae30 - \\uac00\\uc7a5 \\uc785\\uc0c1\\ub41c \\uc2dc\\uae30", desc: "\\ubb34\\ub8cc \\ubc30\\ub780\\uc77c \\uacc4\\uc0b0\\uae30: \\uac00\\uc7a5 \\uc785\\uc0c1\\ub41c \\uc2dc\\uae30, \\ubc30\\ub780\\uc77c, \\ub2e4\\uc74c \\uc0dd\\ub9ac\\ub97c \\ucd94\\uc801\\ud569\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "HealthApplication" },
-    cagr: { name: "CAGR \\uacc4\\uc0b0\\uae30 - \\uc5f0\\ud3c9\\uade0 \\uc131\\uc7a5\\ub960", desc: "\\ubb34\\ub8cc CAGR \\uacc4\\uc0b0\\uae30: \\ud22c\\uc790\\uc758 \\uc5f0\\ud3c9\\uade0 \\uc131\\uc7a5\\ub960\\uc744 \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. \\ucd08\\uae30\\uac12, \\ucd5c\\uc885\\uac12, \\ub144\\uc218\\ub97c \\uc785\\ub825\\ud558\\uc138\\uc694. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "FinanceApplication" },"""
+# Build the tools object additions
+locales = ['en', 'es', 'zh', 'ko', 'pt']
+tools_additions = []
+for loc in locales:
+    tools_additions.append(f"  {loc}: {{")
+    tools_to_use = new_tools_en if loc == 'en' else new_tools_fallback
+    for k, v in tools_to_use.items():
+        name = v['name'].replace('"', '\\"')
+        desc = v['desc'].replace('"', '\\"')
+        cat = v['cat']
+        tools_additions.append(f"    {k}: {{ name: \"{name}\", desc: \"{desc}\", cat: \"{cat}\" }},")
+    tools_additions.append("  },")
 
-# Portuguese block
-pt_new = """ohm: { name: "Calculadora de Lei de Ohm - Tens\\u00e3o, Corrente, Resist\\u00eancia", desc: "Calculadora de Lei de Ohm gratuita: calcule tens\\u00e3o (V), corrente (I), resist\\u00eancia (R) e pot\\u00eancia (P). Insira dois valores para encontrar os outros. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },
-    tdee: { name: "Calculadora de TDEE - Gasto Energ\\u00e9tico Total", desc: "Calculadora de TDEE gratuita: calcule seu Gasto Energ\\u00e9tico Total, BMR e ingest\\u00e3o cal\\u00f3rica recomendada. Estilo retro Mac OS 9.", cat: "HealthApplication, Nutrition" },
-    calorieburn: { name: "Calculadora de Calorias Queimadas - Exerc\\u00edcio", desc: "Calculadora gratuita de calorias queimadas: estime calorias queimadas em diversos exerc\\u00edcios. Estilo retro Mac OS 9.", cat: "HealthApplication, Fitness" },
-    duedate: { name: "Calculadora de Data de Parto - Gravidez", desc: "Calculadora gratuita de data de parto: estime sua data de parto e semanas de gravidez. Estilo retro Mac OS 9.", cat: "HealthApplication" },
-    ovulation: { name: "Calculadora de Ovula\\u00e7\\u00e3o - Janela F\\u00e9rtil", desc: "Calculadora de ovula\\u00e7\\u00e3o gratuita: calcule sua janela f\\u00e9rtil e dia da ovula\\u00e7\\u00e3o. Estilo retro Mac OS 9.", cat: "HealthApplication" },
-    cagr: { name: "Calculadora de CAGR - Taxa de Crescimento Anual", desc: "Calculadora de CAGR gratuita: calcule a taxa de crescimento anual composta dos seus investimentos. Estilo retro Mac OS 9.", cat: "FinanceApplication" },"""
+tools_str = "\n".join(tools_additions)
 
-# Replace each locale block - insert after the ohm entry in each
-# Spanish: after line 41's ohm entry
-content = content.replace(
-    'Ingrese dos valores para encontrar los otros. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },\n  },\n  zh: {',
-    'Ingrese dos valores para encontrar los otros. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },\n    tdee: { name: "Calculadora de TDEE - Gasto Energ\u00e9tico Total", desc: "Calculadora de TDEE gratuita: calcule su Gasto Energ\u00e9tico Total, BMR y consumo cal\u00f3rico recomendado. Estilo retro Mac OS 9.", cat: "HealthApplication, Nutrition" },\n    calorieburn: { name: "Calculadora de Calor\u00edas Quemadas - Ejercicio", desc: "Calculadora gratuita de calor\u00edas quemadas: estime las calor\u00edas quemadas en diversos ejercicios. Estilo retro Mac OS 9.", cat: "HealthApplication, Fitness" },\n    duedate: { name: "Calculadora de Fecha de Parto - Embarazo", desc: "Calculadora gratuita de fecha de parto: estime su fecha de parto y semanas de embarazo. Estilo retro Mac OS 9.", cat: "HealthApplication" },\n    ovulation: { name: "Calculadora de Ovulaci\u00f3n - Ventana F\u00e9rtil", desc: "Calculadora de ovulaci\u00f3n gratuita: calcule su ventana f\u00e9rtil y d\u00eda de ovulaci\u00f3n. Estilo retro Mac OS 9.", cat: "HealthApplication" },\n    cagr: { name: "Calculadora de CAGR - Tasa de Crecimiento Anual", desc: "Calculadora de CAGR gratuita: calcule la tasa de crecimiento anual compuesta de sus inversiones. Estilo retro Mac OS 9.", cat: "FinanceApplication" },\n  },\n  zh: {'
-)
+# Find the tools object and insert after the existing content
+# The tools object starts with "const tools = {"
+# We need to insert our new tools before the closing "};"
 
-# Chinese: after zh ohm
-content = content.replace(
-    'Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "UtilitiesApplication" },\n  },\n  ko: {',
-    'Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "UtilitiesApplication" },\n    tdee: { name: "TDEE\\u8ba1\\u7b97\\u5668 - \\u6bcf\\u65e5\\u80fd\\u91cf\\u603b\\u6d88\\u8017", desc: "\\u514d\\u8d39\\u5728\\u7ebfTDEE\\u8ba1\\u7b97\\u5668\\uff1a\\u8ba1\\u7b97\\u60a8\\u7684\\u6bcf\\u65e5\\u80fd\\u91cf\\u603b\\u6d88\\u8017\\u3001BMR\\u548c\\u63a8\\u8350\\u5361\\u8def\\u91cc\\u6444\\u5165\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "HealthApplication, Nutrition" },\n    calorieburn: { name: "\\u5361\\u8def\\u91cc\\u6d88\\u8017\\u8ba1\\u7b97\\u5668 - \\u8fd0\\u52a8\\u6d88\\u8017", desc: "\\u514d\\u8d39\\u5728\\u7ebf\\u5361\\u8def\\u91cc\\u6d88\\u8017\\u8ba1\\u7b97\\u5668\\uff1a\\u4f30\\u7b97\\u8dd1\\u6b65\\u3001\\u6b65\\u884c\\u3001\\u9a91\\u884c\\u3001\\u6e38\\u6cf3\\u7b49\\u8fd0\\u52a8\\u7684\\u5361\\u8def\\u91cc\\u6d88\\u8017\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "HealthApplication, Fitness" },\n    duedate: { name: "\\u9884\\u4ea7\\u671f\\u8ba1\\u7b97\\u5668 - \\u6000\\u5b55\\u65e5\\u671f", desc: "\\u514d\\u8d39\\u5728\\u7ebf\\u9884\\u4ea7\\u671f\\u8ba1\\u7b97\\u5668\\uff1a\\u4f30\\u7b97\\u9884\\u4ea7\\u671f\\u3001\\u53d7\\u5b55\\u65e5\\u671f\\u548c\\u5f53\\u524d\\u6000\\u5b55\\u5468\\u6570\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "HealthApplication" },\n    ovulation: { name: "\\u6392\\u5375\\u671f\\u8ba1\\u7b97\\u5668 - \\u6392\\u5375\\u65e5\\u548c\\u53d7\\u5b55\\u7a97\\u53e3", desc: "\\u514d\\u8d39\\u5728\\u7ebf\\u6392\\u5375\\u671f\\u8ba1\\u7b97\\u5668\\uff1a\\u8ffd\\u8e2a\\u60a8\\u7684\\u53d7\\u5b55\\u7a97\\u53e3\\u3001\\u6392\\u5375\\u65e5\\u548c\\u4e0b\\u6b21\\u6708\\u7ecf\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "HealthApplication" },\n    cagr: { name: "CAGR\\u8ba1\\u7b97\\u5668 - \\u5e74\\u590d\\u5408\\u589e\\u957f\\u7387", desc: "\\u514d\\u8d39\\u5728\\u7ebfCAGR\\u8ba1\\u7b97\\u5668\\uff1a\\u8ba1\\u7b97\\u6295\\u8d44\\u7684\\u5e74\\u590d\\u5408\\u589e\\u957f\\u7387\\u3002\\u8f93\\u5165\\u521d\\u59cb\\u503c\\u3001\\u6700\\u7ec8\\u503c\\u548c\\u5e74\\u6570\\u3002Mac OS 9\\u590d\\u53e4\\u98ce\\u683c\\u3002", cat: "FinanceApplication" },\n  },\n  ko: {'
-)
+# First, let's add to the toolMap
+tool_map_entries = []
+for k in new_tools_en.keys():
+    tool_map_entries.append(f"  '/{k}': '{k}',")
 
-# Korean: after ko ohm
-content = content.replace(
-    'Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "UtilitiesApplication" },\n  },\n  pt: {',
-    'Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "UtilitiesApplication" },\n    tdee: { name: "TDEE \\uacc4\\uc0b0\\uae30 - \\ucd1d \\uc5d0\\ub108\\uc9c0 \\uc18c\\ube44\\ub7c9 & BMR", desc: "\\ubb34\\ub8cc \\uc628\\ub77c\\uc778 TDEE \\uacc4\\uc0b0\\uae30: \\ucd1d \\uc5d0\\ub108\\uc9c0 \\uc18c\\ube44\\ub7c9, BMR, \\uad8c\\uc7a5 \\uce7c\\ub85c\\ub9ac \\uc12d\\ucde8\\ub7c9\\uc744 \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "HealthApplication, Nutrition" },\n    calorieburn: { name: "\\uce7c\\ub85c\\ub9ac \\uc18c\\ubaa8 \\uacc4\\uc0b0\\uae30 - \\uc6b4\\ub3d9\\ubcc4 \\uce7c\\ub85c\\ub9ac", desc: "\\ubb34\\ub8cc \\uce7c\\ub85c\\ub9ac \\uc18c\\ubaa8 \\uacc4\\uc0b0\\uae30: \\ub2ec\\ub9ac\\uae30, \\uac77\\uae30, \\uc790\\uc804\\uac70, \\uc218\\uc601 \\ub4f1 \\uc6b4\\ub3d9\\ubcc4 \\uce7c\\ub85c\\ub9ac \\uc18c\\ubaa8\\ub7c9\\uc744 \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "HealthApplication, Fitness" },\n    duedate: { name: "\\ucd9c\\uc0b0\\uc608\\uc815\\uc77c \\uacc4\\uc0b0\\uae30 - \\uc784\\uc2e0 \\uae30\\uac04", desc: "\\ubb34\\ub8cc \\ucd9c\\uc0b0\\uc608\\uc815\\uc77c \\uacc4\\uc0b0\\uae30: Naegele \\uaddc\\uce59\\uc744 \\uc774\\uc6a9\\ud55c \\ucd9c\\uc0b0\\uc608\\uc815\\uc77c, \\uc218\\uc815\\uc77c, \\ud604\\uc7ac \\uc784\\uc2e0 \\uc8fc\\ucc28\\ub97c \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "HealthApplication" },\n    ovulation: { name: "\\ubc30\\ub780\\uc77c \\uacc4\\uc0b0\\uae30 - \\uac00\\uc7a5 \\uc785\\uc0c1\\ub41c \\uc2dc\\uae30", desc: "\\ubb34\\ub8cc \\ubc30\\ub780\\uc77c \\uacc4\\uc0b0\\uae30: \\uac00\\uc7a5 \\uc785\\uc0c1\\ub41c \\uc2dc\\uae30, \\ubc30\\ub780\\uc77c, \\ub2e4\\uc74c \\uc0dd\\ub9ac\\ub97c \\ucd94\\uc801\\ud569\\ub2c8\\ub2e4. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "HealthApplication" },\n    cagr: { name: "CAGR \\uacc4\\uc0b0\\uae30 - \\uc5f0\\ud3c9\\uade0 \\uc131\\uc7a5\\ub960", desc: "\\ubb34\\ub8cc CAGR \\uacc4\\uc0b0\\uae30: \\ud22c\\uc790\\uc758 \\uc5f0\\ud3c9\\uade0 \\uc131\\uc7a5\\ub960\\uc744 \\uacc4\\uc0b0\\ud569\\ub2c8\\ub2e4. \\ucd08\\uae30\\uac12, \\ucd5c\\uc885\\uac12, \\ub144\\uc218\\ub97c \\uc785\\ub825\\ud558\\uc138\\uc694. Mac OS 9 \\ub808\\ud2b8\\ub85c \\uc2a4\\ud0c0\\uc77c.", cat: "FinanceApplication" },\n  },\n  pt: {'
-)
+tool_map_str = "\n".join(tool_map_entries)
 
-# Portuguese: after pt ohm
-content = content.replace(
-    'Insira dois valores para encontrar os outros. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },\n  },\n',
-    'Insira dois valores para encontrar os outros. Estilo retro Mac OS 9.", cat: "UtilitiesApplication" },\n    tdee: { name: "Calculadora de TDEE - Gasto Energ\\u00e9tico Total", desc: "Calculadora de TDEE gratuita: calcule seu Gasto Energ\\u00e9tico Total, BMR e ingest\\u00e3o cal\\u00f3rica recomendada. Estilo retro Mac OS 9.", cat: "HealthApplication, Nutrition" },\n    calorieburn: { name: "Calculadora de Calorias Queimadas - Exerc\\u00edcio", desc: "Calculadora gratuita de calorias queimadas: estime calorias queimadas em diversos exerc\\u00edcios. Estilo retro Mac OS 9.", cat: "HealthApplication, Fitness" },\n    duedate: { name: "Calculadora de Data de Parto - Gravidez", desc: "Calculadora gratuita de data de parto: estime sua data de parto e semanas de gravidez. Estilo retro Mac OS 9.", cat: "HealthApplication" },\n    ovulation: { name: "Calculadora de Ovula\\u00e7\\u00e3o - Janela F\\u00e9rtil", desc: "Calculadora de ovula\\u00e7\\u00e3o gratuita: calcule sua janela f\\u00e9rtil e dia da ovula\\u00e7\\u00e3o. Estilo retro Mac OS 9.", cat: "HealthApplication" },\n    cagr: { name: "Calculadora de CAGR - Taxa de Crescimento Anual", desc: "Calculadora de CAGR gratuita: calcule a taxa de crescimento anual composta dos seus investimentos. Estilo retro Mac OS 9.", cat: "FinanceApplication" },\n  },\n'
-)
+# Now do the replacement
+# Find the closing of the tools object
+# The tools object ends with "};"
+# We want to insert our new tools before that closing
 
-# Update toolMap
-content = content.replace(
-    "toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/ohm': 'ohm', '/coinflip': 'coinflip', '/dice': 'dice', '/ratio': 'ratio', '/speed': 'speed' };",
-    "toolMap = { '/bmi': 'bmi', '/convert': 'convert', '/date': 'date', '/photo': 'photo', '/qr': 'qr', '/password': 'password', '/lotto': 'lotto', '/ohm': 'ohm', '/coinflip': 'coinflip', '/dice': 'dice', '/ratio': 'ratio', '/speed': 'speed', '/tdee': 'tdee', '/calorieburn': 'calorieburn', '/duedate': 'duedate', '/ovulation': 'ovulation', '/cagr': 'cagr' };"
-)
+# Let's find the "};" that closes the tools object (after the pt locale)
+# The pattern is: the tools object has en, es, zh, ko, pt keys
+# After pt: { ... }, there's a "};"
 
-with open(LAYOUT_PATH, 'w', encoding='utf-8') as f:
+# Find the position after the pt locale closing
+pt_end = content.find("  },\n};")
+if pt_end == -1:
+    # Try alternative
+    pt_end = content.find("  }\n};")
+    
+if pt_end != -1:
+    # Insert before the "};"
+    content = content[:pt_end + 2] + "\n" + tools_str + content[pt_end + 2:]
+
+# Now update the toolMap in getToolKey function
+# Find the toolMap object
+toolmap_start = content.find("const toolMap = {")
+if toolmap_start != -1:
+    # Find the closing }
+    brace_count = 0
+    pos = toolmap_start
+    for i, ch in enumerate(content[toolmap_start:]):
+        if ch == '{': brace_count += 1
+        elif ch == '}':
+            brace_count -= 1
+            if brace_count == 0:
+                pos = toolmap_start + i
+                break
+    # Insert our new entries before the closing }
+    content = content[:pos] + "\n" + tool_map_str + content[pos:]
+
+# Write back
+with open('src/app/[locale]/layout.js', 'w', encoding='utf-8') as f:
     f.write(content)
 
-print('layout.js updated successfully!')
+print("Updated layout.js with 43 new tools!")

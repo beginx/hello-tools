@@ -1,0 +1,20 @@
+{
+  "title": "Inflation Calculator",
+  "amount": "Amount",
+  "fromYear": "From Year",
+  "toYear": "To Year",
+  "calculate": "Calculate",
+  "result": "Result",
+  "equivalentValue": "Equivalent Value",
+  "inflationRate": "Total Inflation Rate",
+  "avgAnnualRate": "Avg Annual Rate",
+  "seoDescription": "Free online inflation calculator. Calculate how the value of money changes over time due to inflation. Enter an amount, start year, and end year to see the equivalent purchasing power. Based on US CPI data.",
+  "howToUse": "How to Use",
+  "howToUseTitle": "How to Use the Inflation Calculator",
+  "keyFeatures": "Key Features",
+  "commonUses": "Common Uses",
+  "faq": "FAQ",
+  "className": "mx-2",
+  "children": "|",
+  "href": "/"
+}

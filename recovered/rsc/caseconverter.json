@@ -1,0 +1,21 @@
+{
+  "en": {
+    "error": "no_rsc_match",
+    "sample": ""
+  },
+  "es": {
+    "error": "no_rsc_match",
+    "sample": ""
+  },
+  "zh": {
+    "error": "no_rsc_match",
+    "sample": ""
+  },
+  "ko": {
+    "error": "no_rsc_match",
+    "sample": ""
+  },
+  "pt": {
+    "error": "page.goto: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - navigating to \"https://oxoxox1.com/pt/caseconverter\", waiting until \"networkidle\"\u001b[22m\n"
+  }
+}

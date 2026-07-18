@@ -1,0 +1,17 @@
+{
+  "title": "Gerador UUID",
+  "generate": "Gerar UUID",
+  "copy": "Copiar",
+  "history": "Histórico",
+  "clear": "Limpar",
+  "count": "Quantidade",
+  "seoDescription": "Gerador UUID/GUID online gratuito. Gere identificadores UUID v4 aleatórios instantaneamente. Perfeito para desenvolvedores e bancos de dados.",
+  "howToUse": "Como Usar",
+  "howToUseTitle": "Como Usar o Gerador UUID",
+  "keyFeatures": "Recursos",
+  "commonUses": "Usos Comuns",
+  "faq": "Perguntas Frequentes",
+  "className": "mx-2",
+  "children": "|",
+  "href": "/"
+}

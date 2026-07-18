@@ -1,0 +1,4 @@
+CAGR
+JSON
+TDEE
+UUID
